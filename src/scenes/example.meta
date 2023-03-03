@@ -1,4 +1,18 @@
 {
   "version": 1,
-  "seed": 2218013815
+  "seed": 2218013815,
+  "timeEvents": [
+    {
+      "name": "showInit",
+      "targetTime": 3.2924234282643745
+    },
+    {
+      "name": "highlightInit",
+      "targetTime": 5.3
+    },
+    {
+      "name": "hold",
+      "targetTime": 10.257478058391547
+    }
+  ]
 }
