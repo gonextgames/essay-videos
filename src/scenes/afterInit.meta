@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "seed": 2218013815,
+  "timeEvents": [
+    {
+      "name": "something",
+      "targetTime": 1
+    },
+    {
+      "name": "showTemplative",
+      "targetTime": 6.9182403968865245
+    },
+    {
+      "name": "showProduce",
+      "targetTime": 7.548805412970292
+    },
+    {
+      "name": "showOutput",
+      "targetTime": 9.100257104385753
+    },
+    {
+      "name": "folderExpand",
+      "targetTime": 10.16874062628002
+    },
+    {
+      "name": "highlightOutput",
+      "targetTime": 11.274424687528915
+    },
+    {
+      "name": "endSceneHold",
+      "targetTime": 12.714956080944665
+    }
+  ]
+}
