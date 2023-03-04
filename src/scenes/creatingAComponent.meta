@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "seed": 2218013815,
+  "timeEvents": [
+    {
+      "name": "showComponentsRect",
+      "targetTime": 2.89716045346187
+    },
+    {
+      "name": "showCodeRect",
+      "targetTime": 3.933333333333333
+    },
+    {
+      "name": "showCreate",
+      "targetTime": 7.9845354641779265
+    },
+    {
+      "name": "showType",
+      "targetTime": 8.323415493019962
+    },
+    {
+      "name": "showDash",
+      "targetTime": 8.621616121503092
+    },
+    {
+      "name": "showComponentName",
+      "targetTime": 9.503598743033741
+    },
+    {
+      "name": "replaceValues",
+      "targetTime": 10.162308910186214
+    },
+    {
+      "name": "resetHighlights",
+      "targetTime": 10.864443982235773
+    },
+    {
+      "name": "endSceneHold",
+      "targetTime": 13.819828049435783
+    }
+  ]
+}

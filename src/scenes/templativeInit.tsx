@@ -14,14 +14,7 @@ import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 
 export default makeScene2D(function* (view) {
   const code = createRef<CodeBlock>();
-  const textStyle = {
-    fontWeight: 700,
-    fontFamily: 'JetBrains Mono',
-    fontSize: 32,
-    offsetY: -1,
-    padding: 10,
-    cache: true,
-  };
+  
   yield view.add(
     <>
       <Rect
@@ -50,16 +43,16 @@ export default makeScene2D(function* (view) {
     </>
   );
 
-  yield* slideTransition(Direction.Bottom, 1);
-  yield* waitUntil('showInit');
+  yield* slideTransition(Direction.Bottom, 10);
+  // yield* waitUntil('showInit');
   // yield* code().selection(lines(1), 0.3);
   yield* code().edit(2, false)`templative${insert(` init`)}`;
-  yield* waitUntil("highlightInit")
+  // yield* waitUntil("highlightInit")
   yield* code().selection(word(0, 11, 4), 1);
   // yield* waitUntil('showProduce');
   // yield* code().edit(0.8)`templative produce`;
 
-  yield* waitUntil("hold")
+  // yield* waitUntil("hold")
 
 
 });

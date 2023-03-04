@@ -1,9 +1,9 @@
 import {makeProject} from '@motion-canvas/core/lib';
-import introAudio from "./intro.mp3" 
-import example from './scenes/example?scene';
+import creatingAComponent from './scenes/creatingAComponent?scene';
+import creatingComponent from "./audio/creatingComponent.mp3"
 
 export default makeProject({
-  scenes: [example],
+  scenes: [creatingAComponent],
   background: '#141414',
-  audio: introAudio,
+  audio: creatingComponent,
 });
