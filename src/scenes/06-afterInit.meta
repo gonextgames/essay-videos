@@ -8,27 +8,23 @@
     },
     {
       "name": "showTemplative",
-      "targetTime": 6.9182403968865245
+      "targetTime": 6.564360722491804
     },
     {
       "name": "showProduce",
-      "targetTime": 7.548805412970292
+      "targetTime": 7.182138746303625
     },
     {
       "name": "showOutput",
-      "targetTime": 9.100257104385753
+      "targetTime": 8.733590437719087
     },
     {
       "name": "folderExpand",
-      "targetTime": 10.16874062628002
+      "targetTime": 9.802073959613352
     },
     {
       "name": "highlightOutput",
-      "targetTime": 11.274424687528915
-    },
-    {
-      "name": "endSceneHold",
-      "targetTime": 12.714956080944665
+      "targetTime": 10.90775802086225
     }
   ]
 }

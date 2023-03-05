@@ -8,35 +8,35 @@
     },
     {
       "name": "showCodeRect",
-      "targetTime": 3.933333333333333
+      "targetTime": 4.200433841766483
     },
     {
       "name": "showCreate",
-      "targetTime": 7.9845354641779265
+      "targetTime": 8.146374173139812
     },
     {
       "name": "showType",
-      "targetTime": 8.323415493019962
+      "targetTime": 8.484869834681021
     },
     {
       "name": "showDash",
-      "targetTime": 8.621616121503092
+      "targetTime": 8.817499133386063
     },
     {
       "name": "showComponentName",
-      "targetTime": 9.503598743033741
+      "targetTime": 9.579743868720003
     },
     {
       "name": "replaceValues",
-      "targetTime": 10.162308910186214
+      "targetTime": 12.852356475313119
     },
     {
       "name": "resetHighlights",
-      "targetTime": 10.864443982235773
+      "targetTime": 17.736347489738684
     },
     {
       "name": "endSceneHold",
-      "targetTime": 13.819828049435783
+      "targetTime": 27.386494716102447
     }
   ]
 }

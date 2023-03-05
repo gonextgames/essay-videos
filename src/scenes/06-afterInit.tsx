@@ -26,7 +26,7 @@ export default makeScene2D(function* (view) {
   const folderCodeRef = createRef<CodeBlock>();
   const templativeCommandRef = createRef<CodeBlock>();
   
-  yield* view.add(
+  yield view.add(
     <>
       <Rect
         // fill={"#ffffff"} 
@@ -102,7 +102,7 @@ studio.json`;
   yield* folderCodeRef().selection(word(4, 0, 100), 2/8);
 
 
-  yield* waitUntil("endSceneHold")
+  yield* waitFor(4.5)
 
 
 });

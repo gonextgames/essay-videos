@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "timeEvents": [
+    {
+      "name": "showDesigners",
+      "targetTime": 1.1445822709908855
+    },
+    {
+      "name": "showComputer",
+      "targetTime": 4.914265730025632
+    },
+    {
+      "name": "showSvgArt",
+      "targetTime": 6.341090757184572
+    },
+    {
+      "name": "showGit",
+      "targetTime": 8.679118549489903
+    },
+    {
+      "name": "tableTopPlayground",
+      "targetTime": 11.15072976819317
+    },
+    {
+      "name": "gamecrafter",
+      "targetTime": 13.630486688732525
+    },
+    {
+      "name": "showCommands",
+      "targetTime": 16.955401432064555
+    }
+  ],
+  "seed": 284056613
+}
