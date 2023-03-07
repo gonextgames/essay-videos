@@ -25,6 +25,8 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  yield* panes.fileNameRef().text(`studio.json`,0)
+  yield* panes.contentsRef().edit(0,false)`{\n\t"name": "potionMerchants",\n\t"displayName": "Potion Merchants"\n}`
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
 
   yield* waitUntil('showCreate');
@@ -44,7 +46,12 @@ export default makeScene2D(function* (view) {
   yield* panes.fileStructureRef().edit(2/8, false)`v projects\n\tv potionShmotion\n\t\t${edit(`>`,`v`)} art\n\t\t${edit(`>`,`v`)} artdata\n\t\t${edit(`>`,`v`)} gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
 
   yield* waitUntil("showCreatedComponent")
-  yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\tv art${insert(`\n\t\t\tpotionDeckFront.svg\n\t\t\tpotionDeckBack.svg`)}\n\t\tv artdata${insert(`\n\t\t\tpotionDeck.json`)}\n\t\tv gamedata${insert(`\n\t\t\tv components\n\t\t\t\tpotionDeck.json\n\t\t\tv pieces\n\t\t\t\tpotionDeck.csv`)}\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
+  yield* all(
+    yield panes.fileNameRef().text(`component-compose.json`,1),
+    yield panes.contentsRef().edit(1,false)`${edit(`{\n\t"name": "potionMerchants",\n\t"displayName": "Potion Merchants"\n}`,`[\n\t{\n\t\t"name": "potionDeck",\n\t\t"type": "PokerDeck",\n\t\t"quantity": 1,\n\t\t"piecesGamedataFilename": "potionDeck",\n\t\t"componentGamedataFilename": "potionDeck",\n\t\t"artdataFilename": "potionDeck-Front",\n\t\t"backArtdataFilename": "potionDeck-Back",\n\t\t"disabled": false\n\t}\n]`)}`,
+    yield panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\tv art${insert(`\n\t\t\tpotionDeckFront.svg\n\t\t\tpotionDeckBack.svg`)}\n\t\tv artdata${insert(`\n\t\t\tpotionDeck.json`)}\n\t\tv gamedata${insert(`\n\t\t\tv components\n\t\t\t\tpotionDeck.json\n\t\t\tv pieces\n\t\t\t\tpotionDeck.csv`)}\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
+  )
+   
 
   yield* waitUntil("collapse")
   yield* all(

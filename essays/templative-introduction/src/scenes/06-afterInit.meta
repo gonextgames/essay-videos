@@ -4,31 +4,31 @@
   "timeEvents": [
     {
       "name": "showTemplative",
-      "targetTime": 6.9094858913106965
+      "targetTime": 2.097194361536887
     },
     {
       "name": "showProduce",
-      "targetTime": 7.548805412970292
+      "targetTime": 2.715472079636959
     },
     {
       "name": "showOutput",
-      "targetTime": 9.100257104385753
+      "targetTime": 4.2669237710524195
     },
     {
       "name": "folderExpand",
-      "targetTime": 9.765503487181624
+      "targetTime": 4.932170153848291
     },
     {
       "name": "highlightOutput",
-      "targetTime": 12.551571876539173
+      "targetTime": 8.478716937394335
     },
     {
       "name": "resetScene",
-      "targetTime": 15.865119176249683
+      "targetTime": 11.798452509583017
     },
     {
       "name": "endScene",
-      "targetTime": 16.866666666666667
+      "targetTime": 12.8
     }
   ]
 }

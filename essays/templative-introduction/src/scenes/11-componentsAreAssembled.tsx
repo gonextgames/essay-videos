@@ -16,6 +16,8 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  yield* panes.fileNameRef().text(`component-compose.json`,0)
+  yield* panes.contentsRef().edit(0,false)`[\n\t{\n\t\t"name": "potionDeck",\n\t\t"type": "PokerDeck",\n\t\t"quantity": 1,\n\t\t"piecesGamedataFilename": "potionDeck",\n\t\t"componentGamedataFilename": "potionDeck",\n\t\t"artdataFilename": "potionDeck-Front",\n\t\t"backArtdataFilename": "potionDeck-Back",\n\t\t"disabled": false\n\t}\n]`
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
   yield* waitUntil("gameData")
   yield* panes.fileStructureRef().selection(lines(4),4/8)
@@ -35,8 +37,8 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("showPieceFile")
   yield* all(
-    yield panes.fileNameRef().text("potionDeck.csv", 4/8),
-    yield panes.contentsRef().edit(4/8, false)`${edit(`# Templative Introduction`, `name,displayName,quantity\n`)}`,
+    yield panes.fileNameRef().text(`potionDeck.csv`, 4/8),
+    yield panes.contentsRef().edit(4/8, false)`${edit(`[\n\t{\n\t\t"name": "potionDeck",\n\t\t"type": "PokerDeck",\n\t\t"quantity": 1,\n\t\t"piecesGamedataFilename": "potionDeck",\n\t\t"componentGamedataFilename": "potionDeck",\n\t\t"artdataFilename": "potionDeck-Front",\n\t\t"backArtdataFilename": "potionDeck-Back",\n\t\t"disabled": false\n\t}\n]`, `name,displayName,quantity\n`)}`,
   )
   yield* waitUntil("potionName")
   yield* panes.contentsRef().edit(4/8, false)`name,displayName,quantity\n${insert(`poisonDrip,PoisonDrip,1`)}`,

@@ -59,18 +59,18 @@ Commands:
     yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`mkdir potionShmotion`)}`
 
     yield* waitUntil("showTemplativeInit")
-    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`templative init`)}`
+    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative init`)}`
     yield* panes.fileStructureRef().edit(1, false)`v projects\n\t${edit(`>`,`v`)} potionShmotion${insert(`\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`)}`,
      
     yield* waitUntil("clearTemplativeInit")
     yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`templative init`)}`
 
     yield* waitUntil("showGit")
-    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`git`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`git`)}` 
     yield* waitUntil("showGitInit")
-    yield* panes.terminalContentsRef().edit(1, false)`User$ git ${insert(`init`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`User$ git ${insert(`init`)}` 
     yield* waitUntil("clearGit")
-    yield* panes.terminalContentsRef().edit(1, false)`User$ ${remove(`git init`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${remove(`git init`)}` 
 
 
     yield* waitUntil("endScene")

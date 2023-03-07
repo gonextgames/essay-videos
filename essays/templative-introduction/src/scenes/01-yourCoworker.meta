@@ -3,32 +3,28 @@
   "seed": 1534691276,
   "timeEvents": [
     {
-      "name": "columns",
+      "name": "enemyAppears",
       "targetTime": 0
     },
     {
-      "name": "resetColumns",
-      "targetTime": 1
+      "name": "idea",
+      "targetTime": 2.573109275362446
     },
     {
-      "name": "rows",
-      "targetTime": 2
+      "name": "copy",
+      "targetTime": 5.733793598452509
     },
     {
-      "name": "resetRows",
-      "targetTime": 3
+      "name": "changes",
+      "targetTime": 8.472605776488203
     },
     {
-      "name": "both",
-      "targetTime": 4
-    },
-    {
-      "name": "resetBoth",
-      "targetTime": 5
+      "name": "handoff",
+      "targetTime": 9.814732930614063
     },
     {
       "name": "endScene",
-      "targetTime": 6
+      "targetTime": 15.588732687436544
     }
   ]
 }

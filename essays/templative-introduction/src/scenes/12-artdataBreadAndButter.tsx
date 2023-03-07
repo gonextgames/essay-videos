@@ -17,13 +17,15 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  yield* panes.fileNameRef().text("potionDeck.csv", 0)
+  yield* panes.contentsRef().edit(0, false)`name,displayName,quantity,power,cost,graphic\npoisonDrip,PoisonDrip,1,6,3,droplet`
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
 
   yield* waitUntil("showArtdata")
   yield* all(
     yield panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t${edit(`> artdata`,`v artdata\n\t\t\tpotionDeck-Front.json\n\t\t\tpotionDeck-Back.json`)}\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`,
     yield panes.fileNameRef().text("potionDeck-Front.json", 1),
-    yield panes.contentsRef().edit(1, false)`${edit(`# Templative Introduction`, `{\n\t"name": "potionDeck",\n\t"templateFilename": "potionDeck-Front",\n\t"textReplacements": [\n\t],\n\t"styleUpdates":[\n\t],\n\t"overlays": [\n\t]\n}`)}`,
+    yield panes.contentsRef().edit(1, false)`${edit(`name,displayName,quantity,power,cost,graphic\npoisonDrip,PoisonDrip,1,6,3,droplet`, `{\n\t"name": "potionDeck",\n\t"templateFilename": "potionDeck-Front",\n\t"textReplacements": [\n\t],\n\t"styleUpdates":[\n\t],\n\t"overlays": [\n\t]\n}`)}`,
   )
   yield* waitUntil("textReplacements")
   yield* panes.contentsRef().selection(word(3,1,18), 1/8)

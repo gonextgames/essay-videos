@@ -3,35 +3,35 @@
   "timeEvents": [
     {
       "name": "showDesigners",
-      "targetTime": 2.600446065889685
+      "targetTime": 2.297471835701891
     },
     {
       "name": "showComputer",
-      "targetTime": 4.363333164827987
+      "targetTime": 3.8557330775423972
     },
     {
       "name": "showSvgArt",
-      "targetTime": 5.774424090517905
+      "targetTime": 5.032833941973924
     },
     {
       "name": "showGit",
-      "targetTime": 8.112451882823237
+      "targetTime": 7.795841675541869
     },
     {
       "name": "tableTopPlayground",
-      "targetTime": 10.584063101526503
+      "targetTime": 10.25072976819317
     },
     {
       "name": "gamecrafter",
-      "targetTime": 14.044649888766411
+      "targetTime": 13.61120629466879
     },
     {
       "name": "showCommands",
-      "targetTime": 17.388734765397885
+      "targetTime": 16.955401432064548
     },
     {
       "name": "endScene",
-      "targetTime": 21.692963471025028
+      "targetTime": 22.229425783925805
     }
   ],
   "seed": 284056613

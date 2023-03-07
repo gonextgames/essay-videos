@@ -16,23 +16,23 @@
     },
     {
       "name": "updateGame",
-      "targetTime": 7.383857560107242
+      "targetTime": 5.933333333333334
     },
     {
       "name": "updateGameName",
-      "targetTime": 8.4
+      "targetTime": 8.21628173549624
     },
     {
       "name": "updateStudio",
-      "targetTime": 9.048990853247275
+      "targetTime": 8.882324186580608
     },
     {
       "name": "updateStudioName",
-      "targetTime": 9.806364013863242
+      "targetTime": 9.639697347196575
     },
     {
       "name": "endScene",
-      "targetTime": 10.801364208321285
+      "targetTime": 10.634697541654617
     }
   ]
 }

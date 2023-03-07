@@ -20,7 +20,7 @@ export default makeScene2D(function* (view) {
   yield* waitUntil("templativePlayground")
   yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${insert(`templative playground`)}`;
   yield* waitUntil("templativeUpload")
-  yield* panes.terminalContentsRef().edit(2/8, false)`User$ templative ${edit(`templative playground`,`templative upload`)}`;
+  yield* panes.terminalContentsRef().edit(2/8, false)`User$ templative ${edit(`playground`,`upload`)}`;
   yield* waitUntil("endSceneHello")
 
 });

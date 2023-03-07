@@ -23,39 +23,21 @@ import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
 function *createTemplative(parent: Reference<Rect>) {
-    const commandsRef = createRef<CodeBlock>();
-    var codeblock = <CodeBlock 
-        selection={[
-        [
-            [0, 0],
-            [100, 100],
-        ],
-        ]}
-        fill={"#ffffff00"}
-        ref={commandsRef}
-        fontSize={40}
-        lineHeight={40}
-        offsetX={-1}
-        x={-350}
-        y={-200}
-        fontFamily={'JetBrains Mono'}
-        code={`templative\n\n\n\n`} />
-
-    yield parent().add(codeblock)
-    return commandsRef
+    
 }
 
 function *showCommands(templativeRef: Reference<CodeBlock>) {
     yield* templativeRef().edit(1, false)`templative${insert(` init`)}\n\n\n\n`
-    yield* templativeRef().edit(3/8, false)`templative init\n${insert(`templative create deckpoker --name potionDeck`)}\n\n\n`
-    yield* templativeRef().edit(3/8, false)`templative init\ntemplative create deckpoker --name potionDeck\n${insert(`templative produce`)}\n\n`
-    yield* templativeRef().edit(3/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\n${insert(`templative playground`)}\n`
-    yield* templativeRef().edit(3/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\ntemplative playground\n${insert(`templative upload`)}`
+    yield* templativeRef().edit(6/8, false)`templative init\n${insert(`templative create deckpoker --name potionDeck`)}\n\n\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\n${insert(`templative produce`)}\n\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\n${insert(`templative playground`)}\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\ntemplative playground\n${insert(`templative upload`)}`
 }
 
 export default makeScene2D(function* (view) {
   const leftRectRef = createRef<Rect>();
   const rightRectRef = createRef<Rect>();
+  const commandsRef = createRef<CodeBlock>();
   
   yield view.add(
     
@@ -69,7 +51,24 @@ export default makeScene2D(function* (view) {
             y={0}
             clip
             ref={leftRectRef}
-        />
+        >
+            <CodeBlock 
+                selection={[
+                [
+                    [0, 0],
+                    [100, 100],
+                ],
+                ]}
+                fill={"#ffffff00"}
+                ref={commandsRef}
+                fontSize={40}
+                lineHeight={40}
+                offsetX={-1}
+                x={-350}
+                y={-0}
+                fontFamily={'JetBrains Mono'}
+                code={`templative\n\n\n\n`} />
+        </Rect>
         <Rect
             // fill={"#ffffff30"}
             offset={-1}
@@ -85,7 +84,6 @@ export default makeScene2D(function* (view) {
   yield* slideTransition(Direction.Bottom, 2 /8);
 
   yield* waitUntil("showDesigners")
-  var templativeCodeRef = yield* createTemplative(leftRectRef)
   var gameDesignerImageRef = yield* nodes.showImage(rightRectRef, personImage, 0.75, -300,100,0)
   var artistImageRef = yield* nodes.showImage(rightRectRef, personImage, 0.75, 300,-100,0)
   yield* rightRectRef().position(new Vector2(0, rightRectRef().position.y()), 4/8)
@@ -106,7 +104,7 @@ export default makeScene2D(function* (view) {
   var gamecrafterImageRef = yield* nodes.showImage(rightRectRef, gamecrafterImage, 1.2, 150,200,0)
 
   yield* waitUntil("showCommands")
-  yield* showCommands(templativeCodeRef)
+  yield* showCommands(commandsRef)
 
   yield* waitUntil("endScene")
 

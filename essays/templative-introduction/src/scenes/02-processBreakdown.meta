@@ -3,20 +3,8 @@
   "seed": 2625398372,
   "timeEvents": [
     {
-      "name": "showCsvs",
-      "targetTime": 9.809143973381333
-    },
-    {
-      "name": "showImages",
-      "targetTime": 12.746489780184401
-    },
-    {
-      "name": "showGameCrafter",
-      "targetTime": 14.13081122252305
-    },
-    {
       "name": "endScene",
-      "targetTime": 27.33523929829242
+      "targetTime": 8.250700775255906
     }
   ]
 }
