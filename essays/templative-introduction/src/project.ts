@@ -16,26 +16,25 @@ import artdataCommands from "./scenes/13-artdataCommands?scene"
 import artDataSource from "./scenes/14-artDataSource?scene"
 import commandAndGit from "./scenes/15-commandAndGit?scene"
 
-import weDesignedTemplativeScene from './scenes/weDesignedTemplative?scene';
 import audioFile from "./audio/all.mp3"
 
 export default makeProject({
   scenes: [
     yourCoworker,
-  processBreakdown,
-  weDesignedTemplative,
-  keepWatching,
-  basicCommands,
-  afterInit,
-  output,
-  updatingGameStudio,
-  creatingAComponent,
-  createPotionDeck,
-  componentsAreAssembled,
-  artdataBreadAndButter,
-  artdataCommands,
-  artDataSource,
-  commandAndGit,
+    processBreakdown,
+    weDesignedTemplative,
+    keepWatching,
+    basicCommands,
+    afterInit,
+    output,
+    updatingGameStudio,
+    creatingAComponent,
+    createPotionDeck,
+    componentsAreAssembled,
+    artdataBreadAndButter,
+    artdataCommands,
+    artDataSource,
+    commandAndGit,
   ],
   background: '#141414',
   audio: audioFile,

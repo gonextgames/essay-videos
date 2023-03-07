@@ -97,7 +97,7 @@ Commands:
 
 
 
-    yield* waitFor(3)
+    yield* waitFor(4)
 
 
 });

@@ -1,0 +1,9 @@
+{
+  "name": "@essay-videos/templative-introduction",
+  "private": true,
+  "description": "Source code for the Motion Canvas animated logo",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vite"
+  }
+}

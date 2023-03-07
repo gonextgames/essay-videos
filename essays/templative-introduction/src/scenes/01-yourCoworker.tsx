@@ -11,32 +11,21 @@ import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
 export default makeScene2D(function* (view) {
-  const leftRectRef = createRef<Rect>();
-  const rightRectRef = createRef<Rect>();
-  
+  const visualStudioRef = createRef<Rect>();
   yield view.add(
-    
-    <>
-        <Rect
-            // fill={"#ff00ff30"}
-            width={960}
-            height={920}
-            x={-960/2}
-            y={0}
-            clip
-            ref={leftRectRef}
-        />
-        <Rect
-            // fill={"#ffffff30"}
-            offset={-1}
-            width={955}
-            height={920}
-            x={1000}
-            y={-920/2}
-            clip
-            ref={rightRectRef}
-        />
-    </>
+    <Rect ref={visualStudioRef}/>
   )
+
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 0.25,0.9)
+  var sideBarRef = panes[0]
+  var workspaceRef = panes[1]
+  var terminalRef = panes[2]
+  var dividerRef = panes[2]
+  yield* waitUntil("first")
+  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.4, 0.65, 1)
+  yield* waitUntil("second")
+  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.4, 0.4, 1)
+  yield* waitUntil("third")
+  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.25, 0.65, 1)
   yield* waitFor(15.3)
 });

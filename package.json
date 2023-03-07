@@ -1,19 +1,22 @@
 {
-  "name": "community",
+  "name": "essay-videos",
   "private": true,
-  "version": "0.0.0",
+  "description": "Essay videos",
+  "license": "MIT",
   "scripts": {
-    "serve": "vite",
-    "build": "tsc && vite build"
+    "templative-introduction": "npm run serve -w essays/templative-introduction",
+    "rulebooks": "npm run serve -w essays/rulebooks"
   },
+  "workspaces": [
+    "essays/*"
+  ],
   "dependencies": {
-    "@motion-canvas/core": "^2.2.0",
-    "@motion-canvas/2d": "^2.2.0"
+    "@motion-canvas/2d": "3.0.0",
+    "@motion-canvas/core": "3.0.0"
   },
   "devDependencies": {
-    "@motion-canvas/ui": "^2.2.0",
-    "@motion-canvas/vite-plugin": "^2.2.0",
-    "typescript": "^4.9.5",
-    "vite": "^3.0.5"
+    "@motion-canvas/ui": "3.0.1",
+    "@motion-canvas/vite-plugin": "3.0.0",
+    "vite": "^3.0.0"
   }
 }
