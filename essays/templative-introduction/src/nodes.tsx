@@ -60,7 +60,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
     var terminalContentsRef = createRef<CodeBlock>()
 
     const folder = `> projects`
-    const terminal = `UserComputer:projects User$`
+    const terminal = `User$`
     const fileContents = `# Templative Introduction`
     
     const layout = 
@@ -71,7 +71,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
         <Layout ref={workspaceColumnRef} grow={10-sidebarWidthRatio} direction={"column"}>
             <Rect ref={workspaceRowRef} grow={workspaceHeightRatio} direction={"column"} fill={"#070707"} clip>
                 <Rect paddingLeft={20} grow={0.1} clip>
-                    <Rect width={300} height={"100%"} padding={30} fill={"#141414"} clip>
+                    <Rect width={500} height={"100%"} padding={30} fill={"#141414"} clip>
                         <Text ref={fileNameRef} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}>readme.md</Text>
                     </Rect>
                 </Rect>

@@ -32,6 +32,11 @@ export default makeScene2D(function* (view) {
   yield* panes.contentsRef().selection(word(7,1,10), 1/8)
   yield* waitUntil("clear")
   yield* panes.contentsRef().selection(range(0,0,100,100), 1/8)
+
+  yield* waitUntil("highlightTemplate")
+  yield* panes.contentsRef().selection(word(2 ,20,19), 1/8)
+  yield* waitUntil("clearHighlightTemplate")
+  yield* panes.contentsRef().selection(range(0,0,100,100), 1/8)
   
   yield* waitUntil("createTextReplacement")
   yield* panes.contentsRef().edit(1, false)`{\n\t"name": "potionDeck",\n\t"templateFilename": "potionDeck-Front",\n\t"textReplacements": [${insert(`\n\t\t { "key": "gameName", "source": "displayName", "scope": "game" }`)}\n\t],\n\t"styleUpdates":[\n\t],\n\t"overlays": [\n\t]\n}`

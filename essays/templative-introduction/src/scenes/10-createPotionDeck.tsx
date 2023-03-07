@@ -18,7 +18,7 @@ export default makeScene2D(function* (view) {
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
   yield* waitUntil("templativeProduce")
-  yield* panes.terminalContentsRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative produce --component potionDeck`)}`
+  yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative produce --component potionDeck`)}`
 
   yield* waitUntil("showOutput")
   var newStuff = `v output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\t> potionDeck\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json`
@@ -45,11 +45,11 @@ Commands:
   tuckboxpoker108cards  Create a new poker sized tuckbox fitting 108 cards`
   yield* all(
     yield panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t${edit(`v output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\tv potionDeck\n\t\t\t\t\tcomponent.json\n\t\t\t\t\tpotionDeck-back.jpg\n\t\t\t\t\tpotionDeck-front.jpg\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json`,`> output`)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`,
-    yield panes.terminalContentsRef().edit(2, false)`UserComputer:projects User$ ${edit(`templative produce --component potionDeck`, createCommand)}`
+    yield panes.terminalContentsRef().edit(2, false)`User$ ${edit(`templative produce --component potionDeck`, createCommand)}`
   )
   
   yield* waitUntil("clearTerminal")
-  yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${remove(createCommand)}`
+  yield* panes.terminalContentsRef().edit(1, false)`User$ ${remove(createCommand)}`
 
   yield* waitUntil("endScene")
 

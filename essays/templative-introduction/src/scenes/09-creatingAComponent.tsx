@@ -28,19 +28,17 @@ export default makeScene2D(function* (view) {
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
 
   yield* waitUntil('showCreate');
-  yield* panes.terminalContentsRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative create TYPE --name COMPONENTNAME`)}`;
+  yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative create TYPE --name COMPONENTNAME`)}`;
   yield* waitUntil('highlightCreate');
-  yield* panes.terminalContentsRef().selection(word(0,39,6),1/8)
+  yield* panes.terminalContentsRef().selection(word(0,39-22,6),1/8)
   yield* waitUntil('highlightType');
-  yield* panes.terminalContentsRef().selection(word(0,45 ,5),1/8)
-  yield* waitUntil('highlightDash');
-  yield* panes.terminalContentsRef().selection(word(0,50,15),1/8)
+  yield* panes.terminalContentsRef().selection(word(0,45-22 ,5),1/8)
   yield* waitUntil('highlightName');
-  yield* panes.terminalContentsRef().selection(word(0,58,15),1/8)
+  yield* panes.terminalContentsRef().selection(word(0,50-22,25),1/8)
   yield* waitUntil('resetHighlights');
-  yield* panes.terminalContentsRef().selection(range(0,0,100,100),1/8)
+  yield* panes.terminalContentsRef().selection(range(0,0,100,100),4/8)
   yield* waitUntil("replaceValues")
-  yield* panes.terminalContentsRef().edit(1/4, false)`UserComputer:projects User$ templative create ${edit(`TYPE`, `deckpoker`)} --name ${edit(`COMPONENTNAME`, `potionDeck`)}`;
+  yield* panes.terminalContentsRef().edit(1, false)`User$ templative create ${edit(`TYPE`, `deckpoker`)} --name ${edit(`COMPONENTNAME`, `potionDeck`)}`;
   
   yield* waitUntil("openFolders")
   yield* panes.fileStructureRef().edit(2/8, false)`v projects\n\tv potionShmotion\n\t\t${edit(`>`,`v`)} art\n\t\t${edit(`>`,`v`)} artdata\n\t\t${edit(`>`,`v`)} gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
@@ -50,7 +48,7 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("collapse")
   yield* all(
-    yield panes.terminalContentsRef().edit(7/8, false)`UserComputer:projects User$ ${remove(`templative create deckpoker --name potionDeck`)}`,
+    yield panes.terminalContentsRef().edit(7/8, false)`User$ ${remove(`templative create deckpoker --name potionDeck`)}`,
     yield panes.fileStructureRef().edit(7/8, false)`v projects\n\tv potionShmotion\n\t\t${edit(`v`,`>`)} art${remove(`\n\t\t\tpotionDeckFront.svg\n\t\t\tpotionDeckBack.svg`)}\n\t\t${edit(`v`,`>`)} artdata${remove(`\n\t\t\tpotionDeck.json`)}\n\t\t${edit(`v`,`>`)} gamedata${remove(`\n\t\t\tv components\n\t\t\t\tpotionDeck.json\n\t\t\tv pieces\n\t\t\t\tpotionDeck.csv`)}\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
   )
   yield* waitUntil("endScene")

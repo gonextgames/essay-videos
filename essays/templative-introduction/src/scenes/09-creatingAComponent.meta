@@ -15,10 +15,6 @@
       "targetTime": 8.354056000159757
     },
     {
-      "name": "highlightDash",
-      "targetTime": 8.643705903707009
-    },
-    {
       "name": "highlightName",
       "targetTime": 8.766666666666667
     },
@@ -28,23 +24,23 @@
     },
     {
       "name": "replaceValues",
-      "targetTime": 13.978244937576262
+      "targetTime": 12.83450131955624
     },
     {
       "name": "openFolders",
-      "targetTime": 15.506418675401644
+      "targetTime": 13.866666666666667
     },
     {
       "name": "showCreatedComponent",
-      "targetTime": 15.8
+      "targetTime": 14.133333333333333
     },
     {
       "name": "collapse",
-      "targetTime": 17.078865751762887
+      "targetTime": 17.205293918508254
     },
     {
       "name": "endScene",
-      "targetTime": 17.966666666666665
+      "targetTime": 18.1
     }
   ]
 }

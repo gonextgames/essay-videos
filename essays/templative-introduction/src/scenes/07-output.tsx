@@ -18,9 +18,9 @@ export default makeScene2D(function* (view) {
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
   yield* waitUntil("templativePlayground")
-  yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${insert(`templative playground`)}`;
+  yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${insert(`templative playground`)}`;
   yield* waitUntil("templativeUpload")
-  yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ templative ${edit(`templative playground`,`templative upload`)}`;
+  yield* panes.terminalContentsRef().edit(2/8, false)`User$ templative ${edit(`templative playground`,`templative upload`)}`;
   yield* waitUntil("endSceneHello")
 
 });

@@ -31,7 +31,7 @@ export default makeScene2D(function* (view) {
 
   yield* slideTransition(Direction.Bottom, 2 /8);
   yield* waitUntil("showTemplative")
-  yield* panes.terminalContentsRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative`)}`
+  yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative`)}`
   yield* waitUntil("showOutput")
 
   const insertText = `
@@ -46,31 +46,31 @@ Commands:
     upload      Upload to the GameCrafter
     components  Get a list of component quantities in the current directory`
 
-    yield* panes.terminalContentsRef().edit(1.5, false)`UserComputer:projects User$ templative${insert(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.5, false)`User$ templative${insert(insertText)}`
     
     yield* waitUntil("doneShowingCommands")
-    yield* panes.terminalContentsRef().edit(1.25, false)`UserComputer:projects User$ ${remove(`templative`)}${remove(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.25, false)`User$ ${remove(`templative`)}${remove(insertText)}`
 
     yield* waitUntil("makeDirectory")
-    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`mkdir potionShmotion`)}`
+    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`mkdir potionShmotion`)}`
     yield* panes.fileStructureRef().edit(1, false)`${edit('>', `v`)} projects${insert(`\n  > potionShmotion\n`)}`
     
     yield* waitUntil("clearMakeDirectory")
-    yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`mkdir potionShmotion`)}`
+    yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`mkdir potionShmotion`)}`
 
     yield* waitUntil("showTemplativeInit")
-    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`templative init`)}`
+    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`templative init`)}`
     yield* panes.fileStructureRef().edit(1, false)`v projects\n\t${edit(`>`,`v`)} potionShmotion${insert(`\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`)}`,
      
     yield* waitUntil("clearTemplativeInit")
-    yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`templative init`)}`
+    yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`templative init`)}`
 
     yield* waitUntil("showGit")
-    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`git`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`git`)}` 
     yield* waitUntil("showGitInit")
-    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ git ${insert(`init`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`User$ git ${insert(`init`)}` 
     yield* waitUntil("clearGit")
-    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${remove(`git init`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`User$ ${remove(`git init`)}` 
 
 
     yield* waitUntil("endScene")
