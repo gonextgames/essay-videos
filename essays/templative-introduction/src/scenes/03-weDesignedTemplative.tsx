@@ -108,7 +108,8 @@ export default makeScene2D(function* (view) {
   yield* waitUntil("showCommands")
   yield* showCommands(templativeCodeRef)
 
-  yield* waitFor(2)
+  yield* waitUntil("endScene")
+
 
 
 });

@@ -13,6 +13,10 @@
     {
       "name": "showGameCrafter",
       "targetTime": 14.13081122252305
+    },
+    {
+      "name": "endScene",
+      "targetTime": 27.33523929829242
     }
   ]
 }

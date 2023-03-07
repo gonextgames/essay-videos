@@ -25,6 +25,10 @@
     {
       "name": "resetBoth",
       "targetTime": 5
+    },
+    {
+      "name": "endScene",
+      "targetTime": 6
     }
   ]
 }

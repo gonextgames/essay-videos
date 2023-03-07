@@ -3,7 +3,7 @@ import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/comp
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow';
 import {createRef, Reference} from '@motion-canvas/core/lib/utils';
-import {CodeBlock, edit, insert, lines, word} from '@motion-canvas/2d/lib/components/CodeBlock';
+import {CodeBlock, edit, insert, lines,remove, word} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {Image} from '@motion-canvas/2d/lib/components';
 import gamecrafterImage from "../images/gamecrafter.png"
@@ -11,32 +11,16 @@ import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
 export default makeScene2D(function* (view) {
-  const leftRectRef = createRef<Rect>();
-  const rightRectRef = createRef<Rect>();
-  
+  const visualStudioRef = createRef<Rect>();
   yield view.add(
-    
-    <>
-        <Rect
-            // fill={"#ff00ff30"}
-            width={960}
-            height={920}
-            x={-960/2}
-            y={0}
-            clip
-            ref={leftRectRef}
-        />
-        <Rect
-            // fill={"#ffffff30"}
-            offset={-1}
-            width={955}
-            height={920}
-            x={1000}
-            y={-920/2}
-            clip
-            ref={rightRectRef}
-        />
-    </>
+    <Rect ref={visualStudioRef}/>
   )
-  yield* waitFor(12)
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
+  yield* waitUntil("templativePlayground")
+  yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${insert(`templative playground`)}`;
+  yield* waitUntil("templativeUpload")
+  yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ templative ${edit(`templative playground`,`templative upload`)}`;
+  yield* waitUntil("endSceneHello")
+
 });

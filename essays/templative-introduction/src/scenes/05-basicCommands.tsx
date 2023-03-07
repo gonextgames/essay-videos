@@ -23,44 +23,15 @@ import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
 export default makeScene2D(function* (view) {
-  const leftRectRef = createRef<Rect>();
-  const codeRef = createRef<CodeBlock>();
-  
+  const visualStudioRef = createRef<Rect>();
   yield view.add(
-    
-    <>
-        <Rect
-            fill={"#ff00ff30"}
-            width={2900}
-            height={920}
-            x={-960/2}
-            y={0}
-            clip
-            ref={leftRectRef}
-        >
-        <CodeBlock 
-            selection={[
-            [
-                [0, 0],
-                [100, 100],
-            ],
-            ]}
-            fill={"#ffffff00"}
-            ref={codeRef}
-            language={"txt"}
-            fontSize={40}
-            lineHeight={40}
-            offsetX={-1}
-            x={-350}
-            y={0}
-            fontFamily={'JetBrains Mono'}
-            code={`UserComputer:projects User$ `} />
-        </Rect>
-    </>
-  );
+    <Rect ref={visualStudioRef}/>
+  )
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+
   yield* slideTransition(Direction.Bottom, 2 /8);
   yield* waitUntil("showTemplative")
-  yield* codeRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative`)}`
+  yield* panes.terminalContentsRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative`)}`
   yield* waitUntil("showOutput")
 
   const insertText = `
@@ -75,29 +46,35 @@ Commands:
     upload      Upload to the GameCrafter
     components  Get a list of component quantities in the current directory`
 
-    yield* codeRef().edit(1.5, false)`UserComputer:projects User$ templative${insert(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.5, false)`UserComputer:projects User$ templative${insert(insertText)}`
     
     yield* waitUntil("doneShowingCommands")
-    yield* codeRef().edit(1.25, false)`UserComputer:projects User$ ${remove(`templative`)}${remove(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.25, false)`UserComputer:projects User$ ${remove(`templative`)}${remove(insertText)}`
 
     yield* waitUntil("makeDirectory")
-    yield* codeRef().edit(1, false)`UserComputer:projects User$ ${insert(`mkdir potionShmotion`)}`
+    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`mkdir potionShmotion`)}`
+    yield* panes.fileStructureRef().edit(1, false)`${edit('>', `v`)} projects${insert(`\n  > potionShmotion\n`)}`
+    
     yield* waitUntil("clearMakeDirectory")
-    yield* codeRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`mkdir potionShmotion`)}`
+    yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`mkdir potionShmotion`)}`
 
     yield* waitUntil("showTemplativeInit")
-    yield* codeRef().edit(1, false)`UserComputer:projects User$ ${insert(`templative init`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`templative init`)}`
+    yield* panes.fileStructureRef().edit(1, false)`v projects\n\t${edit(`>`,`v`)} potionShmotion${insert(`\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`)}`,
+     
     yield* waitUntil("clearTemplativeInit")
-    yield* codeRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`templative init`)}`
+    yield* panes.terminalContentsRef().edit(2/8, false)`UserComputer:projects User$ ${remove(`templative init`)}`
 
     yield* waitUntil("showGit")
-    yield* codeRef().edit(1, false)`UserComputer:projects User$ ${insert(`git`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${insert(`git`)}` 
     yield* waitUntil("showGitInit")
-    yield* codeRef().edit(1, false)`UserComputer:projects User$ git ${insert(`init`)}` 
+    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ git ${insert(`init`)}` 
+    yield* waitUntil("clearGit")
+    yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${remove(`git init`)}` 
 
 
+    yield* waitUntil("endScene")
 
-    yield* waitFor(4)
 
 
 });

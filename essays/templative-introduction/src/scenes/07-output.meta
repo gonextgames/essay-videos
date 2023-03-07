@@ -1,4 +1,18 @@
 {
   "version": 1,
-  "seed": 941404706
+  "seed": 941404706,
+  "timeEvents": [
+    {
+      "name": "templativePlayground",
+      "targetTime": 6.778238952783959
+    },
+    {
+      "name": "templativeUpload",
+      "targetTime": 9.85205820875877
+    },
+    {
+      "name": "endSceneHello",
+      "targetTime": 11.447585014667709
+    }
+  ]
 }

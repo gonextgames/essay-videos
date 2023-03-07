@@ -4,39 +4,47 @@
   "timeEvents": [
     {
       "name": "showTemplative",
-      "targetTime": 0.5512714160865637
+      "targetTime": 1.1618610797171824
     },
     {
       "name": "showOutput",
-      "targetTime": 3.48513380927768
+      "targetTime": 4.085133809277679
     },
     {
       "name": "doneShowingCommands",
-      "targetTime": 5.5
+      "targetTime": 6.4667474480161165
     },
     {
       "name": "makeDirectory",
-      "targetTime": 6.733333333333333
+      "targetTime": 7.733333333333333
     },
     {
       "name": "clearMakeDirectory",
-      "targetTime": 9.33510027297002
+      "targetTime": 10.335100272970019
     },
     {
       "name": "showTemplativeInit",
-      "targetTime": 9.633333333333335
+      "targetTime": 10.633333333333335
     },
     {
       "name": "clearTemplativeInit",
-      "targetTime": 13.481195990340472
+      "targetTime": 14.481195990340472
     },
     {
       "name": "showGit",
-      "targetTime": 14.37196696677585
+      "targetTime": 15.37196696677585
     },
     {
       "name": "showGitInit",
-      "targetTime": 16.46698546075152
+      "targetTime": 16.427828659888107
+    },
+    {
+      "name": "clearGit",
+      "targetTime": 18.794217675275508
+    },
+    {
+      "name": "endScene",
+      "targetTime": 20.957929107719554
     }
   ]
 }

@@ -1,4 +1,10 @@
 {
   "version": 1,
-  "seed": 2304625832
+  "seed": 2304625832,
+  "timeEvents": [
+    {
+      "name": "endScene",
+      "targetTime": 10.799528789416483
+    }
+  ]
 }

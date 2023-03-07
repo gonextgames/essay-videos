@@ -3,7 +3,7 @@ import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/comp
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow';
 import {createRef, Reference} from '@motion-canvas/core/lib/utils';
-import {CodeBlock, edit, insert, lines, word} from '@motion-canvas/2d/lib/components/CodeBlock';
+import {CodeBlock, edit, insert, lines, word, remove} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {Image} from '@motion-canvas/2d/lib/components';
 import gamecrafterImage from "../images/gamecrafter.png"
@@ -11,32 +11,46 @@ import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
 export default makeScene2D(function* (view) {
-  const leftRectRef = createRef<Rect>();
-  const rightRectRef = createRef<Rect>();
-  
+  const visualStudioRef = createRef<Rect>();
   yield view.add(
-    
-    <>
-        <Rect
-            // fill={"#ff00ff30"}
-            width={960}
-            height={920}
-            x={-960/2}
-            y={0}
-            clip
-            ref={leftRectRef}
-        />
-        <Rect
-            // fill={"#ffffff30"}
-            offset={-1}
-            width={955}
-            height={920}
-            x={1000}
-            y={-920/2}
-            clip
-            ref={rightRectRef}
-        />
-    </>
+    <Rect ref={visualStudioRef}/>
   )
-  yield* waitFor(10)
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
+  yield* waitUntil("templativeProduce")
+  yield* panes.terminalContentsRef().edit(1/8, false)`UserComputer:projects User$ ${insert(`templative produce --component potionDeck`)}`
+
+  yield* waitUntil("showOutput")
+  var newStuff = `v output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\t> potionDeck\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json`
+  yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t${edit(`> output`,newStuff)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
+
+  yield* waitUntil("showImages")
+  var images = `v potionDeck\n\t\t\t\t\tcomponent.json\n\t\t\t\t\tpotionDeck-back.jpg\n\t\t\t\t\tpotionDeck-front.jpg`
+  yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tv output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\t${edit(`> potionDeck`,images)}\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
+ 
+  yield* waitUntil("resetStructure")
+  
+
+  var createCommand = `templative create
+
+  Create components from templates
+
+Commands:
+  accordionpoker        Create a new poker sized accordion
+  chitsquarelarge       Create a new medium ring
+  deckpoker             Create a new poker sized deck
+  ringlarge             Create a new large ring
+  ringmedium            Create a new medium ring
+  stoutboxsmall         Create a new small cardboard box
+  tuckboxpoker108cards  Create a new poker sized tuckbox fitting 108 cards`
+  yield* all(
+    yield panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t${edit(`v output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\tv potionDeck\n\t\t\t\t\tcomponent.json\n\t\t\t\t\tpotionDeck-back.jpg\n\t\t\t\t\tpotionDeck-front.jpg\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json`,`> output`)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`,
+    yield panes.terminalContentsRef().edit(2, false)`UserComputer:projects User$ ${edit(`templative produce --component potionDeck`, createCommand)}`
+  )
+  
+  yield* waitUntil("clearTerminal")
+  yield* panes.terminalContentsRef().edit(1, false)`UserComputer:projects User$ ${remove(createCommand)}`
+
+  yield* waitUntil("endScene")
+
 });

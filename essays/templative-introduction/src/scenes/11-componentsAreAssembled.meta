@@ -1,4 +1,54 @@
 {
   "version": 1,
-  "seed": 3391299254
+  "seed": 3391299254,
+  "timeEvents": [
+    {
+      "name": "gameData",
+      "targetTime": 1.6437859182752041
+    },
+    {
+      "name": "artdata",
+      "targetTime": 3.038508533256655
+    },
+    {
+      "name": "art",
+      "targetTime": 4.066666666666666
+    },
+    {
+      "name": "showArtFiles",
+      "targetTime": 5.066666666666666
+    },
+    {
+      "name": "hideArtFiles",
+      "targetTime": 8.748061641337951
+    },
+    {
+      "name": "showGameData",
+      "targetTime": 11.247025941112412
+    },
+    {
+      "name": "showPieceFile",
+      "targetTime": 12.266666666666667
+    },
+    {
+      "name": "potionName",
+      "targetTime": 13.219960761477749
+    },
+    {
+      "name": "power",
+      "targetTime": 14.540926260870318
+    },
+    {
+      "name": "cost",
+      "targetTime": 15.614545895518681
+    },
+    {
+      "name": "graphic",
+      "targetTime": 16.133333333333333
+    },
+    {
+      "name": "endScene",
+      "targetTime": 17.367865792003474
+    }
+  ]
 }

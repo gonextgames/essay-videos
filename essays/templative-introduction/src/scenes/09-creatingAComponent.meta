@@ -3,40 +3,48 @@
   "seed": 2218013815,
   "timeEvents": [
     {
-      "name": "showComponentsRect",
-      "targetTime": 2.89716045346187
-    },
-    {
-      "name": "showCodeRect",
-      "targetTime": 4.200433841766483
-    },
-    {
       "name": "showCreate",
-      "targetTime": 8.146374173139812
+      "targetTime": 7.315085390986742
     },
     {
-      "name": "showType",
-      "targetTime": 8.484869834681021
+      "name": "highlightCreate",
+      "targetTime": 8.018601454188858
     },
     {
-      "name": "showDash",
-      "targetTime": 8.817499133386063
+      "name": "highlightType",
+      "targetTime": 8.354056000159757
     },
     {
-      "name": "showComponentName",
-      "targetTime": 9.579743868720003
+      "name": "highlightDash",
+      "targetTime": 8.643705903707009
     },
     {
-      "name": "replaceValues",
-      "targetTime": 12.852356475313119
+      "name": "highlightName",
+      "targetTime": 8.766666666666667
     },
     {
       "name": "resetHighlights",
-      "targetTime": 17.736347489738684
+      "targetTime": 9.775540914138544
     },
     {
-      "name": "endSceneHold",
-      "targetTime": 27.386494716102447
+      "name": "replaceValues",
+      "targetTime": 13.978244937576262
+    },
+    {
+      "name": "openFolders",
+      "targetTime": 15.506418675401644
+    },
+    {
+      "name": "showCreatedComponent",
+      "targetTime": 15.8
+    },
+    {
+      "name": "collapse",
+      "targetTime": 17.078865751762887
+    },
+    {
+      "name": "endScene",
+      "targetTime": 17.966666666666665
     }
   ]
 }

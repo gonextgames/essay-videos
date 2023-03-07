@@ -52,5 +52,5 @@ export default makeScene2D(function* (view) {
   yield* waitUntil("showGameCrafter")
   yield* gameCrafterImageRef().position(new Vector2(0,gameCrafterImageRef().position().y),1)
 
-  yield* waitFor(3.4)
+  yield* waitUntil("endScene")
 });

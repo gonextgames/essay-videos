@@ -36,5 +36,5 @@ export default makeScene2D(function* (view) {
   yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, defaultSidebar, defaultWorkspace, 1)
 
 
-  yield* waitFor(15.3)
+  yield* waitUntil("endScene")
 });

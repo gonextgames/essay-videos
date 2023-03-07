@@ -3,28 +3,32 @@
   "seed": 2218013815,
   "timeEvents": [
     {
-      "name": "something",
-      "targetTime": 1
-    },
-    {
       "name": "showTemplative",
-      "targetTime": 6.564360722491804
+      "targetTime": 6.9094858913106965
     },
     {
       "name": "showProduce",
-      "targetTime": 7.182138746303625
+      "targetTime": 7.548805412970292
     },
     {
       "name": "showOutput",
-      "targetTime": 8.733590437719087
+      "targetTime": 9.100257104385753
     },
     {
       "name": "folderExpand",
-      "targetTime": 9.802073959613352
+      "targetTime": 9.765503487181624
     },
     {
       "name": "highlightOutput",
-      "targetTime": 10.90775802086225
+      "targetTime": 12.551571876539173
+    },
+    {
+      "name": "resetScene",
+      "targetTime": 15.865119176249683
+    },
+    {
+      "name": "endScene",
+      "targetTime": 16.866666666666667
     }
   ]
 }

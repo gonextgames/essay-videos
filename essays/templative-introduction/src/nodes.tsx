@@ -51,11 +51,14 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
     var sidebarColumnRef = createRef<Rect>()
     var workspaceColumnRef = createRef<Rect>()
 
-    var fileStructureRef = createRef<CodeBlock>()
-
     var workspaceRowRef = createRef<Rect>()
     var terminalRowRef = createRef<Rect>()
     
+    var fileStructureRef = createRef<CodeBlock>()
+    var fileNameRef = createRef<Text>()
+    var contentsRef = createRef<CodeBlock>()
+    var terminalContentsRef = createRef<CodeBlock>()
+
     const folder = `> projects`
     const terminal = `UserComputer:projects User$`
     const fileContents = `# Templative Introduction`
@@ -63,21 +66,21 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
     const layout = 
     <Layout layout gap={0} width={1920} height={1080}>
         <Rect grow={sidebarWidthRatio} padding={30} ref={sidebarColumnRef} fill={"#202020"} clip>
-            <CodeBlock ref={fileStructureRef} language={`c#`} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'} code={folder}></CodeBlock>
+            <CodeBlock ref={fileStructureRef} language={`c#`} fill={"#ccc"} fontSize={35} lineHeight={50} fontFamily={'JetBrains Mono'} code={folder}></CodeBlock>
         </Rect>
         <Layout ref={workspaceColumnRef} grow={10-sidebarWidthRatio} direction={"column"}>
             <Rect ref={workspaceRowRef} grow={workspaceHeightRatio} direction={"column"} fill={"#070707"} clip>
                 <Rect paddingLeft={20} grow={0.1} clip>
                     <Rect width={300} height={"100%"} padding={30} fill={"#141414"} clip>
-                        <Text fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}>readme.md</Text>
+                        <Text ref={fileNameRef} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}>readme.md</Text>
                     </Rect>
                 </Rect>
                 <Rect grow={9} padding={50} fill={"#141414"} clip>
-                    <CodeBlock language={`c#`} code={fileContents} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
+                    <CodeBlock ref={contentsRef} language={`c#`} code={fileContents} fill={"#ccc"} fontSize={23} lineHeight={35} fontFamily={'JetBrains Mono'}/>
                 </Rect>
             </Rect>
             <Rect ref={terminalRowRef} grow={10-workspaceHeightRatio} padding={30} fill={"#141420"}  clip>
-                <CodeBlock language={`c#`} code={terminal} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
+                <CodeBlock ref={terminalContentsRef} language={`c#`} code={terminal} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
             </Rect>
         </Layout>
     </Layout>
@@ -88,6 +91,11 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
         "workspaceColumnRef": workspaceColumnRef,
         "workspaceRowRef": workspaceRowRef,
         "terminalRowRef": terminalRowRef,
+
+        "fileStructureRef": fileStructureRef,
+        "fileNameRef": fileNameRef,
+        "contentsRef": contentsRef,
+        "terminalContentsRef": terminalContentsRef,
     }
 }
 
