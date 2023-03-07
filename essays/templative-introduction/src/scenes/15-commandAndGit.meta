@@ -3,8 +3,12 @@
   "seed": 2304625832,
   "timeEvents": [
     {
+      "name": "branchTransition",
+      "targetTime": 5.889557277161555
+    },
+    {
       "name": "endScene",
-      "targetTime": 11.167326925559086
+      "targetTime": 16.067326925559087
     }
   ]
 }

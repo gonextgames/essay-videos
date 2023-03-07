@@ -24,91 +24,111 @@
     },
     {
       "name": "highlightTemplate",
-      "targetTime": 18.81429571550903
+      "targetTime": 18.04857203686195
     },
     {
       "name": "clearHighlightTemplate",
-      "targetTime": 20.829499274548198
+      "targetTime": 19.447190454618017
+    },
+    {
+      "name": "clearCode",
+      "targetTime": 20.06376874335019
+    },
+    {
+      "name": "showCard",
+      "targetTime": 20.2
+    },
+    {
+      "name": "variationOne",
+      "targetTime": 21.283891488861165
+    },
+    {
+      "name": "variationTwo",
+      "targetTime": 22.974618600588666
+    },
+    {
+      "name": "showCode",
+      "targetTime": 25.134505747849662
     },
     {
       "name": "createTextReplacement",
-      "targetTime": 26.28630671019967
+      "targetTime": 26.166666666666668
     },
     {
       "name": "highlightGameName",
-      "targetTime": 28.94320844173188
+      "targetTime": 28.809875108398547
     },
     {
       "name": "highlightDisplayName",
-      "targetTime": 30.676925242018505
+      "targetTime": 30.543591908685173
     },
     {
       "name": "highlightScope",
-      "targetTime": 31.34235690979997
+      "targetTime": 31.209023576466638
     },
     {
       "name": "clearHighlights",
-      "targetTime": 32.01182078834031
+      "targetTime": 31.878487455006972
     },
     {
       "name": "createOverlay",
-      "targetTime": 33.36855354912869
+      "targetTime": 33.235220215795366
     },
     {
       "name": "highlightGraphic",
-      "targetTime": 36.71675045226161
+      "targetTime": 36.583417118928274
     },
     {
       "name": "highlightPiece",
-      "targetTime": 37.767941886083825
+      "targetTime": 37.6346085527505
     },
     {
       "name": "clearOverlayHighlights",
-      "targetTime": 38.937445188270345
+      "targetTime": 38.804111854937005
     },
     {
       "name": "createStyleUpdate",
-      "targetTime": 39.52546240095645
+      "targetTime": 39.39212906762312
     },
     {
       "name": "highlightFill",
-      "targetTime": 42.53806911976298
+      "targetTime": 42.40473578642965
     },
     {
       "name": "highlightBackground",
-      "targetTime": 44.70221026761896
+      "targetTime": 44.568876934285626
     },
     {
       "name": "highlightRGB",
-      "targetTime": 46.24996032266679
+      "targetTime": 46.11662698933346
     },
     {
       "name": "highlightStyleScope",
-      "targetTime": 47.97674215447618
+      "targetTime": 47.843408821142845
     },
     {
       "name": "clearStyleHighlights",
-      "targetTime": 49.11592176898706
+      "targetTime": 48.982588435653724
     },
     {
       "name": "scopeExplanation",
-      "targetTime": 51.521820033401006
+      "targetTime": 51.38848670006767
     },
     {
       "name": "componentScope",
-      "targetTime": 52.0679423277163
+      "targetTime": 51.93460899438296
     },
     {
       "name": "gameScope",
-      "targetTime": 52.564587738092435
+      "targetTime": 52.431254404759095
     },
     {
       "name": "studioScope",
-      "targetTime": 53.28710130274377
+      "targetTime": 53.15376796941044
     },
     {
       "name": "endScene",
-      "targetTime": 54.45158651589298
+      "targetTime": 54.318253182559644
     }
   ]
 }

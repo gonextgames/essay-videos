@@ -53,6 +53,8 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
 
     var workspaceRowRef = createRef<Rect>()
     var terminalRowRef = createRef<Rect>()
+
+    var contentsRectRef = createRef<Rect>()
     
     var fileStructureRef = createRef<CodeBlock>()
     var fileNameRef = createRef<Text>()
@@ -75,7 +77,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
                         <Text ref={fileNameRef} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}>readme.md</Text>
                     </Rect>
                 </Rect>
-                <Rect grow={9} padding={50} fill={"#141414"} clip>
+                <Rect ref={contentsRectRef} grow={9} padding={50} fill={"#141414"} clip>
                     <CodeBlock ref={contentsRef} language={`c#`} code={fileContents} fill={"#ccc"} fontSize={23} lineHeight={35} fontFamily={'JetBrains Mono'}/>
                 </Rect>
             </Rect>
@@ -91,6 +93,8 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
         "workspaceColumnRef": workspaceColumnRef,
         "workspaceRowRef": workspaceRowRef,
         "terminalRowRef": terminalRowRef,
+
+        "contentsRectRef": contentsRectRef,
 
         "fileStructureRef": fileStructureRef,
         "fileNameRef": fileNameRef,
