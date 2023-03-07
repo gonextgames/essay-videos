@@ -1,40 +1,40 @@
 import {makeProject} from '@motion-canvas/core/lib';
 
 import yourCoworker from "./scenes/01-yourCoworker?scene"
-import processBreakdown from "./scenes/02-processBreakdown?scene"
-import weDesignedTemplative from "./scenes/03-weDesignedTemplative?scene"
-import keepWatching from "./scenes/04-keepWatching?scene"
-import basicCommands from "./scenes/05-basicCommands?scene"
-import afterInit from "./scenes/06-afterInit?scene"
-import output from "./scenes/07-output?scene"
-import updatingGameStudio from "./scenes/08-updatingGameStudio?scene"
-import creatingAComponent from "./scenes/09-creatingAComponent?scene"
-import createPotionDeck from "./scenes/10-createPotionDeck?scene"
-import componentsAreAssembled from "./scenes/11-componentsAreAssembled?scene"
-import artdataBreadAndButter from "./scenes/12-artdataBreadAndButter?scene"
-import artdataCommands from "./scenes/13-artdataCommands?scene"
-import artDataSource from "./scenes/14-artDataSource?scene"
-import commandAndGit from "./scenes/15-commandAndGit?scene"
+// import processBreakdown from "./scenes/02-processBreakdown?scene"
+// import weDesignedTemplative from "./scenes/03-weDesignedTemplative?scene"
+// import keepWatching from "./scenes/04-keepWatching?scene"
+// import basicCommands from "./scenes/05-basicCommands?scene"
+// import afterInit from "./scenes/06-afterInit?scene"
+// import output from "./scenes/07-output?scene"
+// import updatingGameStudio from "./scenes/08-updatingGameStudio?scene"
+// import creatingAComponent from "./scenes/09-creatingAComponent?scene"
+// import createPotionDeck from "./scenes/10-createPotionDeck?scene"
+// import componentsAreAssembled from "./scenes/11-componentsAreAssembled?scene"
+// import artdataBreadAndButter from "./scenes/12-artdataBreadAndButter?scene"
+// import artdataCommands from "./scenes/13-artdataCommands?scene"
+// import artDataSource from "./scenes/14-artDataSource?scene"
+// import commandAndGit from "./scenes/15-commandAndGit?scene"
 
 import audioFile from "./audio/all.mp3"
 
 export default makeProject({
   scenes: [
     yourCoworker,
-    processBreakdown,
-    weDesignedTemplative,
-    keepWatching,
-    basicCommands,
-    afterInit,
-    output,
-    updatingGameStudio,
-    creatingAComponent,
-    createPotionDeck,
-    componentsAreAssembled,
-    artdataBreadAndButter,
-    artdataCommands,
-    artDataSource,
-    commandAndGit,
+    // processBreakdown,
+    // weDesignedTemplative,
+    // keepWatching,
+    // basicCommands,
+    // afterInit,
+    // output,
+    // updatingGameStudio,
+    // creatingAComponent,
+    // createPotionDeck,
+    // componentsAreAssembled,
+    // artdataBreadAndButter,
+    // artdataCommands,
+    // artDataSource,
+    // commandAndGit,
   ],
   background: '#141414',
   audio: audioFile,

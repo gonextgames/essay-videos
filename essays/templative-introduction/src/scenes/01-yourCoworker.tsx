@@ -16,16 +16,25 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
 
-  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 0.25,0.9)
-  var sideBarRef = panes[0]
-  var workspaceRef = panes[1]
-  var terminalRef = panes[2]
-  var dividerRef = panes[2]
-  yield* waitUntil("first")
-  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.4, 0.65, 1)
-  yield* waitUntil("second")
-  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.4, 0.4, 1)
-  yield* waitUntil("third")
-  yield* nodes.updateSidebarWidthRatio(sideBarRef, workspaceRef, terminalRef, dividerRef, 0.25, 0.65, 1)
+  var defaultSidebar = 2
+  var defaultWorkspace = 8
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 2, 8)  
+  yield* waitUntil("columns")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, 6, defaultWorkspace, 1)
+  yield* waitUntil("resetColumns")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, defaultSidebar, defaultWorkspace, 1)
+  
+  yield* waitUntil("rows")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, defaultSidebar, 3, 1)
+  yield* waitUntil("resetRows")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, defaultSidebar, defaultWorkspace, 1)
+
+  
+  yield* waitUntil("both")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, 6, 3 , 1)
+  yield* waitUntil("resetBoth")
+  yield* nodes.updateSidebarWidthRatio(panes.sidebarColumnRef, panes.workspaceColumnRef, panes.workspaceRowRef, panes.terminalRowRef, defaultSidebar, defaultWorkspace, 1)
+
+
   yield* waitFor(15.3)
 });
