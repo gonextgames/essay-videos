@@ -1,5 +1,5 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {
   all,
@@ -12,13 +12,13 @@ import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 
-import {Image} from '@motion-canvas/2d/lib/components';
-import gamecrafterImage from "../images/gamecrafter.png"
-import tabletopPlaygroundImage from "../images/tabletopPlayground.png"
-import computerImage from "../images/pc.png"
-import personImage from "../images/person.png"
-import artImage from "../images/mona-lisa.png"
-import gitImage from "../images/gitLogo.png"
+import {Img} from '@motion-canvas/2d/lib/components';
+import gamecrafterImg from "../images/gamecrafter.png"
+import tabletopPlaygroundImg from "../images/tabletopPlayground.png"
+import computerImg from "../images/pc.png"
+import personImg from "../images/person.png"
+import artImg from "../images/mona-lisa.png"
+import gitImg from "../images/gitLogo.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
@@ -59,6 +59,7 @@ export default makeScene2D(function* (view) {
                     [100, 100],
                 ],
                 ]}
+                language={"txt"}
                 fill={"#ffffff00"}
                 ref={commandsRef}
                 fontSize={40}
@@ -84,24 +85,24 @@ export default makeScene2D(function* (view) {
   yield* slideTransition(Direction.Bottom, 2 /8);
 
   yield* waitUntil("showDesigners")
-  var gameDesignerImageRef = yield* nodes.showImage(rightRectRef, personImage, 0.75, -300,100,0)
-  var artistImageRef = yield* nodes.showImage(rightRectRef, personImage, 0.75, 300,-100,0)
+  var gameDesignerImgRef = yield* nodes.showImg(rightRectRef, personImg, 0.75, -300,100,0)
+  var artistImgRef = yield* nodes.showImg(rightRectRef, personImg, 0.75, 300,-100,0)
   yield* rightRectRef().position(new Vector2(0, rightRectRef().position.y()), 4/8)
   
   yield* waitUntil("showComputer")
-  var computerImageRef = yield* nodes.showImage(rightRectRef, computerImage, 0.4, -125,-10,0)
+  var computerImgRef = yield* nodes.showImg(rightRectRef, computerImg, 0.4, -125,-10,0)
 
   yield* waitUntil("showSvgArt")
-  var artImageRef = yield* nodes.showImage(rightRectRef, artImage, 0.4, 100,-200,4)
+  var artImgRef = yield* nodes.showImg(rightRectRef, artImg, 0.4, 100,-200,4)
 
   yield* waitUntil("showGit")
-  var gitImageRef = yield* nodes.showImage(rightRectRef, gitImage, 0.20, -115,-120,0)
+  var gitImgRef = yield* nodes.showImg(rightRectRef, gitImg, 0.20, -115,-120,0)
 
   yield* waitUntil("tableTopPlayground")
-  var tabletopImageRef = yield* nodes.showImage(rightRectRef, tabletopPlaygroundImage, 0.4, -200,-300,0)
+  var tabletopImgRef = yield* nodes.showImg(rightRectRef, tabletopPlaygroundImg, 0.4, -200,-300,0)
 
   yield* waitUntil("gamecrafter")
-  var gamecrafterImageRef = yield* nodes.showImage(rightRectRef, gamecrafterImage, 1.2, 150,200,0)
+  var gamecrafterImgRef = yield* nodes.showImg(rightRectRef, gamecrafterImg, 1.2, 150,200,0)
 
   yield* waitUntil("showCommands")
   yield* showCommands(commandsRef)

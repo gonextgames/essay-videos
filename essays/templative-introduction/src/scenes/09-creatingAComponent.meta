@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 2218013815,
   "timeEvents": [
     {
       "name": "showCreate",
@@ -42,5 +41,6 @@
       "name": "endScene",
       "targetTime": 18.266666666666666
     }
-  ]
+  ],
+  "seed": 2218013815
 }

@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 3379238835,
   "timeEvents": [
     {
       "name": "showArtdata",
@@ -51,7 +50,7 @@
       "targetTime": 25.134505747849662
     },
     {
-      "name": "createTextReplacement",
+      "name": "createTxtReplacement",
       "targetTime": 26.166666666666668
     },
     {
@@ -130,5 +129,6 @@
       "name": "endScene",
       "targetTime": 55.18491984922631
     }
-  ]
+  ],
+  "seed": 3379238835
 }

@@ -1,4 +1,4 @@
-import {makeProject} from '@motion-canvas/core/lib';
+import {makeProject} from '@motion-canvas/core';
 
 import yourCoworker from "./scenes/01-yourCoworker?scene"
 import processBreakdown from "./scenes/02-processBreakdown?scene"
@@ -32,7 +32,5 @@ export default makeProject({
     artdataBreadAndButter,
     commandAndGit,
   ],
-  background: '#141414',
   audio: audioFile,
-  audioOffset: 0
 });

@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 2218013815,
   "timeEvents": [
     {
       "name": "showTemplative",
@@ -30,5 +29,6 @@
       "name": "endScene",
       "targetTime": 12.8
     }
-  ]
+  ],
+  "seed": 2218013815
 }

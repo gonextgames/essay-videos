@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 1267851661,
   "timeEvents": [
     {
       "name": "highlightStudio",
@@ -34,5 +33,6 @@
       "name": "endScene",
       "targetTime": 10.634697541654617
     }
-  ]
+  ],
+  "seed": 1267851661
 }

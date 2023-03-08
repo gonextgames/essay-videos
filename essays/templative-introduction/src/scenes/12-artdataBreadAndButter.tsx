@@ -1,11 +1,11 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow';
 import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word, range,remove} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
-import {Image} from '@motion-canvas/2d/lib/components';
+import {Img} from '@motion-canvas/2d/lib/components';
 import poisonDrip from "../images/dripping-tube.png"
 import fireBreath from "../images/fire-breath.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
@@ -48,23 +48,23 @@ export default makeScene2D(function* (view) {
   )
 
   yield* waitUntil("showCard")
-  const cardTextRef = createRef<CodeBlock>();
+  const cardTxtRef = createRef<CodeBlock>();
   const cardRectRef = createRef<Rect>();
-  const cardImageRef = createRef<Image>();
+  const cardImgRef = createRef<Img>();
   var card = <Rect ref={cardRectRef} fill={"#545454"} width={875/2} height={1125/2} radius={16} padding={30} paddingTop={45}>
-    <CodeBlock language={"c#"} ref={cardTextRef} fill={"#000"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'} code={`Power: {power}\n\nCost: {cost}\n\n\n{displayName}\n{description}`}/>
+    <CodeBlock language={"txt"} ref={cardTxtRef} fill={"#000"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'} code={`Power: {power}\n\nCost: {cost}\n\n\n{displayName}\n{description}`}/>
   </Rect>
   yield panes.contentsRectRef().add(card)
   yield* waitUntil("variationOne")
   yield* all(
-    yield cardRectRef().add(<Image ref={cardImageRef} src={poisonDrip} width={100} height={100}/>),
-    yield cardTextRef().edit(4/8, false)`Power: ${edit(`{power}`,`6`)}\n\nCost: ${edit(`{cost}`,`3`)}\n\n\n${edit(`{displayName}`,`Poison Drip`)}\n${edit(`{description}`,`A poison potion.`)}`
+    yield cardRectRef().add(<Img ref={cardImgRef} src={poisonDrip} width={100} height={100}/>),
+    yield cardTxtRef().edit(4/8, false)`Power: ${edit(`{power}`,`6`)}\n\nCost: ${edit(`{cost}`,`3`)}\n\n\n${edit(`{displayName}`,`Poison Drip`)}\n${edit(`{description}`,`A poison potion.`)}`
   )
   yield* waitUntil("variationTwo")
   yield* all(
-    yield cardImageRef().src(fireBreath),
+    yield cardImgRef().src(fireBreath),
     yield cardRectRef().fill("#541414",4/8), 
-    yield cardTextRef().edit(4/8, false)`Power: ${edit(`6`,`3`)}\n\nCost: ${edit(`3`,`2`)}\n\n\n${edit(`Poison Drip`,`Fire Breath`)}\n${edit(`A poison potion.`,`Me after chilli.`)}`
+    yield cardTxtRef().edit(4/8, false)`Power: ${edit(`6`,`3`)}\n\nCost: ${edit(`3`,`2`)}\n\n\n${edit(`Poison Drip`,`Fire Breath`)}\n${edit(`A poison potion.`,`Me after chilli.`)}`
   )
 
   yield* waitUntil("showCode")
@@ -74,7 +74,7 @@ export default makeScene2D(function* (view) {
     yield panes.contentsRef().edit(1, false)`${insert(`{\n\t"name": "potionDeck",\n\t"templateFilename": "potionDeck-Front",\n\t"textReplacements": [\n\t],\n\t"styleUpdates":[\n\t],\n\t"overlays": [\n\t]\n}`)}`
   )
 
-  yield* waitUntil("createTextReplacement")
+  yield* waitUntil("createTxtReplacement")
   yield* panes.contentsRef().edit(1, false)`{\n\t"name": "potionDeck",\n\t"templateFilename": "potionDeck-Front",\n\t"textReplacements": [${insert(`\n\t\t { "key": "gameName", "source": "displayName", "scope": "game" }`)}\n\t],\n\t"styleUpdates":[\n\t],\n\t"overlays": [\n\t]\n}`
  
   yield* waitUntil("highlightGameName")

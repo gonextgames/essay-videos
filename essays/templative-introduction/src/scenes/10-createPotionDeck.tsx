@@ -1,12 +1,12 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow';
 import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word, remove} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
-import {Image} from '@motion-canvas/2d/lib/components';
-import gamecrafterImage from "../images/gamecrafter.png"
+import {Img} from '@motion-canvas/2d/lib/components';
+import gamecrafterImg from "../images/gamecrafter.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
@@ -16,8 +16,8 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
-  yield panes.fileNameRef().text(`component-compose.json`,0)
-  yield panes.contentsRef().edit(0,false)`[\n\t{\n\t\t"name": "potionDeck",\n\t\t"type": "PokerDeck",\n\t\t"quantity": 1,\n\t\t"piecesGamedataFilename": "potionDeck",\n\t\t"componentGamedataFilename": "potionDeck",\n\t\t"artdataFilename": "potionDeck-Front",\n\t\t"backArtdataFilename": "potionDeck-Back",\n\t\t"disabled": false\n\t}\n]`
+  yield* panes.fileNameRef().text(`component-compose.json`,0)
+  yield* panes.contentsRef().edit(0,false)`[\n\t{\n\t\t"name": "potionDeck",\n\t\t"type": "PokerDeck",\n\t\t"quantity": 1,\n\t\t"piecesGamedataFilename": "potionDeck",\n\t\t"componentGamedataFilename": "potionDeck",\n\t\t"artdataFilename": "potionDeck-Front",\n\t\t"backArtdataFilename": "potionDeck-Back",\n\t\t"disabled": false\n\t}\n]`
   yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
   yield* waitUntil("templativeProduce")
   yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative produce --component potionDeck`)}`
@@ -26,7 +26,7 @@ export default makeScene2D(function* (view) {
   var newStuff = `v output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\t> potionDeck\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json`
   yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t${edit(`> output`,newStuff)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
 
-  yield* waitUntil("showImages")
+  yield* waitUntil("showImgs")
   var images = `v potionDeck\n\t\t\t\t\tcomponent.json\n\t\t\t\t\tpotionDeck-back.jpg\n\t\t\t\t\tpotionDeck-front.jpg`
   yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tv output\n\t\t\tv potionShmotion_2.0.0_2023-03-03\n\t\t\t\t${edit(`> potionDeck`,images)}\n\t\t\t\tgame.json\n\t\t\t\trules.pdf\n\t\t\t\tstudio.json\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json` 
  

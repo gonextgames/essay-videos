@@ -1,12 +1,12 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow';
 import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
-import {Image} from '@motion-canvas/2d/lib/components';
-import gamecrafterImage from "../images/gamecrafter.png"
+import {Img} from '@motion-canvas/2d/lib/components';
+import gamecrafterImg from "../images/gamecrafter.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 

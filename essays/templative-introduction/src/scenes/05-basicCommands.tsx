@@ -1,5 +1,5 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {
   all,
@@ -12,13 +12,13 @@ import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word, remove} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 
-import {Image} from '@motion-canvas/2d/lib/components';
-import gamecrafterImage from "../images/gamecrafter.png"
-import tabletopPlaygroundImage from "../images/tabletopPlayground.png"
-import computerImage from "../images/pc.png"
-import personImage from "../images/person.png"
-import artImage from "../images/mona-lisa.png"
-import gitImage from "../images/gitLogo.png"
+import {Img} from '@motion-canvas/2d/lib/components';
+import gamecrafterImg from "../images/gamecrafter.png"
+import tabletopPlaygroundImg from "../images/tabletopPlayground.png"
+import computerImg from "../images/pc.png"
+import personImg from "../images/person.png"
+import artImg from "../images/mona-lisa.png"
+import gitImg from "../images/gitLogo.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
@@ -34,7 +34,7 @@ export default makeScene2D(function* (view) {
   yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative`)}`
   yield* waitUntil("showOutput")
 
-  const insertText = `
+  const insertTxt = `
 
 Templative CLI
 
@@ -46,10 +46,10 @@ Commands:
     upload      Upload to the GameCrafter
     components  Get a list of component quantities in the current directory`
 
-    yield* panes.terminalContentsRef().edit(1.5, false)`User$ templative${insert(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.5, false)`User$ templative${insert(insertTxt)}`
     
     yield* waitUntil("doneShowingCommands")
-    yield* panes.terminalContentsRef().edit(1.25, false)`User$ ${remove(`templative`)}${remove(insertText)}`
+    yield* panes.terminalContentsRef().edit(1.25, false)`User$ ${remove(`templative`)}${remove(insertTxt)}`
 
     yield* waitUntil("makeDirectory")
     yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`mkdir potionShmotion`)}`

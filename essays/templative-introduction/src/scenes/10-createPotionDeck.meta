@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 3667795282,
   "timeEvents": [
     {
       "name": "templativeProduce",
@@ -11,7 +10,7 @@
       "targetTime": 3.968265499289038
     },
     {
-      "name": "showImages",
+      "name": "showImgs",
       "targetTime": 5
     },
     {
@@ -26,5 +25,6 @@
       "name": "endScene",
       "targetTime": 10.7
     }
-  ]
+  ],
+  "seed": 3667795282
 }

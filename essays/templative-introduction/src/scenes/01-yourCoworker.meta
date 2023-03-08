@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 1534691276,
   "timeEvents": [
     {
       "name": "enemyAppears",
@@ -26,5 +25,6 @@
       "name": "endScene",
       "targetTime": 15.588732687436544
     }
-  ]
+  ],
+  "seed": 1534691276
 }

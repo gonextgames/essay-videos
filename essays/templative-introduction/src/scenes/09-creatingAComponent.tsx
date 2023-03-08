@@ -1,5 +1,5 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
-import {Circle, Layout, Text, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
+import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {
   all,
@@ -12,7 +12,7 @@ import {createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {CodeBlock, edit, insert, lines, word, range, remove} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 
-import {Image} from '@motion-canvas/2d/lib/components';
+import {Img} from '@motion-canvas/2d/lib/components';
 import admiral from "../images/capsAction-admiral.jpg"
 import actionBack from "../images/capsAction-back.jpg"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';

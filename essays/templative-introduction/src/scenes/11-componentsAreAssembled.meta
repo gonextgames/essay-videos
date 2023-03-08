@@ -1,6 +1,5 @@
 {
   "version": 1,
-  "seed": 3391299254,
   "timeEvents": [
     {
       "name": "gameData",
@@ -50,5 +49,6 @@
       "name": "endScene",
       "targetTime": 17.367865792003474
     }
-  ]
+  ],
+  "seed": 3391299254
 }
