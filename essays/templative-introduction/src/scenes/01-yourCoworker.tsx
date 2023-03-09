@@ -57,7 +57,7 @@ export default makeScene2D(function* (view) {
       <Img ref={playerImgRef} src={personSource} width={400} height={400} x={-400} y={200}/>
       <Circle width={600} height={200} x={400} y={-100} fill={"#146014"}/>
       <Img ref={enemyImgRef} src={personSource} width={400} height={400} x={2000} y={-300}/>
-      <Rect width={"100%"} height={250} x={0} y={-125 + (1080/2)} fill={"#eee"}>
+      <Rect width={"100%"} height={200} offsetY={1} x={0} y={1080/2} fill={"#eee"}>
         <Txt ref={messageRef} fill={"#000"} fontSize={60} lineHeight={60} fontFamily={'JetBrains Mono'}></Txt>
       </Rect>
     </Rect>

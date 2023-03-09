@@ -82,7 +82,7 @@ export default makeScene2D(function* (view) {
         />
     </>
   );
-  yield* slideTransition(Direction.Bottom, 2 /8);
+  yield* slideTransition(Direction.Top, 2 /8);
 
   yield* waitUntil("showDesigners")
   var gameDesignerImgRef = yield* nodes.showImg(rightRectRef, personImg, 0.75, -300,100,0)

@@ -9,6 +9,7 @@ import {Img} from '@motion-canvas/2d/lib/components';
 import gamecrafterImg from "../images/gamecrafter.png"
 import artImg from "../images/mona-lisa.png"
 import notebookImg from "../images/notebook.png"
+import stressImg from "../images/stress.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
 import nodes from "../nodes"
 
@@ -21,8 +22,8 @@ export default makeScene2D(function* (view) {
   const leftRectRef = createRef<Rect>();
   const rightRectRef = createRef<Rect>();
   
+  
   yield view.add(
-    
     <>
         <Rect
             // fill={"#ffffff"}
@@ -33,20 +34,30 @@ export default makeScene2D(function* (view) {
             y={0}
             clip
             ref={rightRectRef}
-        />
+        >
+          <Rect
+            fill={"#ffffff"}
+            offset={new Vector2(0,1)}
+            width={"100%"}
+            height={200}
+            x={0}
+            y={1080/2}
+            clip/>
+          <Img src={stressImg} x={0} y={387} offset={new Vector2(0,1)} width={500} height={400}></Img>
+        </Rect>
     </>
   )
-  yield* slideTransition(Direction.Top , 2 /8);
+  yield* slideTransition(Direction.Left , 2 /8);
 
   var distance = 75
-  yield* swingImgIn(rightRectRef, notebookImg, 0.25, new Vector2(distance,distance))
+  yield* swingImgIn(rightRectRef, notebookImg, 0.25, new Vector2(-4*distance,distance/2))
   yield* swingImgIn(rightRectRef, artImg, 0.25, new Vector2(-distance,-distance))
   yield* swingImgIn(rightRectRef, gamecrafterImg, 0.6, new Vector2(distance*-2,distance))
   yield* swingImgIn(rightRectRef, notebookImg, 0.25, new Vector2(distance*-4,distance*-3))
   yield* swingImgIn(rightRectRef, notebookImg, 0.25, new Vector2(distance*2,distance*-2))
   yield* swingImgIn(rightRectRef, artImg, 0.25, new Vector2(distance*3,0))
-  yield* swingImgIn(rightRectRef, gamecrafterImg, 0.6, new Vector2(distance*1,distance*3))
-  yield* swingImgIn(rightRectRef, artImg, 0.25, new Vector2(-distance*4,-1*distance))
+  yield* swingImgIn(rightRectRef, gamecrafterImg, 0.6, new Vector2(distance*4,distance*3))
+  yield* swingImgIn(rightRectRef, artImg, 0.25, new Vector2(-distance*6,-1.5*distance))
   yield* swingImgIn(rightRectRef, gamecrafterImg, 0.6, new Vector2(0,-distance*5))
 
   yield* waitUntil("endScene")
