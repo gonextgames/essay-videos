@@ -28,10 +28,10 @@ function *createTemplative(parent: Reference<Rect>) {
 
 function *showCommands(templativeRef: Reference<CodeBlock>) {
     yield* templativeRef().edit(1, false)`templative${insert(` init`)}\n\n\n\n`
-    yield* templativeRef().edit(6/8, false)`templative init\n${insert(`templative create deckpoker --name potionDeck`)}\n\n\n`
-    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\n${insert(`templative produce`)}\n\n`
-    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\n${insert(`templative playground`)}\n`
-    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create deckpoker --name potionDeck\ntemplative produce\ntemplative playground\n${insert(`templative upload`)}`
+    yield* templativeRef().edit(6/8, false)`templative init\n${insert(`templative create  `)}\n\n\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create \n${insert(`templative produce`)}\n\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create \ntemplative produce\n${insert(`templative playground`)}\n`
+    yield* templativeRef().edit(6/8, false)`templative init\ntemplative create \ntemplative produce\ntemplative playground\n${insert(`templative upload`)}`
 }
 
 export default makeScene2D(function* (view) {

@@ -35,7 +35,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
     var terminalContentsRef = createRef<CodeBlock>()
 
     const folder = `> projects`
-    const terminal = `User$`
+    const terminal = `$`
     const fileContents = `# Templative Introduction`
     
     const layout = 
@@ -48,14 +48,15 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
                 <Rect paddingLeft={20} grow={0.1} clip>
                     <Rect width={600} height={"100%"} padding={30} fill={"#141414"} clip>
                         <Txt ref={fileNameRef} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}>readme.md</Txt>
+                        <Txt layout={false} offsetX={1} x={280} y={-5} fill={"#ccc"} fontSize={40} lineHeight={35} fontFamily={'JetBrains Mono'}>x</Txt>
                     </Rect>
                 </Rect>
                 <Rect ref={contentsRectRef} grow={9} padding={50} fill={"#141414"} clip>
-                    <CodeBlock ref={contentsRef} language={`txt`} code={fileContents} fill={"#ccc"} fontSize={23} lineHeight={35} fontFamily={'JetBrains Mono'}/>
+                    <CodeBlock ref={contentsRef} language={`txt`} code={fileContents} fill={"#ccc"} fontSize={27} lineHeight={35} fontFamily={'JetBrains Mono'}/>
                 </Rect>
             </Rect>
             <Rect ref={terminalRowRef} grow={10-workspaceHeightRatio} padding={30} fill={"#141420"}  clip>
-                <CodeBlock ref={terminalContentsRef} language={"txt"} code={terminal} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
+                <CodeBlock  ref={terminalContentsRef} language={"txt"} code={terminal} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
             </Rect>
         </Layout>
     </Layout>

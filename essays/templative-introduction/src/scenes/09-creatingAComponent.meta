@@ -3,43 +3,35 @@
   "timeEvents": [
     {
       "name": "showCreate",
-      "targetTime": 7.487082208698063
+      "targetTime": 1.5246043565773593
     },
     {
       "name": "highlightCreate",
-      "targetTime": 8.185268120855524
+      "targetTime": 2.1143929756284185
     },
     {
       "name": "highlightType",
-      "targetTime": 8.520722666826424
+      "targetTime": 2.454056000159757
     },
     {
       "name": "highlightName",
-      "targetTime": 8.933333333333334
+      "targetTime": 2.8666666666666676
     },
     {
       "name": "resetHighlights",
-      "targetTime": 9.94220758080521
+      "targetTime": 3.9088742474718767
     },
     {
-      "name": "replaceValues",
-      "targetTime": 13.001167986222907
+      "name": "showTypeOptions",
+      "targetTime": 4.433333333333334
     },
     {
-      "name": "openFolders",
-      "targetTime": 14.033333333333333
-    },
-    {
-      "name": "showCreatedComponent",
-      "targetTime": 14.3
-    },
-    {
-      "name": "collapse",
-      "targetTime": 17.37196058517492
+      "name": "clearTerminal",
+      "targetTime": 9.146861311511728
     },
     {
       "name": "endScene",
-      "targetTime": 18.266666666666666
+      "targetTime": 10.166666666666666
     }
   ],
   "seed": 2218013815

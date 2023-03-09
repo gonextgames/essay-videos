@@ -3,15 +3,31 @@
   "timeEvents": [
     {
       "name": "templativePlayground",
-      "targetTime": 5.862556292062972
+      "targetTime": 1.8349728904276064
+    },
+    {
+      "name": "showPlayground",
+      "targetTime": 2.733991858314977
+    },
+    {
+      "name": "hidePlayground",
+      "targetTime": 3.7666666666666666
     },
     {
       "name": "templativeUpload",
-      "targetTime": 8.918724875425436
+      "targetTime": 4.695480424017388
     },
     {
-      "name": "endSceneHello",
-      "targetTime": 10.514251681334375
+      "name": "showGameCrafter",
+      "targetTime": 5.4709424503606945
+    },
+    {
+      "name": "hideGameCrafter",
+      "targetTime": 6.5
+    },
+    {
+      "name": "endScene",
+      "targetTime": 7.633333333333334
     }
   ],
   "seed": 941404706

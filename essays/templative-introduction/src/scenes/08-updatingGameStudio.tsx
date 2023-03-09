@@ -16,11 +16,13 @@ export default makeScene2D(function* (view) {
     <Rect ref={visualStudioRef}/>
   )
   var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
-  yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t> output\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
+  yield* panes.terminalContentsRef().edit(0, false)`$`
+  yield* panes.fileStructureRef().edit(0, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
+
   yield* waitUntil("highlightStudio")
-  yield* panes.fileStructureRef().selection(word(10,0,100), 1/8)
+  yield* panes.fileStructureRef().selection(word(9,0,100), 1/8)
   yield* waitUntil("highlightGame")
-  yield* panes.fileStructureRef().selection(word(8,0,100), 1/8)
+  yield* panes.fileStructureRef().selection(word(7,0,100), 1/8)
   yield* waitUntil("resetHighlights")
   yield* panes.fileStructureRef().selection(range(0,0,100,100), 1/8)
 
@@ -42,5 +44,9 @@ export default makeScene2D(function* (view) {
   yield* waitUntil("updateStudioName")
   yield panes.contentsRef().edit(4/8, false)`{\n\t"name": "${edit(`templateStudio`,`potionMerchants`)}",\n\t"displayName": "${edit(`Template Studio`,`Potion Merchants`)}"\n}`
 
+
+  
+
+  
   yield* waitUntil("endScene")
 });

@@ -17,11 +17,11 @@ function *createHealthBarRects(parent: Reference<Node>, ratio:number) {
 function *createHealthBar(parent: Reference<Node>, name: string, position: Vector2) {
   const healthBarRef = createRef<Rect>()
   var sizeRatio = 5
-  yield parent().add(<Rect ref={healthBarRef} position={position} width={162*sizeRatio} height={42*sizeRatio} fill={"#ccc"} radius={30}>
+  yield parent().add(<Rect position={position} width={162*sizeRatio} height={42*sizeRatio} fill={"#ccc"} radius={30}>
     <Txt x={-90} y={-50} fontSize={50} lineHeight={50} fontFamily={'JetBrains Mono'}>{name}</Txt>
     <Txt x={300} y={-50} fontSize={50} lineHeight={50} fontFamily={'JetBrains Mono'}>Lv11</Txt>
     <Rect x={90} y={50} fill={"#202020"} width={118*sizeRatio} height={14*sizeRatio} radius={60} >
-      <Rect fill={"#00ff00"} width={114*sizeRatio} height={10*sizeRatio} radius={60}/>
+      <Rect ref={healthBarRef} offsetX={-1} x={-114*sizeRatio/2} fill={"#00ff00"} width={114*sizeRatio} height={10*sizeRatio} radius={60}/>
     </Rect>
   </Rect>)
 
@@ -54,7 +54,7 @@ export default makeScene2D(function* (view) {
   yield view.add(
     <Rect ref={mainRef}>
       <Circle width={600} height={200} x={-400} y={300} fill={"#146014"}/>
-      <Img ref={playerImgRef} src={personSource} width={400} height={400} x={-400} y={200}/>
+      <Img ref={playerImgRef} src={personSource} width={400} height={400} x={-400} y={140}/>
       <Circle width={600} height={200} x={400} y={-100} fill={"#146014"}/>
       <Img ref={enemyImgRef} src={personSource} width={400} height={400} x={2000} y={-300}/>
       <Rect width={"100%"} height={200} offsetY={1} x={0} y={1080/2} fill={"#eee"}>
@@ -73,20 +73,11 @@ export default makeScene2D(function* (view) {
   )
 
   yield* waitUntil("idea")
-  yield* messageRef().text(`GAMEDESIGN COWORKER wants to EXPERIMENT!`, 6/8)
-
-  yield* waitUntil("copy")
-  yield* messageRef().text(`GAMEDESIGN COWORKER uses COPY GOOGLE DOC!`, 6/8)
-
-  yield* waitUntil("changes")
-  yield* messageRef().text(`GAMEDESIGN COWORKER uses EDIT MINUTIA!`, 6/8)
-
-  yield* waitUntil("handoff")
-  yield* messageRef().text(`GAMEDESIGN COWORKER uses HANDOFF!`, 6/8)
+  yield* messageRef().text(`GAMEDESIGN COWORKER uses EXPERIMENT!`, 6/8)
   yield* thrustNode(enemyImgRef, 6/8)
   yield* shakeNode(playerImgRef)
+  yield* yourHealthBarRef().width(100*5,4/8)
   yield* messageRef().text(`The team is not very effective.`, 6/8)
-
 
   yield* waitUntil("endScene")
 });

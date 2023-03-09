@@ -14,20 +14,18 @@ import componentsAreAssembled from "./scenes/11-componentsAreAssembled?scene"
 import artdataBreadAndButter from "./scenes/12-artdataBreadAndButter?scene"
 import commandAndGit from "./scenes/15-commandAndGit?scene"
 
-import audioFile from "./audio/all.mp3"
+import audioFile from "./audio/fixedAudio.mp3"
 
 export default makeProject({
   scenes: [
     yourCoworker,
     processBreakdown,
     weDesignedTemplative,
-    keepWatching,
     basicCommands,
-    afterInit,
-    output,
     updatingGameStudio,
     creatingAComponent,
     createPotionDeck,
+    output,
     componentsAreAssembled,
     artdataBreadAndButter,
     commandAndGit,

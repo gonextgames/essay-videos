@@ -27,10 +27,10 @@ export default makeScene2D(function* (view) {
   yield* panes.fileStructureRef().edit(1/8, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`
   
   yield* waitUntil('showTemplative')
-  yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${insert(`templative`)}`
+  yield* panes.terminalContentsRef().edit(2/8, false)`$ ${insert(`templative`)}`
 
   yield* waitUntil('showProduce');
-  yield* panes.terminalContentsRef().edit(2/8, false)`User$ templative${insert(` produce`)}`;
+  yield* panes.terminalContentsRef().edit(2/8, false)`$ templative${insert(` produce`)}`;
   yield* waitUntil('showOutput')
   yield* panes.fileStructureRef().edit(3/8, false)
 `v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata${insert(`\n\t\t> output`)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`;
@@ -43,7 +43,7 @@ export default makeScene2D(function* (view) {
   yield* all(
     yield panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\t${edit(`v`, `>`)} output${remove(`\n\t\t\t> potionShmotion_2.0.0_2023-03-03`)}\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`,
     yield panes.fileStructureRef().selection(range(0,0,100,100), 1),
-    yield panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`templative produce`)}`
+    yield panes.terminalContentsRef().edit(2/8, false)`$ ${remove(`templative produce`)}`
   )
 
   yield* waitUntil("endScene")

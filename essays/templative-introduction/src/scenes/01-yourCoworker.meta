@@ -10,20 +10,8 @@
       "targetTime": 2.573109275362446
     },
     {
-      "name": "copy",
-      "targetTime": 5.733793598452509
-    },
-    {
-      "name": "changes",
-      "targetTime": 8.472605776488203
-    },
-    {
-      "name": "handoff",
-      "targetTime": 9.814732930614063
-    },
-    {
       "name": "endScene",
-      "targetTime": 15.588732687436544
+      "targetTime": 8.783654190784006
     }
   ],
   "seed": 1534691276

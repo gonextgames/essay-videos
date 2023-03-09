@@ -15,7 +15,7 @@ import nodes from "../nodes"
 
 function *swingImgIn(parent: Reference<Node>, src: string, sizeRatio:number, position: Vector2) {
   var imageRef = yield* nodes.showImg(parent, src, sizeRatio, 2000, position.y, 0)
-  yield* imageRef().position.x(position.x, 7/8)
+  yield* imageRef().position.x(position.x, 2/8)
 }
 
 export default makeScene2D(function* (view) {

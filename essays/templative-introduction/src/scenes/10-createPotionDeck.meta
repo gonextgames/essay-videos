@@ -2,28 +2,56 @@
   "version": 1,
   "timeEvents": [
     {
+      "name": "replaceValues",
+      "targetTime": 0.44539433979756937
+    },
+    {
+      "name": "highlightDeckPoker",
+      "targetTime": 2.7798186460718215
+    },
+    {
+      "name": "highlightPotionName",
+      "targetTime": 4.3895884023435725
+    },
+    {
+      "name": "showCreateOutput",
+      "targetTime": 5.259156519356784
+    },
+    {
+      "name": "showCreatedArtFiles",
+      "targetTime": 6.8950479989744675
+    },
+    {
+      "name": "showCreatedArtDataFiles",
+      "targetTime": 7.5763259524543525
+    },
+    {
+      "name": "showCreatedGameDataFiles",
+      "targetTime": 8.613486540841096
+    },
+    {
+      "name": "hideCreatedHighlights",
+      "targetTime": 10.427835498430657
+    },
+    {
+      "name": "hideFolderStructure",
+      "targetTime": 10.825510082140834
+    },
+    {
       "name": "templativeProduce",
-      "targetTime": 0.8576907071265178
+      "targetTime": 14.45611494754565
     },
     {
-      "name": "showOutput",
-      "targetTime": 3.968265499289038
-    },
-    {
-      "name": "showImgs",
-      "targetTime": 5
+      "name": "showTemplativeProduceOutput",
+      "targetTime": 15.730919577133857
     },
     {
       "name": "resetStructure",
-      "targetTime": 6
-    },
-    {
-      "name": "clearTerminal",
-      "targetTime": 9.667333967461435
+      "targetTime": 18.204825449376447
     },
     {
       "name": "endScene",
-      "targetTime": 10.7
+      "targetTime": 18.757295987276255
     }
   ],
   "seed": 3667795282

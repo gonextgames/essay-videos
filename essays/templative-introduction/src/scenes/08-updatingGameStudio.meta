@@ -3,35 +3,35 @@
   "timeEvents": [
     {
       "name": "highlightStudio",
-      "targetTime": 3.0827934622659616
+      "targetTime": 0.9041450158025303
     },
     {
       "name": "highlightGame",
-      "targetTime": 4.349920612916454
+      "targetTime": 3.022671985546199
     },
     {
       "name": "resetHighlights",
-      "targetTime": 5.7802950696772735
+      "targetTime": 4.080641982531965
     },
     {
       "name": "updateGame",
-      "targetTime": 5.933333333333334
+      "targetTime": 5.0191833273971715
     },
     {
       "name": "updateGameName",
-      "targetTime": 8.21628173549624
+      "targetTime": 5.865048239594991
     },
     {
       "name": "updateStudio",
-      "targetTime": 8.882324186580608
+      "targetTime": 7.133672396895457
     },
     {
       "name": "updateStudioName",
-      "targetTime": 9.639697347196575
+      "targetTime": 8.366408825889467
     },
     {
       "name": "endScene",
-      "targetTime": 10.634697541654617
+      "targetTime": 9.712852343675072
     }
   ],
   "seed": 1267851661

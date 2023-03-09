@@ -27,50 +27,47 @@ export default makeScene2D(function* (view) {
   yield view.add(
     <Rect ref={visualStudioRef}/>
   )
-  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 3, 8)
+  var panes = yield* nodes.createFakeVisualStudioCode(visualStudioRef, 1, 9)
 
   yield* slideTransition(Direction.Bottom, 2 /8);
   yield* waitUntil("showTemplative")
-  yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative`)}`
+  yield* panes.terminalContentsRef().edit(1/8, false)`$ ${insert(`templative`)}`
   yield* waitUntil("showOutput")
 
   const insertTxt = `
 
-Templative CLI
-
 Commands:
     init        Create the default game project here
     create      Create components from templates
-    produce     Produce the game in the current directory
+    produce     Produce the game
     playground  Create a Tabletop Playground package
     upload      Upload to the GameCrafter
-    components  Get a list of component quantities in the current directory`
+    components  Get a list of component quantities`
 
-    yield* panes.terminalContentsRef().edit(1.5, false)`User$ templative${insert(insertTxt)}`
+    yield* panes.terminalContentsRef().edit(1.5, false)`$ templative${insert(insertTxt)}`
     
     yield* waitUntil("doneShowingCommands")
-    yield* panes.terminalContentsRef().edit(1.25, false)`User$ ${remove(`templative`)}${remove(insertTxt)}`
+    yield* panes.terminalContentsRef().edit(1.25, false)`$ ${remove(`templative`)}${remove(insertTxt)}`
 
     yield* waitUntil("makeDirectory")
-    yield* panes.terminalContentsRef().edit(1, false)`User$ ${insert(`mkdir potionShmotion`)}`
-    yield* panes.fileStructureRef().edit(1, false)`${edit('>', `v`)} projects${insert(`\n  > potionShmotion\n`)}`
-    
-    yield* waitUntil("clearMakeDirectory")
-    yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`mkdir potionShmotion`)}`
-
+    yield* all(
+      yield panes.terminalContentsRef().edit(1/8, false)`$ ${insert(`mkdir potionShmotion`)}`,
+      yield panes.fileStructureRef().edit(1, false)`${edit('>', `v`)} projects${insert(`\n\tv potionShmotion\n`)}`
+    )
+  
     yield* waitUntil("showTemplativeInit")
-    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`templative init`)}`
-    yield* panes.fileStructureRef().edit(1, false)`v projects\n\t${edit(`>`,`v`)} potionShmotion${insert(`\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`)}`,
+    yield* panes.terminalContentsRef().edit(4/8, false)`$ ${edit(`mkdir potionShmotion`,`templative init`)}`
+    yield* panes.fileStructureRef().edit(1, false)`v projects\n\tv potionShmotion${insert(`\n\t\t> art\n\t\t> artdata\n\t\t> gamedata\n\t\tcomponent-compose.json\n\t\tgame-compose.json\n\t\tgame.json\n\t\trules.md\n\t\tstudio.json`)}`,
      
     yield* waitUntil("clearTemplativeInit")
-    yield* panes.terminalContentsRef().edit(2/8, false)`User$ ${remove(`templative init`)}`
+    yield* panes.terminalContentsRef().edit(1, false)`$ ${remove(`templative init`)}`
 
     yield* waitUntil("showGit")
-    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${insert(`git`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`$ ${insert(`git`)}` 
     yield* waitUntil("showGitInit")
-    yield* panes.terminalContentsRef().edit(1/8, false)`User$ git ${insert(`init`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`$ git ${insert(`init`)}` 
     yield* waitUntil("clearGit")
-    yield* panes.terminalContentsRef().edit(1/8, false)`User$ ${remove(`git init`)}` 
+    yield* panes.terminalContentsRef().edit(1/8, false)`$ ${remove(`git init`)}` 
 
 
     yield* waitUntil("endScene")
