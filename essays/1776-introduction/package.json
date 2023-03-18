@@ -1,0 +1,9 @@
+{
+  "name": "@essay-videos/1776-introduction",
+  "private": true,
+  "description": "Source code for the Motion Canvas animated logo",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vite"
+  }
+}

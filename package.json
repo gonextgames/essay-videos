@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "templative-introduction": "npm run serve -w essays/templative-introduction",
-    "rulebooks": "npm run serve -w essays/rulebooks"
+    "rulebooks": "npm run serve -w essays/rulebooks",
+    "1776-introduction": "npm run serve -w essays/1776-introduction"
   },
   "workspaces": [
     "essays/*"
