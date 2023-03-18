@@ -20,6 +20,24 @@ function *showImg(parent: Reference<Node>, src: string, scale: number, x: number
     return reference
 }
 
+function *thrustNode(thing: Reference<Node>, duration: number) {
+    var originalX = thing().position.x() 
+  
+    yield* thing().position.x(originalX+25, 4/8) 
+    yield* thing().position.x(originalX-25, 1/8)
+    yield* thing().position.x(originalX, 4/8) 
+  }
+  
+  function *shakeNode(thing: Reference<Node>) {
+    var originalX = thing().position.x() 
+  
+    yield* thing().position.x(originalX+25, 2/16) 
+    yield* thing().position.x(originalX-25, 1/16)
+    yield* thing().position.x(originalX+25, 2/16) 
+    yield* thing().position.x(originalX-25, 1/16)
+    yield* thing().position.x(originalX, 1/16) 
+  }
+
 function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio: number, workspaceHeightRatio: number) {
     var sidebarColumnRef = createRef<Rect>()
     var workspaceColumnRef = createRef<Rect>()
@@ -92,5 +110,7 @@ function *updateSidebarWidthRatio(sidebarColumnRef: Reference<Rect>, workspaceCo
 export default {
     showImg,
     createFakeVisualStudioCode,
-    updateSidebarWidthRatio
+    updateSidebarWidthRatio,
+    thrustNode,
+    shakeNode
 }
