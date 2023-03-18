@@ -1,4 +1,14 @@
 {
   "version": 1,
+  "timeEvents": [
+    {
+      "name": "branchTransition",
+      "targetTime": 1
+    },
+    {
+      "name": "endScene",
+      "targetTime": 9.412148303073192
+    }
+  ],
   "seed": 2304625832
 }

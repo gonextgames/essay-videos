@@ -1,4 +1,4 @@
-import {makeProject} from '@motion-canvas/core/lib';
+import {makeProject} from '@motion-canvas/core';
 
 import yourCoworker from "./scenes/01-yourCoworker?scene"
 import processBreakdown from "./scenes/02-processBreakdown?scene"
@@ -12,31 +12,23 @@ import creatingAComponent from "./scenes/09-creatingAComponent?scene"
 import createPotionDeck from "./scenes/10-createPotionDeck?scene"
 import componentsAreAssembled from "./scenes/11-componentsAreAssembled?scene"
 import artdataBreadAndButter from "./scenes/12-artdataBreadAndButter?scene"
-import artdataCommands from "./scenes/13-artdataCommands?scene"
-import artDataSource from "./scenes/14-artDataSource?scene"
 import commandAndGit from "./scenes/15-commandAndGit?scene"
 
-import audioFile from "./audio/all.mp3"
+import audioFile from "./audio/fixedAudio.mp3"
 
 export default makeProject({
   scenes: [
     yourCoworker,
     processBreakdown,
     weDesignedTemplative,
-    keepWatching,
     basicCommands,
-    afterInit,
-    output,
     updatingGameStudio,
     creatingAComponent,
     createPotionDeck,
+    output,
     componentsAreAssembled,
     artdataBreadAndButter,
-    artdataCommands,
-    artDataSource,
     commandAndGit,
   ],
-  background: '#141414',
   audio: audioFile,
-  audioOffset: 0
 });

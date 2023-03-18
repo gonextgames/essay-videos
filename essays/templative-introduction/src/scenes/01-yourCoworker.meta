@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "seed": 1534691276,
   "timeEvents": [
     {
-      "name": "first",
-      "targetTime": 1.216221079979186
+      "name": "enemyAppears",
+      "targetTime": 0
     },
     {
-      "name": "second",
-      "targetTime": 3.3670571676002155
+      "name": "idea",
+      "targetTime": 2.573109275362446
     },
     {
-      "name": "third",
-      "targetTime": 5.959337128544171
+      "name": "endScene",
+      "targetTime": 8.783654190784006
     }
-  ]
+  ],
+  "seed": 1534691276
 }

@@ -1,4 +1,118 @@
 {
   "version": 1,
+  "timeEvents": [
+    {
+      "name": "showArtdata",
+      "targetTime": 0.7049173687558674
+    },
+    {
+      "name": "textReplacements",
+      "targetTime": 2.6687909041082154
+    },
+    {
+      "name": "styleUpdates",
+      "targetTime": 3.961978175129765
+    },
+    {
+      "name": "overlays",
+      "targetTime": 4.754821321108578
+    },
+    {
+      "name": "clear",
+      "targetTime": 6.014008256786024
+    },
+    {
+      "name": "showCard",
+      "targetTime": 6.133333333333334
+    },
+    {
+      "name": "createTxtReplacement",
+      "targetTime": 6.98394874685687
+    },
+    {
+      "name": "highlightGameName",
+      "targetTime": 9.631278005044328
+    },
+    {
+      "name": "highlightDisplayName",
+      "targetTime": 11.826898604468811
+    },
+    {
+      "name": "highlightScope",
+      "targetTime": 12.47569024313331
+    },
+    {
+      "name": "clearHighlights",
+      "targetTime": 13.048318486650308
+    },
+    {
+      "name": "createOverlay",
+      "targetTime": 14.401886882462035
+    },
+    {
+      "name": "highlightGraphic",
+      "targetTime": 16.506849703475098
+    },
+    {
+      "name": "highlightPiece",
+      "targetTime": 17.56794188608383
+    },
+    {
+      "name": "clearOverlayHighlights",
+      "targetTime": 18.473296316608074
+    },
+    {
+      "name": "createStyleUpdate",
+      "targetTime": 19.058795734289788
+    },
+    {
+      "name": "highlightFill",
+      "targetTime": 21.271448074505415
+    },
+    {
+      "name": "highlightBackground",
+      "targetTime": 23.435543600952283
+    },
+    {
+      "name": "highlightRGB",
+      "targetTime": 24.98329365600013
+    },
+    {
+      "name": "highlightStyleScope",
+      "targetTime": 26.71007548780951
+    },
+    {
+      "name": "clearStyleHighlights",
+      "targetTime": 27.84925510232039
+    },
+    {
+      "name": "scopeExplanation",
+      "targetTime": 29.39263941402291
+    },
+    {
+      "name": "componentScope",
+      "targetTime": 30.016668827767067
+    },
+    {
+      "name": "gameScope",
+      "targetTime": 30.497921071425758
+    },
+    {
+      "name": "studioScope",
+      "targetTime": 30.968251359123975
+    },
+    {
+      "name": "global",
+      "targetTime": 31.765691635407805
+    },
+    {
+      "name": "gitCommands",
+      "targetTime": 34.16813586363226
+    },
+    {
+      "name": "endScene",
+      "targetTime": 37.183848055441494
+    }
+  ],
   "seed": 3379238835
 }

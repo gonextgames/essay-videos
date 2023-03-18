@@ -1,18 +1,10 @@
 {
   "version": 1,
-  "seed": 2625398372,
   "timeEvents": [
     {
-      "name": "showCsvs",
-      "targetTime": 9.809143973381333
-    },
-    {
-      "name": "showImages",
-      "targetTime": 12.746489780184401
-    },
-    {
-      "name": "showGameCrafter",
-      "targetTime": 14.13081122252305
+      "name": "endScene",
+      "targetTime": 5.040529412338636
     }
-  ]
+  ],
+  "seed": 2625398372
 }

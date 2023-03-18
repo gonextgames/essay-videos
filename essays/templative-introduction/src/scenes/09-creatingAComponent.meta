@@ -1,42 +1,38 @@
 {
   "version": 1,
-  "seed": 2218013815,
   "timeEvents": [
     {
-      "name": "showComponentsRect",
-      "targetTime": 2.89716045346187
-    },
-    {
-      "name": "showCodeRect",
-      "targetTime": 4.200433841766483
-    },
-    {
       "name": "showCreate",
-      "targetTime": 8.146374173139812
+      "targetTime": 1.5246043565773593
     },
     {
-      "name": "showType",
-      "targetTime": 8.484869834681021
+      "name": "highlightCreate",
+      "targetTime": 2.1143929756284185
     },
     {
-      "name": "showDash",
-      "targetTime": 8.817499133386063
+      "name": "highlightType",
+      "targetTime": 2.454056000159757
     },
     {
-      "name": "showComponentName",
-      "targetTime": 9.579743868720003
-    },
-    {
-      "name": "replaceValues",
-      "targetTime": 12.852356475313119
+      "name": "highlightName",
+      "targetTime": 2.8666666666666676
     },
     {
       "name": "resetHighlights",
-      "targetTime": 17.736347489738684
+      "targetTime": 3.9088742474718767
     },
     {
-      "name": "endSceneHold",
-      "targetTime": 27.386494716102447
+      "name": "showTypeOptions",
+      "targetTime": 4.433333333333334
+    },
+    {
+      "name": "clearTerminal",
+      "targetTime": 9.146861311511728
+    },
+    {
+      "name": "endScene",
+      "targetTime": 10.166666666666666
     }
-  ]
+  ],
+  "seed": 2218013815
 }

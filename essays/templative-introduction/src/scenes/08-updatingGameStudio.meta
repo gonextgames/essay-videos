@@ -1,4 +1,38 @@
 {
   "version": 1,
+  "timeEvents": [
+    {
+      "name": "highlightStudio",
+      "targetTime": 0.9041450158025303
+    },
+    {
+      "name": "highlightGame",
+      "targetTime": 3.022671985546199
+    },
+    {
+      "name": "resetHighlights",
+      "targetTime": 4.080641982531965
+    },
+    {
+      "name": "updateGame",
+      "targetTime": 5.0191833273971715
+    },
+    {
+      "name": "updateGameName",
+      "targetTime": 5.865048239594991
+    },
+    {
+      "name": "updateStudio",
+      "targetTime": 7.133672396895457
+    },
+    {
+      "name": "updateStudioName",
+      "targetTime": 8.366408825889467
+    },
+    {
+      "name": "endScene",
+      "targetTime": 9.712852343675072
+    }
+  ],
   "seed": 1267851661
 }

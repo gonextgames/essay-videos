@@ -1,30 +1,34 @@
 {
   "version": 1,
-  "seed": 2218013815,
   "timeEvents": [
     {
-      "name": "something",
-      "targetTime": 1
-    },
-    {
       "name": "showTemplative",
-      "targetTime": 6.564360722491804
+      "targetTime": 2.097194361536887
     },
     {
       "name": "showProduce",
-      "targetTime": 7.182138746303625
+      "targetTime": 2.715472079636959
     },
     {
       "name": "showOutput",
-      "targetTime": 8.733590437719087
+      "targetTime": 4.2669237710524195
     },
     {
       "name": "folderExpand",
-      "targetTime": 9.802073959613352
+      "targetTime": 4.932170153848291
     },
     {
       "name": "highlightOutput",
-      "targetTime": 10.90775802086225
+      "targetTime": 8.478716937394335
+    },
+    {
+      "name": "resetScene",
+      "targetTime": 11.798452509583017
+    },
+    {
+      "name": "endScene",
+      "targetTime": 12.8
     }
-  ]
+  ],
+  "seed": 2218013815
 }
