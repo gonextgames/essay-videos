@@ -1,4 +1,4 @@
-import {makeProject} from '@motion-canvas/core/lib';
+import {makeProject} from '@motion-canvas/core';
 
 import warOfRing from "./scenes/00-fitWarOfRing?scene"
 
@@ -8,7 +8,5 @@ export default makeProject({
   scenes: [
     warOfRing,
   ],
-  background: '#141414',
   // audio: audioFile,
-  // audioOffset: 0
 });
