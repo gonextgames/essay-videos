@@ -20,7 +20,7 @@ import personImage from "../images/person.png"
 import artImage from "../images/mona-lisa.png"
 import gitImage from "../images/gitLogo.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
-import nodes from "../nodes"
+import nodes from "../../../../common/nodes"
 
 export default makeScene2D(function* (view) {
   const leftRectRef = createRef<Rect>();
