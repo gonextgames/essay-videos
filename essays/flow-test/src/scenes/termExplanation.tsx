@@ -1,7 +1,7 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
 import {Circle, Txt, Rect, Node,CubicBezier} from '@motion-canvas/2d/lib/components';
 import {all,waitFor} from '@motion-canvas/core/lib/flow';
-import {slideTransition} from '@motion-canvas/core/lib/transitions';
+import {slideTransition, fadeTransition} from '@motion-canvas/core/lib/transitions';
 import {beginSlide, createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
@@ -114,24 +114,16 @@ export default makeScene2D(function* (view) {
     var radialCircles = yield* createRadialCircles(mainRef, 5, 3)
     var bezierReferences = yield* createBezierReferences(mainRef, 3, radialCircles)
 
-    yield* all(
-        radialCircles[0]().size(new Vector2(150,150), 1),
-        radialCircles[1]().size(new Vector2(150,150), 1),
-        radialCircles[2]().size(new Vector2(150,150), 1),
-        radialCircles[3]().size(new Vector2(150,150), 1),
-        radialCircles[4]().size(new Vector2(150,150), 1),
-        bezierReferences[0]().end(1,1),
-        bezierReferences[1]().end(1,1),
-        bezierReferences[2]().end(1,1),
-    )
+    var generators = [];
+    for (var i = 0 ; i < radialCircles.length ; i++) {
+        generators.push(radialCircles[i]().size(new Vector2(150,150), 1))
+    }
+    for (var i = 0 ; i < 3 ; i++) {
+        generators.push(bezierReferences[i]().end(1,1))
+    }
+    yield* all(...generators)
 
     yield* beginSlide('explainMaxComplexity');
-
-    yield* all(
-        bezierReferences[0]().end(0,1),
-        bezierReferences[1]().end(0,1),
-        bezierReferences[2]().end(0,1),
-    )
 
     var angle = Math.PI * 2 / 5
     var newPositions = Array<Vector2>()
@@ -139,11 +131,14 @@ export default makeScene2D(function* (view) {
         newPositions.push(new Vector2(200+(Math.cos(angle*i) * 300), Math.sin(angle*i) * 300))
     }
 
-    var generators = [
+    generators = [
         yield controlRectRef().position.y(-(600/2)+105,1)
     ];
+    for (var i = 0 ; i < bezierReferences.length ; i++) {
+        generators.push(bezierReferences[i]().start(1,4/8))
+    }
     for (var i = 0 ; i < radialCircles.length ; i++) {
-        generators.push(radialCircles[i]().position(newPositions[i], 1));
+        generators.push(radialCircles[i]().position(newPositions[i], 1.2));
     }
     yield* all(...generators)
 
@@ -158,12 +153,12 @@ export default makeScene2D(function* (view) {
     yield* beginSlide('explainMinComplexity');
     yield* all(
         yield controlRectRef().position.y((600/2)-105,1),
-        yield bezierReferences[0]().end(0,1),
-        yield bezierReferences[1]().end(0,1),
-        yield bezierReferences[3]().end(0,1),
-        yield bezierReferences[5]().end(0,1),
-        yield bezierReferences[6]().end(0,1),
-        yield bezierReferences[8]().end(0,1),
+        yield bezierReferences[0]().start(1,1),
+        yield bezierReferences[1]().start(1,1),
+        yield bezierReferences[3]().start(1,1),
+        yield bezierReferences[5]().start(1,1),
+        yield bezierReferences[6]().start(1,1),
+        yield bezierReferences[8]().start(1,1),
     )
 
     yield* beginSlide('showAgency');
@@ -174,17 +169,56 @@ export default makeScene2D(function* (view) {
         yield abstractionTxtRef().fill("#ffffff00", 1),
     ];
     for (const ref of Object.values(bezierReferences)) {
-        generators.push(ref().end(0,1));
+        generators.push(ref().start(1,1));
     }    
+
+    var valueChainBezierReference = createRef<CubicBezier>()
+    mainRef().add(<CubicBezier
+        ref={valueChainBezierReference}
+        lineWidth={6}
+        stroke={'lightseagreen'}
+        p0={new Vector2(1920/5, 1080/2)}
+        p1={radialCircles[1]().position()}
+        p2={radialCircles[3]().position()}
+        p3={new Vector2(1920/3, -(1080/2)-100)}
+        endArrow
+        end={0}
+        shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}
+    />)
+    generators.push(valueChainBezierReference().end(1,2))
+
     yield* all(...generators);
 
     yield* beginSlide('explainMaxAgency');
-    yield* controlRectRef().position.y(-(600/2)+105,1)
-
-    // HEllo
-    // mainRef().add(<Bezier></Bezier>)
+    generators = [
+        controlRectRef().position.y(-(600/2)+105,1)
+    ]
+    var otherValueChainBezierReference = createRef<CubicBezier>()
+    mainRef().add(<CubicBezier
+        ref={otherValueChainBezierReference}
+        lineWidth={6}
+        stroke={'lightseagreen'}
+        p0={new Vector2(-1920/4, -1080/2)}
+        p1={radialCircles[3]().position()}
+        p2={radialCircles[0]().position()}
+        p3={new Vector2(-1920/3, (1080/2)+100)}
+        endArrow
+        end={0}
+        shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}
+    />)
+    generators.push(otherValueChainBezierReference().end(1,2))
+    yield* all(...generators)
 
     yield* beginSlide('explainMinAgency');
+
+    yield* all(
+        yield valueChainBezierReference().start(1,1),
+        yield otherValueChainBezierReference().start(1,1),
+        yield controlRectRef().position.y((600/2)-105,1)
+    )
+    
+
+    yield* beginSlide('showAbstraction');
 
     generators = [controlRectRef().position.y((600/2)-105,1)]
     for (var i = 0 ; i < radialCircles.length; i ++) {
@@ -192,7 +226,6 @@ export default makeScene2D(function* (view) {
     }    
     yield* all(...generators);
 
-    yield* beginSlide('showAbstraction');
     var systemExampleRef = createRef<Circle>()
     mainRef().add(<Circle 
         ref={systemExampleRef}
@@ -260,5 +293,26 @@ export default makeScene2D(function* (view) {
     }    
     yield* all(...generators);
 
-    yield* beginSlide('endOfTerms');
+    yield* beginSlide('reset');
+    yield* all(
+        yield sliderRectRef().position.x((1920/2)+200,1),
+        yield controlRectRef().position.y(0,1),
+        yield systemExampleRef().position.x((1920/2)+400,1.3),
+
+        yield titleTxtRef().offset(new Vector2(0, 0), 1),
+        yield titleTxtRef().position(new Vector2(0, -100), 1),
+
+        yield abstractionTxtRef().position.x(-150,1),
+        yield abstractionTxtRef().offset(new Vector2(1, 0), 1),
+
+        yield complexityTxtRef().position.x(0,1),
+        yield complexityTxtRef().fill("#fff", 1.2),
+        yield complexityTxtRef().offset(new Vector2(0, 0), 1),
+
+        yield agencyTxtRef().position.x(150,1),
+        yield agencyTxtRef().fill("#fff", 1.2),
+        yield agencyTxtRef().offset(new Vector2(-1, 0), 1),
+    )
+    yield* beginSlide('finishTermExplanation');
+
 });

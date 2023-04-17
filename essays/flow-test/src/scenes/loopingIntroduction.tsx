@@ -57,7 +57,6 @@ export default makeScene2D(function* (view) {
     yield aCircle().position.x(-circleRadius*2,1),
     yield bCircle().position.x(circleRadius*2,1)
   )
-  yield* beginSlide('drawBeziers');
 
 
   const lineMargin = 12
@@ -93,6 +92,7 @@ export default makeScene2D(function* (view) {
     yield aToBBezier().end(1, 1),
     yield bToABezier().end(1, 1)
   )
+  yield* beginSlide('drawBeziers');
   const coinImageRef = createRef<Img>();
   yield mainRef().add(<Img ref={coinImageRef} src={coinsImageSource} width={0} height={0} x={-circleRadius} y={0} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}/>)
   
@@ -107,10 +107,10 @@ export default makeScene2D(function* (view) {
     yield coinImageRef().size(new Vector2(100,100), 6/8),
     yield coinImageRef().position(positions[1],6/8)
   )
-  yield* coinImageRef().position(positions[2],0.5)
-  yield* coinImageRef().position(positions[3],0.5)
-  yield* coinImageRef().position(positions[4],0.5)
-  yield* coinImageRef().position(positions[0],0.5) 
+  yield* coinImageRef().position(positions[2],0.25)
+  yield* coinImageRef().position(positions[3],0.25)
+  yield* coinImageRef().position(positions[4],0.25)
+  yield* coinImageRef().position(positions[0],0.25) 
   yield* coinImageRef().size(new Vector2(0,0), 4/8)
   
   yield* beginSlide('labelBankingSystem');
