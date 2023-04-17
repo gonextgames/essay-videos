@@ -105,30 +105,43 @@ export default makeScene2D(function* (view) {
         yield leverageTxtRef().fill("#ffaa00", 1)
     )
 
-    var images = [cryOnionOneImageSource, cryOnionTwoImageSource, cryOnionThreeImageSource]
     var imageReferences = Array<Reference<Img>>()
-    var generators = []
-    for(var i = 0 ; i < images.length ; i++) {
-        var cryImageRef = createRef<Img>()
-        var onionPosition = new Vector2(-150,25)
+    var themeCircleRef = createRef<Circle>()
+    yield mainRef().add(<Circle ref={themeCircleRef} fill={"lightseagreen"} x={0} y={-(1080/2)-100} size={new Vector2(200,200)}>
+        <Txt fontSize={45} fill={"#fff"} lineHeight={45} fontFamily={'JetBrains Mono'} shadowColor={"#030303"} shadowOffset={blurOffset} shadowBlur={blur}>Theme</Txt>
+    </Circle>)
+    var generators = [themeCircleRef().position.y(-300, 1)]
+    for(var i = 0 ; i < 3 ; i++) {
+        var otherOnionRef = createRef<Img>()
         yield mainRef().add(<Img 
-            ref={cryImageRef} 
-            src={images[i]} 
-            offsetX={1} x={(-1920/2)+1920/3*(i+1)} y={1080*1.5} 
-            width={1920/3} height={1080}
+            ref={otherOnionRef} 
+            src={onionImageSource}  
+            position={onionPosition}
+            width={0} height={0}
             zIndex={-1}
         />)
-        imageReferences.push(cryImageRef)
-        generators.push(cryImageRef().position.y(0,1))
+        imageReferences.push(otherOnionRef)
+        generators.push(yield otherOnionRef().size(new Vector2(200, 200),1))
+        generators.push(yield otherOnionRef().position(new Vector2(-70-(i*75),-80),1))
     }
+    yield* all(...generators) 
 
-    yield* all(...generators)
+    var leverageLine = createRef<CubicBezier>()
+    onionArrowStart = new Vector2(onionPosition.x, onionPosition.y)
+    onionArrowEnd = new Vector2(-50, onionPosition.y-220)
+    yield mainRef().add(<CubicBezier
+        ref={leverageLine}
+        lineWidth={12}
+        stroke={'#ffaa00'}
+        p0={onionArrowStart}
+        p1={onionArrowStart}
+        p2={onionArrowEnd}
+        p3={onionArrowEnd}
+        end={0}
+        endArrow
+        shadowColor={"#030303"} shadowOffset={new Vector2(3,3)} shadowBlur={3}
+    />)
+    yield* leverageLine().end(1,1)
 
-    yield* beginSlide("hideOnions")
-    generators = [yield leverageTxtRef().fill("#fff", 1)]
-    for(var ref of imageReferences) {
-        generators.push(ref().position.y(-1080,1))
-    }
-    yield* all(...generators)
     yield* beginSlide("endMetrics")
 })
