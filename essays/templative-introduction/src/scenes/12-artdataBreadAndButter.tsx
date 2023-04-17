@@ -9,7 +9,7 @@ import {Img} from '@motion-canvas/2d/lib/components';
 import poisonDrip from "../images/dripping-tube.png"
 import fireBreath from "../images/fire-breath.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
-import nodes from "../nodes"
+import nodes from "../../../../common/nodes"
 
 export default makeScene2D(function* (view) {
   const visualStudioRef = createRef<Rect>();

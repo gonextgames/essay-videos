@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "timeEvents": [
+    {
+      "name": "panAcrossBoard",
+      "targetTime": 0
+    },
+    {
+      "name": "showBox",
+      "targetTime": 1
+    },
+    {
+      "name": "shrinkBoard",
+      "targetTime": 1.5
+    },
+    {
+      "name": "showAltoids",
+      "targetTime": 2.5416666666666665
+    },
+    {
+      "name": "shrinkBox",
+      "targetTime": 1.9999999999999998
+    },
+    {
+      "name": "endScene",
+      "targetTime": 3.4859384797780164
+    }
+  ],
+  "seed": 2243798864
+}

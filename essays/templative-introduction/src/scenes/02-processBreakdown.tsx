@@ -11,7 +11,8 @@ import artImg from "../images/mona-lisa.png"
 import notebookImg from "../images/notebook.png"
 import stressImg from "../images/stress.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
-import nodes from "../nodes"
+import nodes from "../../../../common/nodes"
+
 
 function *swingImgIn(parent: Reference<Node>, src: string, sizeRatio:number, position: Vector2) {
   var imageRef = yield* nodes.showImg(parent, src, sizeRatio, 2000, position.y, 0)

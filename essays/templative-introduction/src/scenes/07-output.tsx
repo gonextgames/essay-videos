@@ -9,7 +9,7 @@ import {Img} from '@motion-canvas/2d/lib/components';
 import gamecrafterImg from "../images/gameGrafterUpload.png"
 import tabletopImg from "../images/playgroundExample.png"
 import { interpolation } from '@motion-canvas/2d/lib/decorators';
-import nodes from "../nodes"
+import nodes from "../../../../common/nodes"
 
 export default makeScene2D(function* (view) {
   const visualStudioRef = createRef<Rect>();
