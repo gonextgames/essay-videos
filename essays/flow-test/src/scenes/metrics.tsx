@@ -125,7 +125,7 @@ export default makeScene2D(function* (view) {
     yield* all(...generators)
 
     yield* beginSlide("hideOnions")
-    generators = [leverageTxtRef().fill("#fff", 1)]
+    generators = [yield leverageTxtRef().fill("#fff", 1)]
     for(var ref of imageReferences) {
         generators.push(ref().position.y(-1080,1))
     }

@@ -220,7 +220,7 @@ export default makeScene2D(function* (view) {
 
     yield* beginSlide('showAbstraction');
 
-    generators = [controlRectRef().position.y((600/2)-105,1)]
+    generators = [yield controlRectRef().position.y((600/2)-105,1)]
     for (var i = 0 ; i < radialCircles.length; i ++) {
         generators.push(radialCircles[i]().size(new Vector2(0,0), 1))
     }    
@@ -280,14 +280,19 @@ export default makeScene2D(function* (view) {
     yield* beginSlide('explainMinAbstraction');
 
     var sizeZero = new Vector2(0,0)
+    yield controlRectRef().position.y((600/2)-105,2)
     generators = [
-        yield controlRectRef().position.y((600/2)-105,1),
+        ,
     ]
     for (var i = 0 ; i < 3; i ++) {
         for (var z = 0 ; z < 3; z ++) {
             generators.push(childrensChildren[i][z]().position(sizeZero, 1))
             generators.push(childrensChildren[i][z]().size(sizeZero, 1))
         }
+    }    
+    yield* all(...generators);
+    generators = []
+    for (var i = 0 ; i < 3; i ++) {
         generators.push(children[i]().position(sizeZero, 1))
         generators.push(children[i]().size(sizeZero, 1))
     }    
