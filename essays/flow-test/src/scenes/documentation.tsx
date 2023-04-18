@@ -14,41 +14,61 @@ export default makeScene2D(function* (view) {
     yield view.add(
         <Rect size={new Vector2(1920,1080)} layout gap={10} direction={"row"} ref={mainRef}>
             <Rect ref={fileExplorerRectRef} fill={"#202020"} grow={1} paddingTop={60} direction={"column"} gap={0}/>
-            <Rect ref={fileBodyRectRef} fill={"#202020"} grow={9} padding={30} paddingTop={45} direction={"column"}/>
+            <Rect ref={fileBodyRectRef} fill={"#141414"} grow={9} padding={30} paddingTop={45} direction={"column"}/>
         </Rect>
     )
 
     var files = [
         {
-            name: "1 Effort & Meaning Economy",
+            name: "v Systems",
             explanation: "",
             indents: 0
         },
         {
-            name: "1a Time Investment Ecology",
+            name: "1 Effort & Meaning Economy",
             explanation: "",
             indents: 1
+        },
+        {
+            name: "1a Time Investment Ecology",
+            explanation: "",
+            indents: 2
         },
         
         {
             name: "1a1 Money & QoL Economy",
             explanation: "",
-            indents: 2
+            indents: 3
         },
         {
             name: "1a1a Banking Engine",
             explanation: "",
-            indents: 3
+            indents: 4
         },
         {
-            name: "1b Boredom Brake",
+            name: "1a1b Boredom Brake",
             explanation: "",
-            indents: 2
+            indents: 4
+        },
+        {
+            name: "v Value Chains",
+            explanation: "",
+            indents: 0
+        },
+        {
+            name: "COMPLETION Buy every Album",
+            explanation: "",
+            indents: 1
+        },
+        {
+            name: "DESTRUCTION Buy Fireworks",
+            explanation: "",
+            indents: 1
         },
     ]
     for(var i = 0 ; i < files.length; i++) {
-        yield fileExplorerRectRef().add(<Rect fill={i != 3 ? "#202020":"#303030"} width={"100%"} height={60} paddingLeft={30+(files[i]["indents"]*20)}>
-            <Txt offsetX={-1} fontSize={30} fill={i != 3 ? "#aaa":"#fff"} lineHeight={60} fontFamily={'JetBrains Mono'} shadowColor={"#030303"} shadowOffset={new Vector2(3,3)} shadowBlur={3}>
+        yield fileExplorerRectRef().add(<Rect fill={i != 4 ? "#202020":"#303030"} width={"100%"} height={60} paddingLeft={30+(files[i]["indents"]*20)}>
+            <Txt offsetX={-1} fontSize={30} fill={i != 4 ? "#aaa":"#fff"} lineHeight={60} fontFamily={'JetBrains Mono'} shadowColor={"#030303"} shadowOffset={new Vector2(3,3)} shadowBlur={3}>
                 {files[i]["name"]}
             </Txt>
         </Rect>)
@@ -57,8 +77,8 @@ export default makeScene2D(function* (view) {
         "Banking Engine",
         "A system that makes money through interest with the bank.",
         "Value Chains",
-        "- Find a new card",
-        "- Meet my banker",
+        "- COMPLETION Buy every Album",
+        "- DESTRUCTION Buy Fireworks",
     ]
     for(var i = 0 ; i < documentInfo.length; i++) {
         yield fileBodyRectRef().add(

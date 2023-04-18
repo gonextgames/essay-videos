@@ -95,7 +95,7 @@ export default makeScene2D(function* (view) {
         rectReferences.push(rectReference)
     }
 
-    yield* slideTransition(Direction.Left);
+    yield* slideTransition(Direction.Right);
 
     
     var moveRectTo = (1080/2)+200

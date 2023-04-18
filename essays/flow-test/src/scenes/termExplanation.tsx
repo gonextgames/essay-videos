@@ -18,6 +18,7 @@ function* createRadialCircles(parent: Reference<Node>, circleCount: number, show
         var yPosition = Math.sin(angle*angleIndex) * 200
         var reference = createRef<Circle>()
         parent().add(<Circle 
+            clip={true} 
             ref={reference}
             x={200+xPosition}
             y={yPosition}
@@ -78,6 +79,18 @@ function* createThreeChildren(parent: Reference<Circle>, result: Array<Reference
     }
 }
 
+function* popText(textReference: Reference<Txt>)
+{
+    yield* all(
+        yield textReference().fill("#fff", 4/8),
+        yield textReference().fontSize(60, 4/8)
+    )
+    yield* all(
+        yield textReference().fill("#fff", 4/8),
+        yield textReference().fontSize(30, 4/8)
+    )
+}
+
 export default makeScene2D(function* (view) {
     var mainRef = createRef<Rect>();
     var titleTxtRef = createRef<Txt>();
@@ -110,11 +123,11 @@ export default makeScene2D(function* (view) {
         yield abstractionTxtRef().fill("#ffffff00", 1/8),
         yield sliderRectRef().position.x((1920/2)-200,1)
     )
-
+    
     var radialCircles = yield* createRadialCircles(mainRef, 5, 3)
     var bezierReferences = yield* createBezierReferences(mainRef, 3, radialCircles)
 
-    var generators = [];
+    var generators = [yield popText(complexityTxtRef)];
     for (var i = 0 ; i < radialCircles.length ; i++) {
         generators.push(radialCircles[i]().size(new Vector2(150,150), 1))
     }
@@ -164,10 +177,11 @@ export default makeScene2D(function* (view) {
     yield* beginSlide('showAgency');
     generators = [
         yield controlRectRef().position.y(0,1),
-        yield agencyTxtRef().fill("#fff", 1),
-        yield complexityTxtRef().fill("#ffffff00", 1),
-        yield abstractionTxtRef().fill("#ffffff00", 1),
+        yield complexityTxtRef().fill("#ffffff00", 1/8),
+        yield abstractionTxtRef().fill("#ffffff00", 1/8),
+        yield popText(agencyTxtRef)
     ];
+
     for (const ref of Object.values(bezierReferences)) {
         generators.push(ref().start(1,1));
     }    
@@ -188,6 +202,7 @@ export default makeScene2D(function* (view) {
     generators.push(valueChainBezierReference().end(1,2))
 
     yield* all(...generators);
+    
 
     yield* beginSlide('explainMaxAgency');
     generators = [
@@ -242,9 +257,9 @@ export default makeScene2D(function* (view) {
     var newSize = new Vector2(300,150)
     yield* all(
         yield controlRectRef().position.y(0,1),
-        yield abstractionTxtRef().fill("#fff", 1),
+        yield popText(abstractionTxtRef),
         yield complexityTxtRef().fill("#ffffff00", 1),
-        yield agencyTxtRef().fill("#ffffff00", 1),
+        yield agencyTxtRef().fill("#ffffff00", 1/8),
 
         yield systemExampleRef().size(new Vector2(600,300), 1),
         
@@ -286,14 +301,14 @@ export default makeScene2D(function* (view) {
     ]
     for (var i = 0 ; i < 3; i ++) {
         for (var z = 0 ; z < 3; z ++) {
-            generators.push(childrensChildren[i][z]().position(sizeZero, 1))
+            // generators.push(childrensChildren[i][z]().position(sizeZero, 1))
             generators.push(childrensChildren[i][z]().size(sizeZero, 1))
         }
     }    
     yield* all(...generators);
     generators = []
     for (var i = 0 ; i < 3; i ++) {
-        generators.push(children[i]().position(sizeZero, 1))
+        // generators.push(children[i]().position(sizeZero, 1))
         generators.push(children[i]().size(sizeZero, 1))
     }    
     yield* all(...generators);

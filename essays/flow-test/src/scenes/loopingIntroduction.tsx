@@ -10,7 +10,7 @@ import {slideTransition} from '@motion-canvas/core/lib/transitions';
 function *createLabeledCircle(parent: Reference<Node>, name: string, radius: number, position: Vector2) {
   const circleRef = createRef<Circle>()
   var fontSize = (radius*2)-5
-  yield parent().add(<Circle ref={circleRef} width={0} height={0} x={position.x} y={position.y} fill={'lightseagreen'} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
+  yield parent().add(<Circle ref={circleRef} clip={true} width={0} height={0} x={position.x} y={position.y} fill={'lightseagreen'} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
     <Txt x={0} y={15} fill={"#ffffff00"} offsetX={0} offsetY={0} fontSize={0} lineHeight={35} fontFamily={'JetBrains Mono'}>{name}</Txt>
   </Circle>)
 
@@ -24,17 +24,17 @@ export default makeScene2D(function* (view) {
   )
 
   const newSystemCircle = createRef<Circle>()
-  yield mainRef().add(<Circle ref={newSystemCircle} width={0} height={0} x={0} y={0} fill={"lightseagreen"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}/>)
+  yield mainRef().add(<Circle clip={true} ref={newSystemCircle} width={0} height={0} x={0} y={0} fill={"lightseagreen"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}/>)
 
   var radianAngle = Math.PI*2/3
   var distance = 100
   const secondSystemCircleRef = createRef<Circle>()
-  yield mainRef().add(<Circle ref={secondSystemCircleRef} width={0} height={0} x={Math.cos(radianAngle*2)*distance} y={Math.sin(radianAngle*2)*distance} fill={"#ffaa00"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
+  yield mainRef().add(<Circle clip={true} ref={secondSystemCircleRef} width={0} height={0} x={Math.cos(radianAngle*2)*distance} y={Math.sin(radianAngle*2)*distance} fill={"#ffaa00"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
     <Txt x={0} y={0} fontSize={30} fill={"#141414"} lineHeight={35} fontFamily={'JetBrains Mono'}>Spending</Txt>
   </Circle>)
 
   const thirdSystemCircleRef = createRef<Circle>()
-  yield mainRef().add(<Circle ref={thirdSystemCircleRef} width={0} height={0} x={Math.cos(radianAngle*3)*distance} y={Math.sin(radianAngle*3)*distance} fill={"#ffaa00"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
+  yield mainRef().add(<Circle clip={true}  ref={thirdSystemCircleRef} width={0} height={0} x={Math.cos(radianAngle*3)*distance} y={Math.sin(radianAngle*3)*distance} fill={"#ffaa00"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}>
     <Txt x={0} y={0} fontSize={30} fill={"#141414"} lineHeight={35} fontFamily={'JetBrains Mono'}>Salary</Txt>
   </Circle>)
 
