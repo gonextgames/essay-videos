@@ -6,6 +6,7 @@ import {Vector2, Direction} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
 import coinsImageSource from "../images/penny.png"
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
+import {waitUntil} from '@motion-canvas/core/lib/flow';
 
 function *createLabeledCircle(parent: Reference<Node>, name: string, radius: number, position: Vector2) {
   const circleRef = createRef<Circle>()
@@ -92,7 +93,7 @@ export default makeScene2D(function* (view) {
     yield aToBBezier().end(1, 1),
     yield bToABezier().end(1, 1)
   )
-  yield* beginSlide('drawBeziers');
+  yield* waitUntil('drawBeziers');
   const coinImageRef = createRef<Img>();
   yield mainRef().add(<Img ref={coinImageRef} src={coinsImageSource} width={0} height={0} x={-circleRadius} y={0} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}/>)
   
@@ -113,14 +114,14 @@ export default makeScene2D(function* (view) {
   yield* coinImageRef().position(positions[0],0.25) 
   yield* coinImageRef().size(new Vector2(0,0), 4/8)
   
-  yield* beginSlide('labelBankingSystem');
+  yield* waitUntil('labelBankingSystem');
 
   yield* systemCircleRef().size(new Vector2(600,600), 1)
   const systemLabelRef = createRef<Txt>()
   yield systemCircleRef().add(<Txt ref={systemLabelRef} x={0} y={-150} offsetX={0} offsetY={1} fontSize={35} fill={"#14141400"} lineHeight={35} fontFamily={'JetBrains Mono'}>Banking</Txt>)
   yield* systemLabelRef().fill("#141414ff",6/8)
 
-  yield* beginSlide('hide BankingSystem');  
+  yield* waitUntil('hide BankingSystem');  
 
   var durationSeconds = 6/8
   yield* all(
@@ -147,7 +148,7 @@ export default makeScene2D(function* (view) {
   yield newSystemCircle().add(<Txt y={-200} fontSize={30} fill={"#141414"} lineHeight={35} fontFamily={'JetBrains Mono'}>Money & QoL Economy</Txt>)
   yield* newSystemCircle().size(new Vector2(600,600), 6/8)
 
-  yield* beginSlide('outSystems');
+  yield* waitUntil('outSystems');
   
   const outerSystemCircle = createRef<Circle>()
   yield mainRef().add(<Circle ref={outerSystemCircle} width={0} zIndex={-2} height={0} x={-300} y={-300} fill={"#ffaa00"} shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}/>)
@@ -161,6 +162,6 @@ export default makeScene2D(function* (view) {
   yield outerSystemCircle().add(<Txt ref={effortMeaningTxtRef} x={200} y={-100} fontSize={0} fill={"#141414"} lineHeight={35} fontFamily={'JetBrains Mono'}>Effort & Meaning Economy</Txt>)
   yield* effortMeaningTxtRef().fontSize(30, 4/8)
 
-  yield* beginSlide('endSlide');
+  yield* waitUntil('endSlide');
 
 });

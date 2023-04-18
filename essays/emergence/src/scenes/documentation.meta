@@ -1,5 +1,10 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "endDocExplanation",
+      "targetTime": 38.928841587396796
+    }
+  ],
   "seed": 1485682265
 }

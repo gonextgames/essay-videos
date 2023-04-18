@@ -3,7 +3,7 @@ import {Txt, Rect, CubicBezier} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {beginSlide, createRef, Reference,useLogger} from '@motion-canvas/core/lib/utils';
-import {all,waitFor} from '@motion-canvas/core/lib/flow';
+import {all,waitUntil} from '@motion-canvas/core/lib/flow';
 import { Bezier } from '@motion-canvas/2d/lib/components/Bezier';
 import { diff } from 'code-fns';
 
@@ -82,7 +82,7 @@ export default makeScene2D(function* (view) {
     }
 
     yield* slideTransition(Direction.Right);
-    yield* beginSlide("showValueChains")
+    yield* waitUntil("showValueChains")
 
     var generators = []
     for (var valueChainReference of valueChainReferences)
@@ -138,10 +138,10 @@ export default makeScene2D(function* (view) {
         meaningTxtReferences.push(txtReference)
     }
 
-    yield* beginSlide("showMeaning")
+    yield* waitUntil("showMeaning")
     yield* meaningRectRef().position.x(destinationX,1)
 
-    yield* beginSlide("showCorrectMeaning")
+    yield* waitUntil("showCorrectMeaning")
 
     var lastValueChainReference = valueChainReferences[valueChainReferences.length-1]
     var shelf = lastValueChainReference().children()[3] as Txt
@@ -167,5 +167,5 @@ export default makeScene2D(function* (view) {
     )
     console.log(meaningTxtReferences[5]().position())
 
-    yield* beginSlide("endValueChain")
+    yield* waitUntil("endValueChain")
 })

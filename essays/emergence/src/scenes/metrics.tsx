@@ -9,6 +9,7 @@ import onionImageSource from "../images/onion.png"
 import cryOnionOneImageSource from "../images/cryOnionOne.jpg"
 import cryOnionTwoImageSource from "../images/cryOnionTwo.jpg"
 import cryOnionThreeImageSource from "../images/cryOnionThree.jpg"
+import {waitUntil} from '@motion-canvas/core/lib/flow';
 
 import {Gradient} from '@motion-canvas/2d/lib/partials';
 import { Bezier } from '@motion-canvas/2d/lib/components/Bezier';
@@ -32,7 +33,7 @@ export default makeScene2D(function* (view) {
         </Rect>
     )
     yield* slideTransition(Direction.Top);
-    yield* beginSlide("explain")
+    yield* waitUntil("explain")
 
     var onionImageRef = createRef<Img>()
     var onionPosition = new Vector2(-150,25)
@@ -64,7 +65,7 @@ export default makeScene2D(function* (view) {
         yield depthTxtRef().fill("#ffaa00", 1),
     )
     yield* depthLine().end(1,1)
-    yield* beginSlide("elegantExplanation")
+    yield* waitUntil("elegantExplanation")
     onionArrowStart = new Vector2(onionPosition.x+125, onionPosition.y+125)
     onionArrowEnd = new Vector2(onionPosition.x+25, onionPosition.y+25)
     
@@ -99,7 +100,7 @@ export default makeScene2D(function* (view) {
     )
     yield* elegantArrow().start(1,1)
 
-    yield* beginSlide("explainLeverage")
+    yield* waitUntil("explainLeverage")
     yield* all(
         yield eleganceTxtRef().fill("#fff", 1),
         yield leverageTxtRef().fill("#ffaa00", 1)
@@ -143,5 +144,5 @@ export default makeScene2D(function* (view) {
     />)
     yield* leverageLine().end(1,1)
 
-    yield* beginSlide("endMetrics")
+    yield* waitUntil("endMetrics")
 })

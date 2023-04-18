@@ -8,7 +8,8 @@ import systemTypes from './scenes/systemTypes?scene';
 import valueChains from './scenes/valueChains?scene';
 import documentation from './scenes/documentation?scene';
 import thanks from './scenes/thanks?scene';
-
+import emergencePresentationFull from './audio/emergencePresentationFull.wav';
 export default makeProject({
   scenes: [introduction, loopingIntroduction,systemTypes, termExplanation, valueChains, metrics,  documentation, thanks],
+  audio: emergencePresentationFull
 });

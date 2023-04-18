@@ -1,5 +1,50 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "showComplexity",
+      "targetTime": 14.402484612009287
+    },
+    {
+      "name": "explainMaxComplexity",
+      "targetTime": 26.60669690373163
+    },
+    {
+      "name": "explainMinComplexity",
+      "targetTime": 32.92754915819163
+    },
+    {
+      "name": "showAgency",
+      "targetTime": 44.542744244385716
+    },
+    {
+      "name": "explainMaxAgency",
+      "targetTime": 49.67254066227069
+    },
+    {
+      "name": "explainMinAgency",
+      "targetTime": 52.471462379467646
+    },
+    {
+      "name": "showAbstraction",
+      "targetTime": 55.11872365203868
+    },
+    {
+      "name": "explainMaxAbstraction",
+      "targetTime": 59.316375789964106
+    },
+    {
+      "name": "explainMinAbstraction",
+      "targetTime": 62.76668158509785
+    },
+    {
+      "name": "reset",
+      "targetTime": 69.8835842775441
+    },
+    {
+      "name": "finishTermExplanation",
+      "targetTime": 79.59375746353652
+    }
+  ],
   "seed": 384626082
 }

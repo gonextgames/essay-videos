@@ -1,5 +1,26 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "drawBeziers",
+      "targetTime": 9.77950523411548
+    },
+    {
+      "name": "labelBankingSystem",
+      "targetTime": 15.364702963690073
+    },
+    {
+      "name": "hide BankingSystem",
+      "targetTime": 36.10332250762474
+    },
+    {
+      "name": "outSystems",
+      "targetTime": 47.06957176095578
+    },
+    {
+      "name": "endSlide",
+      "targetTime": 58.72521618821236
+    }
+  ],
   "seed": 527516929
 }

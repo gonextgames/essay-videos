@@ -5,6 +5,8 @@ import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {beginSlide, createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
+import {waitUntil} from '@motion-canvas/core/lib/flow';
+
 import onionImageSource from "../images/onion.png"
 import cryOnionOneImageSource from "../images/cryOnionOne.jpg"
 import cryOnionTwoImageSource from "../images/cryOnionTwo.jpg"
@@ -99,16 +101,16 @@ export default makeScene2D(function* (view) {
 
     
     var moveRectTo = (1080/2)+200
-    yield* beginSlide("showSystems")
+    yield* waitUntil("showSystems")
     var totalTime = 1
     
     yield* rectReferences[0]().position.y(moveRectTo, 6/8)
-    yield* beginSlide("showEconomy")
+    yield* waitUntil("showEconomy")
     yield* rectReferences[1]().position.y(moveRectTo, 6/8)
-    yield* beginSlide("showBrake")
+    yield* waitUntil("showBrake")
     yield* rectReferences[2]().position.y(moveRectTo, 6/8)
-    yield* beginSlide("showEcology")
+    yield* waitUntil("showEcology")
     yield* rectReferences[3]().position.y(moveRectTo, 6/8)
 
-    yield* beginSlide("endSlide")
+    yield* waitUntil("endSlide")
 })

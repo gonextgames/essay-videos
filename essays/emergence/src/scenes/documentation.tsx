@@ -6,6 +6,7 @@ import {Vector2, Direction} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
 import coinsImageSource from "../images/penny.png"
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
+import {waitUntil} from '@motion-canvas/core/lib/flow';
 
 export default makeScene2D(function* (view) {
     var mainRef = createRef<Rect>();
@@ -88,5 +89,5 @@ export default makeScene2D(function* (view) {
     }
 
     yield* slideTransition(Direction.Right);
-    yield* beginSlide("endDocExplanation")
+    yield* waitUntil("endDocExplanation")
 })

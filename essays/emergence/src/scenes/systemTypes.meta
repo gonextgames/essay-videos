@@ -1,5 +1,26 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "showSystems",
+      "targetTime": 15.476706252345389
+    },
+    {
+      "name": "showEconomy",
+      "targetTime": 22.128336280374718
+    },
+    {
+      "name": "showBrake",
+      "targetTime": 28.502955407851754
+    },
+    {
+      "name": "showEcology",
+      "targetTime": 33.61043941795563
+    },
+    {
+      "name": "endSlide",
+      "targetTime": 39.842134199976265
+    }
+  ],
   "seed": 1651236322
 }

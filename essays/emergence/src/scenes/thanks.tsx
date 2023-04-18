@@ -3,6 +3,7 @@ import {Txt} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {beginSlide} from '@motion-canvas/core/lib/utils';
 import {Direction, Vector2} from '@motion-canvas/core/lib/types';
+import {waitUntil} from '@motion-canvas/core/lib/flow';
 
 export default makeScene2D(function* (view) {
     yield view.add(
@@ -11,5 +12,5 @@ export default makeScene2D(function* (view) {
         </>
     )
     yield* slideTransition(Direction.Right);
-    yield* beginSlide("endOfPresentation")
+    yield* waitUntil("endOfPresentation")
 })

@@ -1,5 +1,22 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "showValueChains",
+      "targetTime": 3.1269251031272334
+    },
+    {
+      "name": "showMeaning",
+      "targetTime": 23.915570655130246
+    },
+    {
+      "name": "showCorrectMeaning",
+      "targetTime": 34.8875313745277
+    },
+    {
+      "name": "endValueChain",
+      "targetTime": 40.02438089705682
+    }
+  ],
   "seed": 693697698
 }

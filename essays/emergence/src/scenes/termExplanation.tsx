@@ -7,6 +7,8 @@ import {Direction, Vector2} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
 import {Gradient} from '@motion-canvas/2d/lib/partials';
 import { Bezier } from '@motion-canvas/2d/lib/components/Bezier';
+import {waitUntil} from '@motion-canvas/core/lib/flow';
+
 import nodes from "../nodes"
 function* createRadialCircles(parent: Reference<Node>, circleCount: number, shownCircleCount: number) {
     var children = new Array<Reference<Circle>>
@@ -106,7 +108,7 @@ export default makeScene2D(function* (view) {
         </Rect>
     )
     yield* slideTransition(Direction.Right);
-    yield* beginSlide('showComplexity');
+    yield* waitUntil('showComplexity');
     var margin = 60
 
     var sliderRectRef = createRef<Rect>();
@@ -136,7 +138,7 @@ export default makeScene2D(function* (view) {
     }
     yield* all(...generators)
 
-    yield* beginSlide('explainMaxComplexity');
+    yield* waitUntil('explainMaxComplexity');
 
     var angle = Math.PI * 2 / 5
     var newPositions = Array<Vector2>()
@@ -163,7 +165,7 @@ export default makeScene2D(function* (view) {
     }
     yield* all(...generators);
 
-    yield* beginSlide('explainMinComplexity');
+    yield* waitUntil('explainMinComplexity');
     yield* all(
         yield controlRectRef().position.y((600/2)-105,1),
         yield bezierReferences[0]().start(1,1),
@@ -174,7 +176,7 @@ export default makeScene2D(function* (view) {
         yield bezierReferences[8]().start(1,1),
     )
 
-    yield* beginSlide('showAgency');
+    yield* waitUntil('showAgency');
     generators = [
         yield controlRectRef().position.y(0,1),
         yield complexityTxtRef().fill("#ffffff00", 1/8),
@@ -204,7 +206,7 @@ export default makeScene2D(function* (view) {
     yield* all(...generators);
     
 
-    yield* beginSlide('explainMaxAgency');
+    yield* waitUntil('explainMaxAgency');
     generators = [
         controlRectRef().position.y(-(600/2)+105,1)
     ]
@@ -224,7 +226,7 @@ export default makeScene2D(function* (view) {
     generators.push(otherValueChainBezierReference().end(1,2))
     yield* all(...generators)
 
-    yield* beginSlide('explainMinAgency');
+    yield* waitUntil('explainMinAgency');
 
     yield* all(
         yield valueChainBezierReference().start(1,1),
@@ -233,7 +235,7 @@ export default makeScene2D(function* (view) {
     )
     
 
-    yield* beginSlide('showAbstraction');
+    yield* waitUntil('showAbstraction');
 
     generators = [yield controlRectRef().position.y((600/2)-105,1)]
     for (var i = 0 ; i < radialCircles.length; i ++) {
@@ -272,7 +274,7 @@ export default makeScene2D(function* (view) {
     }    
     yield* all(...generators);
 
-    yield* beginSlide('explainMaxAbstraction');
+    yield* waitUntil('explainMaxAbstraction');
     
     var childrensChildren = new Array<Array<Reference<Circle>>>()
     for(var c = 0 ; c < children.length ; c++) {
@@ -292,7 +294,7 @@ export default makeScene2D(function* (view) {
     yield* all(...generators);
 
 
-    yield* beginSlide('explainMinAbstraction');
+    yield* waitUntil('explainMinAbstraction');
 
     var sizeZero = new Vector2(0,0)
     yield controlRectRef().position.y((600/2)-105,2)
@@ -313,7 +315,7 @@ export default makeScene2D(function* (view) {
     }    
     yield* all(...generators);
 
-    yield* beginSlide('reset');
+    yield* waitUntil('reset');
     yield* all(
         yield sliderRectRef().position.x((1920/2)+200,1),
         yield controlRectRef().position.y(0,1),
@@ -333,6 +335,6 @@ export default makeScene2D(function* (view) {
         yield agencyTxtRef().fill("#fff", 1.2),
         yield agencyTxtRef().offset(new Vector2(-1, 0), 1),
     )
-    yield* beginSlide('finishTermExplanation');
+    yield* waitUntil('finishTermExplanation');
 
 });

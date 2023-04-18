@@ -1,5 +1,22 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "explain",
+      "targetTime": 12.118857828646773
+    },
+    {
+      "name": "elegantExplanation",
+      "targetTime": 21.65159279354306
+    },
+    {
+      "name": "explainLeverage",
+      "targetTime": 32.89870966306493
+    },
+    {
+      "name": "endMetrics",
+      "targetTime": 39.75160723926643
+    }
+  ],
   "seed": 3240712596
 }
