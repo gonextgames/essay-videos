@@ -12,5 +12,5 @@ export default makeScene2D(function* (view) {
         </>
     )
     yield* slideTransition(Direction.Right);
-    yield* waitUntil("endOfPresentation")
+    yield* beginSlide("endOfPresentation")
 })

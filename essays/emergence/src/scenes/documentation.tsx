@@ -89,5 +89,5 @@ export default makeScene2D(function* (view) {
     }
 
     yield* slideTransition(Direction.Right);
-    yield* waitUntil("endDocExplanation")
+    yield* beginSlide("endDocExplanation")
 })

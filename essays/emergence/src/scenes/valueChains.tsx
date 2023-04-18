@@ -82,7 +82,7 @@ export default makeScene2D(function* (view) {
     }
 
     yield* slideTransition(Direction.Right);
-    yield* waitUntil("showValueChains")
+    yield* beginSlide("showValueChains")
 
     var generators = []
     for (var valueChainReference of valueChainReferences)
@@ -138,10 +138,10 @@ export default makeScene2D(function* (view) {
         meaningTxtReferences.push(txtReference)
     }
 
-    yield* waitUntil("showMeaning")
+    yield* beginSlide("showMeaning")
     yield* meaningRectRef().position.x(destinationX,1)
 
-    yield* waitUntil("showCorrectMeaning")
+    yield* beginSlide("showCorrectMeaning")
 
     var lastValueChainReference = valueChainReferences[valueChainReferences.length-1]
     var shelf = lastValueChainReference().children()[3] as Txt
@@ -167,5 +167,5 @@ export default makeScene2D(function* (view) {
     )
     console.log(meaningTxtReferences[5]().position())
 
-    yield* waitUntil("endValueChain")
+    yield* beginSlide("endValueChain")
 })

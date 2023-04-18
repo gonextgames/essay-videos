@@ -101,16 +101,16 @@ export default makeScene2D(function* (view) {
 
     
     var moveRectTo = (1080/2)+200
-    yield* waitUntil("showSystems")
+    yield* beginSlide("showSystems")
     var totalTime = 1
     
     yield* rectReferences[0]().position.y(moveRectTo, 6/8)
-    yield* waitUntil("showEconomy")
+    yield* beginSlide("showEconomy")
     yield* rectReferences[1]().position.y(moveRectTo, 6/8)
-    yield* waitUntil("showBrake")
+    yield* beginSlide("showBrake")
     yield* rectReferences[2]().position.y(moveRectTo, 6/8)
-    yield* waitUntil("showEcology")
+    yield* beginSlide("showEcology")
     yield* rectReferences[3]().position.y(moveRectTo, 6/8)
 
-    yield* waitUntil("endSlide")
+    yield* beginSlide("endSlide")
 })

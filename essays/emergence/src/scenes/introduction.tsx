@@ -13,6 +13,6 @@ export default makeScene2D(function* (view) {
         <Txt ref={txtRef} fontSize={40} fill={"#fff"} lineHeight={35} fontFamily={'JetBrains Mono'}>Compilation of Emergence Learnings</Txt>
     </Rect>
   );
-  yield* waitUntil('endOfIntroduction');
+  yield* beginSlide('endOfIntroduction');
     yield* txtRef().fill("#ffffff00", 4/8)
 });

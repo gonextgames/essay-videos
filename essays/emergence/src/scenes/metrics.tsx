@@ -33,7 +33,7 @@ export default makeScene2D(function* (view) {
         </Rect>
     )
     yield* slideTransition(Direction.Top);
-    yield* waitUntil("explain")
+    yield* beginSlide("explain")
 
     var onionImageRef = createRef<Img>()
     var onionPosition = new Vector2(-150,25)
@@ -65,7 +65,7 @@ export default makeScene2D(function* (view) {
         yield depthTxtRef().fill("#ffaa00", 1),
     )
     yield* depthLine().end(1,1)
-    yield* waitUntil("elegantExplanation")
+    yield* beginSlide("elegantExplanation")
     onionArrowStart = new Vector2(onionPosition.x+125, onionPosition.y+125)
     onionArrowEnd = new Vector2(onionPosition.x+25, onionPosition.y+25)
     
@@ -100,7 +100,7 @@ export default makeScene2D(function* (view) {
     )
     yield* elegantArrow().start(1,1)
 
-    yield* waitUntil("explainLeverage")
+    yield* beginSlide("explainLeverage")
     yield* all(
         yield eleganceTxtRef().fill("#fff", 1),
         yield leverageTxtRef().fill("#ffaa00", 1)
@@ -144,5 +144,5 @@ export default makeScene2D(function* (view) {
     />)
     yield* leverageLine().end(1,1)
 
-    yield* waitUntil("endMetrics")
+    yield* beginSlide("endMetrics")
 })
