@@ -2,8 +2,96 @@
   "version": 0,
   "timeEvents": [
     {
-      "name": "flip",
-      "targetTime": 0.17591076394425925
+      "name": "showCommunism",
+      "targetTime": 0.5374999999999999
+    },
+    {
+      "name": "hideCommunism",
+      "targetTime": 2.1718749999999996
+    },
+    {
+      "name": "shrink",
+      "targetTime": 3.1718749999999996
+    },
+    {
+      "name": "showCards",
+      "targetTime": 4.421875
+    },
+    {
+      "name": "showNumber",
+      "targetTime": 4.421875
+    },
+    {
+      "name": "showactions-guerrilla.jpg",
+      "targetTime": 4.921875
+    },
+    {
+      "name": "hideactions-guerrilla.jpg",
+      "targetTime": 5.421875
+    },
+    {
+      "name": "showactions-nuke.jpg",
+      "targetTime": 5.921875
+    },
+    {
+      "name": "showTinyactions-guerrilla.jpg",
+      "targetTime": 5.921875
+    },
+    {
+      "name": "hideactions-nuke.jpg",
+      "targetTime": 6.421875
+    },
+    {
+      "name": "showactions-spy.jpg",
+      "targetTime": 6.921875
+    },
+    {
+      "name": "showTinyactions-nuke.jpg",
+      "targetTime": 6.921875
+    },
+    {
+      "name": "hideactions-spy.jpg",
+      "targetTime": 7.421875
+    },
+    {
+      "name": "showactions-defector.jpg",
+      "targetTime": 7.921875
+    },
+    {
+      "name": "showTinyactions-spy.jpg",
+      "targetTime": 7.921875
+    },
+    {
+      "name": "hideactions-defector.jpg",
+      "targetTime": 8.421875
+    },
+    {
+      "name": "showactions-diplomat.jpg",
+      "targetTime": 8.921875
+    },
+    {
+      "name": "showTinyactions-defector.jpg",
+      "targetTime": 8.921875
+    },
+    {
+      "name": "hideactions-diplomat.jpg",
+      "targetTime": 9.421875
+    },
+    {
+      "name": "showactions-policeman.jpg",
+      "targetTime": 9.921875
+    },
+    {
+      "name": "showTinyactions-diplomat.jpg",
+      "targetTime": 9.921875
+    },
+    {
+      "name": "hideactions-policeman.jpg",
+      "targetTime": 10.421875
+    },
+    {
+      "name": "showTinyactions-policeman.jpg",
+      "targetTime": 10.921875
     }
   ],
   "seed": 687877201
