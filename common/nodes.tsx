@@ -1,9 +1,25 @@
 import {createRef, Reference} from '@motion-canvas/core/lib/utils'
 import {Img} from '@motion-canvas/2d/lib/components'
 import {CodeBlock} from '@motion-canvas/2d/lib/components/CodeBlock';
-import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components'
+import {Circle, Layout, Txt, Line, Rect, Node, CubicBezier} from '@motion-canvas/2d/lib/components'
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow'
 import {Direction, Vector2} from '@motion-canvas/core/lib/types'
+
+const QuickBezier = (props:{reference: Reference<CubicBezier>, startingPosition: Vector2, endingPosition: Vector2, lineWidth?: number}) => (
+    <CubicBezier
+        ref={props.reference}
+        lineWidth={props.lineWidth != null ? props.lineWidth: 6}
+        stroke={'lightseagreen'}
+        p0={props.startingPosition}
+        p1={props.startingPosition}
+        p2={props.endingPosition}
+        p3={props.endingPosition}
+        arrowSize={props.lineWidth != null ? props.lineWidth*2: 6}
+        endArrow
+        end={0}
+        shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}
+    />
+)
 
 function *showImg(parent: Reference<Node>, src: string, scale: number, x: number, y: number, rotation: number) {
     const reference = createRef<Img>()
@@ -56,7 +72,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
     const terminal = `$`
     const fileContents = `# Templative Introduction`
     
-    const layout = 
+    const layout = (
     <Layout layout gap={0} width={1920} height={1080}>
         <Rect grow={sidebarWidthRatio} padding={30} ref={sidebarColumnRef} fill={"#202020"} clip>
             <CodeBlock ref={fileStructureRef} language={`txt`} fill={"#ccc"} fontSize={35} lineHeight={50} fontFamily={'JetBrains Mono'} code={folder}></CodeBlock>
@@ -77,7 +93,7 @@ function *createFakeVisualStudioCode(parent: Reference<Node>, sidebarWidthRatio:
                 <CodeBlock  ref={terminalContentsRef} language={"txt"} code={terminal} fill={"#ccc"} fontSize={35} lineHeight={35} fontFamily={'JetBrains Mono'}/>
             </Rect>
         </Layout>
-    </Layout>
+    </Layout>)
 
     yield parent().add(layout)
     return {
@@ -112,5 +128,6 @@ export default {
     createFakeVisualStudioCode,
     updateSidebarWidthRatio,
     thrustNode,
-    shakeNode
+    shakeNode,
+    QuickBezier
 }
