@@ -8,8 +8,7 @@ import coinsImageSource from "../images/penny.png"
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {waitUntil} from '@motion-canvas/core/lib/flow';
 
-import admiralSource from "../images/actions-admiral.jpg"
-import actionBackSource from "../images/actions-back.jpg"
+import CapsAndHammersImages from "../capsAndHammersCards"
 
 import CardHelper from "../card"
 
@@ -25,7 +24,7 @@ export default makeScene2D(function* (view) {
     var shownWidth = size*widthRatio
     var shownHeight = size* heightRatio
     const admiralCardReference = createRef<Rect>()
-    yield mainRef().add(<CardHelper.Card rectReference={admiralCardReference} frontSrc={admiralSource} backSrc={actionBackSource} width={shownWidth} height={shownHeight} rotation={0}/>)
+    yield mainRef().add(<CardHelper.Card rectReference={admiralCardReference} frontSrc={CapsAndHammersImages.admiral} backSrc={CapsAndHammersImages.actionBack} width={shownWidth} height={shownHeight} rotation={0}/>)
 
     yield* waitUntil("flip")
     var durationSeconds = 1
