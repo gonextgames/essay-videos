@@ -1,7 +1,7 @@
 import {makeProject} from '@motion-canvas/core';
 
-import example from './scenes/example?scene';
+import introduction from './scenes/introduction?scene'; 
 
 export default makeProject({
-  scenes: [example],
+  scenes: [introduction],
 });
