@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "look",
+      "targetTime": 0
+    },
+    {
+      "name": "shown",
+      "targetTime": 1.6886786715957811
+    },
+    {
+      "name": "flipCardToEnemy",
+      "targetTime": 2.688678671595781
+    },
+    {
+      "name": "deployCards",
+      "targetTime": 4.188678671595781
+    },
+    {
+      "name": "mechanicsEnd",
+      "targetTime": 6.188678671595781
+    }
+  ],
+  "seed": 3567183491
+}

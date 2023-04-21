@@ -5,7 +5,7 @@ import {Circle, Layout, Txt, Line, Rect, Node, CubicBezier} from '@motion-canvas
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow'
 import {Direction, Vector2} from '@motion-canvas/core/lib/types'
 
-const QuickBezier = (props:{reference: Reference<CubicBezier>, startingPosition: Vector2, endingPosition: Vector2, lineWidth?: number}) => (
+const QuickBezier = (props:{reference?: Reference<CubicBezier>, startingPosition: Vector2, endingPosition: Vector2, lineWidth?: number, drawn?:boolean, compositeOperation?: GlobalCompositeOperation}) => (
     <CubicBezier
         ref={props.reference}
         lineWidth={props.lineWidth != null ? props.lineWidth: 6}
@@ -16,8 +16,9 @@ const QuickBezier = (props:{reference: Reference<CubicBezier>, startingPosition:
         p3={props.endingPosition}
         arrowSize={props.lineWidth != null ? props.lineWidth*2: 6}
         endArrow
-        end={0}
+        end={props.drawn!= null ? 1:0}
         shadowColor={"#030303"} shadowOffset={new Vector2(5,5)} shadowBlur={5}
+        compositeOperation={props.compositeOperation}
     />
 )
 

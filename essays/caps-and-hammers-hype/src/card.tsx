@@ -6,7 +6,7 @@ import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow'
 import {Direction, Vector2} from '@motion-canvas/core/lib/types'
 import { easeInBack, easeOutBack, linear } from '@motion-canvas/core/lib/tweening';
 
-import {createSignal, SimpleSignal} from '@motion-canvas/core/lib/signals';
+import {createSignal, SimpleSignal, SignalValue} from '@motion-canvas/core/lib/signals';
 
 
 type CardProps = {
@@ -14,8 +14,9 @@ type CardProps = {
     width: SimpleSignal<any, void>, height: SimpleSignal<any, void>,
     flipSignal: SimpleSignal<any, void>
     frontSrc: string, backSrc: string,
-    x?: number, y?: number,
+    x?: SignalValue<number>, y?: SignalValue<number>,
     rotation?: number,
+    compositeOperation?: GlobalCompositeOperation,
 }
 
 const Card = (props:CardProps) => {
@@ -34,13 +35,12 @@ const Card = (props:CardProps) => {
         }
         return [front*width, back*width]
     }
-
     return (<Rect 
         ref={props.rectReference}
         width={()=>props.width()} height={()=>props.height()}
-        position={new Vector2(props.x != null ? props.x : 0, props.y != null ? props.y : 0)}
+        x={props.x} y={props.y}
         rotation={props.rotation != null ? props.rotation : 0}
-        clip>
+        clip compositeOperation={props.compositeOperation != null ? props.compositeOperation : "source-over"}>
         
         <Img src={props.frontSrc} 
             width={() => widths()[0]} 

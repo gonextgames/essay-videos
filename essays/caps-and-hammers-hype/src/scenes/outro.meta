@@ -1,0 +1,18 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "showOriginalCountry",
+      "targetTime": 0
+    },
+    {
+      "name": "zoomOriginalCountry",
+      "targetTime": 0.18544056106945206
+    },
+    {
+      "name": "end",
+      "targetTime": 2.5248297090620198
+    }
+  ],
+  "seed": 4145026035
+}
