@@ -1,24 +1,28 @@
 import {makeScene2D} from '@motion-canvas/2d/lib/scenes';
 import {Circle, Txt, Rect, Node,CubicBezier} from '@motion-canvas/2d/lib/components';
-import {all, waitFor} from '@motion-canvas/core/lib/flow';
+import {all, waitFor,sequence} from '@motion-canvas/core/lib/flow';
 import {beginSlide, createRef, Reference} from '@motion-canvas/core/lib/utils';
 import {Vector2, Direction} from '@motion-canvas/core/lib/types';
 import {Img} from '@motion-canvas/2d/lib/components';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {waitUntil} from '@motion-canvas/core/lib/flow';
-import {createSignal} from '@motion-canvas/core/lib/signals';
+import {createSignal,SimpleSignal} from '@motion-canvas/core/lib/signals';
+import { easeInBack, easeInBounce, easeInCubic, easeInOutBack, easeInOutBounce, easeInOutCirc, easeInOutElastic, easeOutBack, easeOutBounce, easeOutCirc, easeOutCubic, easeOutElastic } from '@motion-canvas/core/lib/tweening';
 
 import tiktokOverlaySource from "../../../../common/tiktokOverlay.png"
 
 import CapsAndHammersImages from "../capsAndHammersCards"
 import CardHelper from "../card"
 import communismSource from "../images/communism.png"
-import { easeInBack, easeInBounce, easeInCubic, easeInOutBack, easeInOutBounce, easeInOutCirc, easeInOutElastic, easeOutBack, easeOutBounce, easeOutCirc, easeOutCubic, easeOutElastic } from '@motion-canvas/core/lib/tweening';
+import thinkingSource from "../images/thinking.png"
+import pinchesSource from "../images/pinchedFingers.png"
+import earthSource from "../images/earth.png"
+import explosionSource from "../images/fire.png"
 import capsAndHammersCards from '../capsAndHammersCards';
-
+import nodes from "../../../../common/nodes"
 
 function* incrementNumber(influenceReference: Reference<Txt>, newNumber: string) {
-    var duration = 2/8
+    var duration = 1/8
     var rotationMax = 20
     yield* all(
         yield influenceReference().text(newNumber+"+", 0),
@@ -32,7 +36,7 @@ function* incrementNumber(influenceReference: Reference<Txt>, newNumber: string)
     )
 }
 
-function* showCard(parent: Reference<Node>, cardSource:string, rotation:number) {
+function* showCard(parent: Reference<Node>, cardSource:string, rotation:number, duration: number) {
 
     var shownRatio = 300
     var shownSize = new Vector2(shownRatio*2.5, shownRatio*3.5)
@@ -45,16 +49,33 @@ function* showCard(parent: Reference<Node>, cardSource:string, rotation:number) 
     
     var cardName = cardSource.replace(/^.*[\\\/]/, '')
     yield* waitUntil("show"+cardName)
-    yield* cardReference().position.x(0,4/8, easeOutCubic)
+    yield* cardReference().position.x(0,4/8*duration, easeOutCubic)
 
     yield* waitUntil("hide"+cardName)
-    yield* cardReference().position.x(-1080,4/8,easeInCubic)
+    yield* cardReference().position.x(-1080,2/8*duration,easeInCubic)
     // yield* waitFor(0.3)
 
     yield* waitUntil("showTiny"+cardName)
-    yield* tinyCardReference().position.x(0,6/8, easeOutCubic)
+    yield tinyCardReference().position.x(0,3/8*duration, easeOutCubic)
+    yield* waitFor(2/8)
 }
 
+function* showDefconCard(defconCardRectReference: Reference<Rect>, flipSignal: SimpleSignal<any, void>, duration: number) {
+    yield* all(
+        yield defconCardRectReference().shadowOffset(new Vector2(15,15),duration),
+        yield defconCardRectReference().shadowColor("#060606",duration),
+        yield defconCardRectReference().rotation(0,duration),
+        yield flipSignal(1,duration),
+        yield defconCardRectReference().position(new Vector2(0,0), duration)
+    )
+}
+
+function* peelCardAway(defconCardRectReference: Reference<Rect>, flipSignal: SimpleSignal<any, void>, duration: number) {
+    yield* all(
+        yield defconCardRectReference().position(new Vector2(-1920/2,-1920/2),duration),
+        yield flipSignal(0.6, duration)
+    )
+}
 
 export default makeScene2D(function* (view) {
   
@@ -80,13 +101,18 @@ export default makeScene2D(function* (view) {
     yield* waitUntil("showCommunism")
 
     var communismRef = createRef<Img>()
+    var thinkingRef = createRef<Img>()
     var questionRef = createRef<Txt>()
     yield mainRef().add(<Img src={communismSource} size={new Vector2(0,0)} ref={communismRef} y={-500} shadowColor={"#141414"} shadowOffset={new Vector2(5,5)}/>)
+    yield mainRef().add(<Img src={thinkingSource}  size={new Vector2(500,500)} ref={thinkingRef} x={(1080/2)+350} y={300} shadowColor={"#141414"} shadowOffset={new Vector2(5,5)}/>)
     yield mainRef().add(<Txt fontFamily={'JetBrains Mono'} x={300} y={-450} rotation={5} fill={"#fff"} shadowColor={"#141414"} shadowOffset={new Vector2(5,5)} fontSize={0} ref={questionRef}>?</Txt>)
 
+    var sceneSetupDuration = 4/8
     yield* all(
-        yield communismRef().size(new Vector2(400,400), 6/8, easeOutBack),
-        yield questionRef().fontSize(400, 6/8, easeOutBack)
+        yield communismRef().size(new Vector2(400,400), sceneSetupDuration, easeOutBack),
+        yield questionRef().fontSize(400, sceneSetupDuration, easeOutBack),
+        yield thinkingRef().position(new Vector2(200,175),sceneSetupDuration, easeOutCubic),
+        yield thinkingRef().size(new Vector2(700,700),sceneSetupDuration, easeOutCubic)
     )
 
     var shrunkenSize = 95
@@ -94,7 +120,8 @@ export default makeScene2D(function* (view) {
     yield* waitUntil("hideCommunism")
     yield* all(
         yield communismRef().position.y(-1200, 5/8),
-        yield questionRef().position.y(-1200, 5/8)
+        yield questionRef().position.y(-1200, 5/8),
+        yield thinkingRef().position(new Vector2(200,1920),1),
     )
     yield* waitUntil("shrink")
     yield* all(
@@ -128,13 +155,82 @@ export default makeScene2D(function* (view) {
     yield* influenceReference().fontSize(190,4/8, easeOutBack)
 
     for (var c = 0 ; c < cards.length ; c++) {
-        yield showCard(mainRef, cards[c], rotations[c])
-        yield* waitFor(1.2)
+        yield* showCard(mainRef, cards[c], rotations[c], 4/8)
         value += values[c]
-        yield incrementNumber(influenceReference, value.toString())
-    }    
+        yield* incrementNumber(influenceReference, value.toString())
+        yield* waitFor(2/8)
+    }
 
-    yield* waitFor(1)
+    var pointReference = createRef<CubicBezier>()
+    yield mainRef().add(<nodes.QuickBezier reference={pointReference} startingPosition={new Vector2(300,300)} endingPosition={new Vector2(75,5)} lineWidth={40}/>)
+
+    yield* waitUntil("wait")
+    yield* pointReference().end(1,4/8)
+    yield* waitUntil("holdArrow")
+    yield* pointReference().start(1,4/8)
+
+    var defconSources = [
+        capsAndHammersCards.defconOne,
+        capsAndHammersCards.defconTwo,
+        capsAndHammersCards.defconThree,
+        capsAndHammersCards.defconFour,
+        capsAndHammersCards.defconFive
+    ]
+    var defconReferences = []
+    var defconWidthSignals = []
+    var defconHeightSignals = []
+    var defconFlipSignals = []
+
+    yield* waitUntil("showDefconCards")
+    for (var i = 0 ; i < 5; i++) {
+        var defconReference = createRef<Rect>()
+        var flipSignal = createSignal(0.9)
+        defconFlipSignals.push(flipSignal)
+
+        var defconWidthSignal = createSignal(shownWidth)
+        defconWidthSignals.push(defconWidthSignal)
+
+        var defconHeightSignal = createSignal(shownHeight)
+        defconHeightSignals.push(defconHeightSignal)
+
+        yield mainRef().add(<CardHelper.Card rectReference={defconReference} frontSrc={defconSources[i]} backSrc={CapsAndHammersImages.defconBack} width={defconWidthSignal} x={i*15} y={-1920} height={defconHeightSignal} rotation={-30} flipSignal={flipSignal}/>)
+        defconReferences.push(defconReference)
+        yield* defconReference().position.y(-i*30, 2/8, easeOutCubic)
+    }
+    yield* waitUntil("removeDefconCards")
+    for (var i = 4 ; i >= 1; i--) {
+        yield* peelCardAway(defconReferences[i], defconFlipSignals[i], 2/8)
+    }
+    yield* waitUntil("showDefconOne")
+    yield* all(
+        yield defconWidthSignals[0](1920*2.4/3.5, 6/8),
+        yield defconHeightSignals[0](1920, 6/8),
+        yield showDefconCard(defconReferences[0], defconFlipSignals[0], 6/8)
+    )
+    
+    var explosionRef = createRef<Img>()
+    var earthRef = createRef<Img>()
+    yield mainRef().add(<Img ref={explosionRef} src={explosionSource}y={300}  width={0} height={0} offsetY={1}/>)
+    yield mainRef().add(<Img ref={earthRef} src={earthSource} width={0} height={0}/>)
+
+    var earthSizeRatio = 48/36
+    var earthWidth = 1000
+    yield* waitUntil("showEarth")
+    yield* earthRef().size(new Vector2(earthWidth*earthSizeRatio,earthWidth),4/8, easeOutBack)
+    yield explosionRef().size(new Vector2(earthWidth*1,earthWidth*1.1),4/8, easeOutBack)
+    var swayAmount = 5
+    var totalEarthTime = 1
+    yield* explosionRef().rotation(-swayAmount,2/8*totalEarthTime),
+    yield* explosionRef().rotation(swayAmount,3/8*totalEarthTime),
+    yield explosionRef().rotation(-swayAmount,3/8*totalEarthTime)
+    yield* all(
+        yield earthRef().size(new Vector2(0,0), 3/8),
+        yield explosionRef().size(new Vector2(0,0), 3/8)
+    )
+    yield* waitUntil("removeDefconOne")
+    yield* peelCardAway(defconReferences[0], defconFlipSignals[0], 4/8)
+
+    yield* waitFor(5)
 });
 
 // var chinaReference = createRef<Rect>()

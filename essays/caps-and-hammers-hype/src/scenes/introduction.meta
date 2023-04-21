@@ -3,95 +3,123 @@
   "timeEvents": [
     {
       "name": "showCommunism",
-      "targetTime": 0.5374999999999999
+      "targetTime": 0.1221651742394959
     },
     {
       "name": "hideCommunism",
-      "targetTime": 2.1718749999999996
+      "targetTime": 1.7565401742394955
     },
     {
       "name": "shrink",
-      "targetTime": 3.1718749999999996
+      "targetTime": 3.4236426547682672
     },
     {
       "name": "showCards",
-      "targetTime": 4.421875
+      "targetTime": 4.673642654768267
     },
     {
       "name": "showNumber",
-      "targetTime": 4.421875
+      "targetTime": 4.673642654768267
     },
     {
       "name": "showactions-guerrilla.jpg",
-      "targetTime": 4.921875
+      "targetTime": 6.527468277017832
     },
     {
       "name": "hideactions-guerrilla.jpg",
-      "targetTime": 5.421875
-    },
-    {
-      "name": "showactions-nuke.jpg",
-      "targetTime": 5.921875
+      "targetTime": 6.777468277017832
     },
     {
       "name": "showTinyactions-guerrilla.jpg",
-      "targetTime": 5.921875
+      "targetTime": 6.902468277017832
+    },
+    {
+      "name": "showactions-nuke.jpg",
+      "targetTime": 7.527468277017832
     },
     {
       "name": "hideactions-nuke.jpg",
-      "targetTime": 6.421875
-    },
-    {
-      "name": "showactions-spy.jpg",
-      "targetTime": 6.921875
+      "targetTime": 7.902468277017832
     },
     {
       "name": "showTinyactions-nuke.jpg",
-      "targetTime": 6.921875
+      "targetTime": 8.102468277017831
+    },
+    {
+      "name": "showactions-spy.jpg",
+      "targetTime": 9.150948276923332
     },
     {
       "name": "hideactions-spy.jpg",
-      "targetTime": 7.421875
-    },
-    {
-      "name": "showactions-defector.jpg",
-      "targetTime": 7.921875
+      "targetTime": 9.525948276923332
     },
     {
       "name": "showTinyactions-spy.jpg",
-      "targetTime": 7.921875
+      "targetTime": 9.725948276923331
+    },
+    {
+      "name": "showactions-defector.jpg",
+      "targetTime": 10.350948276923331
     },
     {
       "name": "hideactions-defector.jpg",
-      "targetTime": 8.421875
-    },
-    {
-      "name": "showactions-diplomat.jpg",
-      "targetTime": 8.921875
+      "targetTime": 10.725948276923331
     },
     {
       "name": "showTinyactions-defector.jpg",
-      "targetTime": 8.921875
+      "targetTime": 10.92594827692333
+    },
+    {
+      "name": "showactions-diplomat.jpg",
+      "targetTime": 12.0397126945907
     },
     {
       "name": "hideactions-diplomat.jpg",
-      "targetTime": 9.421875
-    },
-    {
-      "name": "showactions-policeman.jpg",
-      "targetTime": 9.921875
+      "targetTime": 12.2897126945907
     },
     {
       "name": "showTinyactions-diplomat.jpg",
-      "targetTime": 9.921875
+      "targetTime": 12.4147126945907
+    },
+    {
+      "name": "showactions-policeman.jpg",
+      "targetTime": 13.0397126945907
     },
     {
       "name": "hideactions-policeman.jpg",
-      "targetTime": 10.421875
+      "targetTime": 13.4147126945907
     },
     {
       "name": "showTinyactions-policeman.jpg",
-      "targetTime": 10.921875
+      "targetTime": 13.614712694590699
+    },
+    {
+      "name": "wait",
+      "targetTime": 15.277867639378213
+    },
+    {
+      "name": "holdArrow",
+      "targetTime": 15.777867639378213
+    },
+    {
+      "name": "showDefconCards",
+      "targetTime": 16.277867639378215
+    },
+    {
+      "name": "removeDefconCards",
+      "targetTime": 17.527867639378215
+    },
+    {
+      "name": "showDefconOne",
+      "targetTime": 19.783881522244222
+    },
+    {
+      "name": "showEarth",
+      "targetTime": 21.391673222267755
+    },
+    {
+      "name": "removeDefconOne",
+      "targetTime": 20.891673222267755
     }
   ],
   "seed": 687877201
