@@ -23,75 +23,75 @@
     },
     {
       "name": "showactions-guerrilla.jpg",
-      "targetTime": 6.880039492071448
+      "targetTime": 5.673642654768267
     },
     {
       "name": "hideactions-guerrilla.jpg",
-      "targetTime": 7.130039492071448
+      "targetTime": 5.923642654768267
     },
     {
       "name": "showTinyactions-guerrilla.jpg",
-      "targetTime": 7.255039492071448
+      "targetTime": 6.048642654768267
     },
     {
       "name": "showactions-nuke.jpg",
-      "targetTime": 7.880039492071448
+      "targetTime": 6.673642654768267
     },
     {
       "name": "hideactions-nuke.jpg",
-      "targetTime": 8.255039492071447
+      "targetTime": 6.923642654768267
     },
     {
       "name": "showTinyactions-nuke.jpg",
-      "targetTime": 8.455039492071446
+      "targetTime": 7.048642654768267
     },
     {
       "name": "showactions-spy.jpg",
-      "targetTime": 9.503519491976947
+      "targetTime": 7.673642654768267
     },
     {
       "name": "hideactions-spy.jpg",
-      "targetTime": 9.878519491976947
+      "targetTime": 7.923642654768267
     },
     {
       "name": "showTinyactions-spy.jpg",
-      "targetTime": 10.078519491976946
+      "targetTime": 8.048642654768267
     },
     {
       "name": "showactions-defector.jpg",
-      "targetTime": 10.703519491976946
+      "targetTime": 8.673642654768267
     },
     {
       "name": "hideactions-defector.jpg",
-      "targetTime": 11.078519491976946
+      "targetTime": 8.923642654768267
     },
     {
       "name": "showTinyactions-defector.jpg",
-      "targetTime": 11.278519491976946
+      "targetTime": 9.048642654768267
     },
     {
       "name": "showactions-diplomat.jpg",
-      "targetTime": 12.59295145843036
+      "targetTime": 9.673642654768267
     },
     {
       "name": "hideactions-diplomat.jpg",
-      "targetTime": 12.84295145843036
+      "targetTime": 9.923642654768267
     },
     {
       "name": "showTinyactions-diplomat.jpg",
-      "targetTime": 12.96795145843036
+      "targetTime": 10.048642654768267
     },
     {
       "name": "showactions-policeman.jpg",
-      "targetTime": 13.59295145843036
+      "targetTime": 10.673642654768267
     },
     {
       "name": "hideactions-policeman.jpg",
-      "targetTime": 13.96795145843036
+      "targetTime": 10.923642654768267
     },
     {
       "name": "showTinyactions-policeman.jpg",
-      "targetTime": 14.167951458430359
+      "targetTime": 11.048642654768267
     },
     {
       "name": "wait",
