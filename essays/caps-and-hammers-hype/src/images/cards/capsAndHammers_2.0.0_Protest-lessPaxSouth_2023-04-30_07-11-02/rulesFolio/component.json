@@ -1,0 +1,16 @@
+{
+    "name": "rulesFolio",
+    "type": "PokerFolio",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "rulesFolio",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\rulesFolio\\rulesFolio-rulesFolio.jpg",
+            "quantity": 1
+        }
+    ],
+    "backInstructions": {
+        "name": "rulesFolio-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\rulesFolio\\rulesFolio-back.jpg"
+    }
+}

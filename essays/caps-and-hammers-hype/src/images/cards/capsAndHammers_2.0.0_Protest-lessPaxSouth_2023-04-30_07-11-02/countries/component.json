@@ -1,0 +1,116 @@
+{
+    "name": "countries",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "iraq",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-iraq.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "egypt",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-egypt.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "saudiArabia",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-saudiArabia.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "nicaragua",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-nicaragua.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "panama",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-panama.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "cuba",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-cuba.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "spain",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-spain.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "greatBritain",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-greatBritain.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "france",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-france.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "japan",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-japan.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "korea",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-korea.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "china",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-china.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "singapore",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-singapore.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "malaysia",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-malaysia.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "vietnam",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-vietnam.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "poland",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-poland.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "yugoslavia",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-yugoslavia.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "germany",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-germany.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "argentina",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-argentina.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "venezuela",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-venezuela.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "brazil",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-brazil.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "countries-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\countries\\countries-back.jpg"
+    }
+}

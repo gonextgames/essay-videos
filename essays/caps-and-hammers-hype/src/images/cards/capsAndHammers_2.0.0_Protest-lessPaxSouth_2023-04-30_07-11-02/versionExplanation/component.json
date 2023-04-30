@@ -1,0 +1,16 @@
+{
+    "name": "versionExplanation",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "explanation",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\versionExplanation\\versionExplanation-explanation.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "versionExplanation-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\versionExplanation\\versionExplanation-back.jpg"
+    }
+}

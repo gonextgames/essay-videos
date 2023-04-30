@@ -1,0 +1,16 @@
+{
+    "name": "pokerTuckBox",
+    "type": "PokerTuckBox108",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "container",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\pokerTuckBox\\pokerTuckBox-container.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "pokerTuckBox-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\pokerTuckBox\\pokerTuckBox-back.jpg"
+    }
+}

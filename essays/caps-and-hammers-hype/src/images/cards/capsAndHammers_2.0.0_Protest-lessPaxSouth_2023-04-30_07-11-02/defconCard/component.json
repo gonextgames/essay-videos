@@ -1,0 +1,31 @@
+{
+    "name": "defconCard",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "defconTwo",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconCard\\defconCard-defconTwo.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "defconThree",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconCard\\defconCard-defconThree.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "defconFour",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconCard\\defconCard-defconFour.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "defconFive",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconCard\\defconCard-defconFive.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "defconCard-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconCard\\defconCard-back.jpg"
+    }
+}

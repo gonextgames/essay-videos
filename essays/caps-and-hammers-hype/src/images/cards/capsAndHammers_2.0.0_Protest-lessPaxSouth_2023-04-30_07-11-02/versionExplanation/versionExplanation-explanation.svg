@@ -1,0 +1,37 @@
+<ns0:svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" width="825px" height="1125px" viewbox="0 0 825 1125">
+  <ns0:g>
+    <ns0:g>
+      <ns0:g transform="translate(0, 0) scale(1 1) "><ns0:defs id="defs3322" />
+  <ns0:metadata id="metadata3325">
+    <rdf:RDF>
+      <ns2:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </ns2:Work>
+    </rdf:RDF>
+  </ns0:metadata>
+  <ns0:rect style="fill:#3f3f47;fill-opacity:1;stroke-width:3.33279133" x="-7.8125004e-07" y="-1.5869141e-08" width="825" height="1124.9989" id="background" />
+  <ns0:polygon transform="matrix(0.99999987,0,0,1.3945564,-2534.9989,7539.8185)" style="fill:#eaeaea;fill-opacity:1" points="3359.965,-4599.899 3359.965,-4622.543 3359.965,-5321.666 2535,-5321.666 2535,-4622.543 2535,-4599.899 " id="polygon9173-2-4-1-4-3-2-1-2-9-2-1-7-6-3-8-4-7-8" />
+  <ns0:text id="name" y="191.27795" x="74.252563" style="font-style:normal;font-weight:bold;font-size:43.1736px;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#454545;fill-opacity:1;stroke:none;stroke-width:3.5978" xml:space="preserve">Protest-less Pax South</ns0:text>
+  <ns0:flowRoot xml:space="preserve" id="flowRoot842" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:justify;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#494949;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="matrix(3.3327948,0,0,3.3327874,3479.4283,345.23417)"><ns0:flowRegion id="flowRegion4865-3-3-3-7" style="text-align:justify;text-anchor:start"><ns0:rect id="rect4867-0-2-9-3" width="203.83919" height="233.42043" x="-1021.0622" y="-18.904541" style="font-size:12.3931px;text-align:justify;text-anchor:start;fill:#494949;fill-opacity:1" /></ns0:flowRegion><ns0:flowPara style="font-size:11px;line-height:1.25;text-align:justify;text-anchor:start;fill:#494949;fill-opacity:1" id="description">This is a protest-less copy of Pax South. It's meant to fit into a smaller box.</ns0:flowPara><ns0:flowPara style="font-size:12.3931px;line-height:1.25;text-align:justify;text-anchor:start;fill:#494949;fill-opacity:1" id="passiveDescription" /></ns0:flowRoot>
+  <ns0:text id="subtitle" y="253.47171" x="74.709709" style="font-style:normal;font-weight:bold;font-size:37.0142px;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#454545;fill-opacity:1;stroke:none;stroke-width:3.08451" xml:space="preserve">2.0.0</ns0:text>
+</ns0:g>
+    </ns0:g>
+    <ns0:g transform="translate(0.0, 0.0) scale(1 1) ">
+      <ns0:g transform="translate(0, 0) scale(1 1) "><ns0:defs id="defs3322" />
+  <ns0:metadata id="metadata3325">
+    <rdf:RDF>
+      <ns2:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </ns2:Work>
+    </rdf:RDF>
+  </ns0:metadata>
+  <ns0:text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:41.65988922px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#494949;fill-opacity:0.36405531;stroke:none;stroke-width:3.12449169;" x="744.5274" y="1037.1442" id="text5926-4-7" transform="scale(1.0000011,0.9999989)"><ns0:tspan id="devText" x="744.5274" y="1037.1442" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:ARIAL;-inkscape-font-specification:ARIAL;text-align:end;text-anchor:end;fill:#494949;fill-opacity:0.36405531;stroke-width:3.12449169;">(1q/2.0.0v)</ns0:tspan></ns0:text>
+  <ns0:rect y="0" x="0" height="1125" width="825" id="rect878" style="opacity:0.93999999;fill:none;fill-opacity:1;stroke:none;stroke-width:1.37928593;stroke-opacity:1" />
+</ns0:g>
+    </ns0:g>
+  </ns0:g>
+</ns0:svg>

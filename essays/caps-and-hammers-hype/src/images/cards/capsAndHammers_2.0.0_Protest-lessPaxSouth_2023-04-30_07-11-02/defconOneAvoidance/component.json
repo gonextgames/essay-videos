@@ -1,0 +1,16 @@
+{
+    "name": "defconOneAvoidance",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "defconOne",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconOneAvoidance\\defconOneAvoidance-defconOne.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "defconOneAvoidance-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\defconOneAvoidance\\defconOneAvoidance-back.jpg"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02",
+    "displayName": "Caps and Hammers",
+    "version": "2.0.0",
+    "versionName": "Protest-less Pax South",
+    "rulebookUrl": "https://docs.google.com/document/d/1R0AIJUkj_5kNqs9_TwzKOPkT0uprcLLAI6pV59BmKdc",
+    "versionExplanation": "This is a protest-less copy of Pax South. It's meant to fit into a smaller box.",
+    "countrySymbol": "<flowSpan style=\"-inkscape-font-specification:'IcoFont Bold Italic';font-family:IcoFont;\" id=\"flowSpan662\">&#xEF0E;</flowSpan>",
+    "crisisSymbol": "<flowSpan style=\"-inkscape-font-specification:'IcoFont Bold Italic';font-family:IcoFont;\" id=\"flowSpan662\">&#xeebf;</flowSpan>",
+    "influenceSymbol": "<flowSpan style=\"-inkscape-font-specification:'IcoFont Bold Italic';font-family:IcoFont;\" id=\"flowSpan662\">&#xef32;</flowSpan>",
+    "justificationSymbol": "<flowSpan style=\"-inkscape-font-specification:'IcoFont Bold Italic';font-family:IcoFont;\" id=\"flowSpan662\">&#xebb8;</flowSpan>",
+    "scienceSymbol": "<flowSpan style=\"-inkscape-font-specification:'IcoFont Bold Italic';font-family:IcoFont;\" id=\"flowSpan662\">&#xeeb5;</flowSpan>"
+}

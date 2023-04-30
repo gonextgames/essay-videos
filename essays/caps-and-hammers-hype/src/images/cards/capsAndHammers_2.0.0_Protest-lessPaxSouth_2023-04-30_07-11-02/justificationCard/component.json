@@ -1,0 +1,31 @@
+{
+    "name": "justificationCard",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "justificationOne",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\justificationCard\\justificationCard-justificationOne.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "justificationTwo",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\justificationCard\\justificationCard-justificationTwo.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "justificationThree",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\justificationCard\\justificationCard-justificationThree.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "justificationFour",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\justificationCard\\justificationCard-justificationFour.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "justificationCard-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\justificationCard\\justificationCard-back.jpg"
+    }
+}

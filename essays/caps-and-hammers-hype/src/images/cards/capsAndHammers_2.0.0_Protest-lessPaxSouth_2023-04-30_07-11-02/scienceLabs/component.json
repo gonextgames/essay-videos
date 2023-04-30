@@ -1,0 +1,46 @@
+{
+    "name": "scienceLabs",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "icbm",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-icbm.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "satellites",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-satellites.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "computers",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-computers.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "reentry",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-reentry.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "spaceWalks",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-spaceWalks.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "landers",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-landers.jpg",
+            "quantity": "1"
+        },
+        {
+            "name": "moonLanding",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-moonLanding.jpg",
+            "quantity": "1"
+        }
+    ],
+    "backInstructions": {
+        "name": "scienceLabs-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\scienceLabs\\scienceLabs-back.jpg"
+    }
+}

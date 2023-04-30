@@ -1,0 +1,24 @@
+<ns0:svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" xmlns:ns4="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" width="825px" height="1125px" viewbox="0 0 825 1125">
+  <ns0:g>
+    <ns0:g transform="translate(0, 0) scale(1 1) "><ns1:namedview id="namedview148" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" ns2:showpageshadow="2" ns2:pageopacity="0.0" ns2:pagecheckerboard="0" ns2:deskcolor="#d1d1d1" showgrid="false" ns2:zoom="0.55122902" ns2:cx="309.30882" ns2:cy="717.48762" ns2:window-width="1390" ns2:window-height="1027" ns2:window-x="59" ns2:window-y="25" ns2:window-maximized="0" ns2:current-layer="svg3328" />
+  <ns0:defs id="defs3322" />
+  <ns0:metadata id="metadata3325">
+    <rdf:RDF>
+      <ns4:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </ns4:Work>
+    </rdf:RDF>
+  </ns0:metadata>
+  <ns0:rect id="background" height="1124.9989" width="825" y="0.00054931641" x="0" style="fill:#3f3f47;fill-opacity:1;stroke-width:3.33279" />
+  <ns0:g id="g3197">
+    <ns0:text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:37.0142px;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#454545;fill-opacity:1;stroke:none;stroke-width:3.08451" x="412.5" y="573.01929" id="title-7">{subtitle}</ns0:text>
+    <ns0:path style="fill:#eaeaea;fill-opacity:1;stroke-width:0.43822" d="m 368.16403,671.35872 c -15.57655,-32.41166 -7.28147,-50.98389 4.69027,-68.48159 13.11024,-19.16251 16.48892,-38.13088 16.48892,-38.13088 0,0 10.30607,13.39772 6.18329,34.3521 18.20719,-20.26769 21.64328,-52.55928 18.89388,-64.9263 41.15504,28.76041 58.74389,91.0346 35.04011,137.18667 126.07384,-71.33178 31.35993,-178.06607 14.87057,-190.08909 5.4966,12.02258 6.53913,32.37573 -4.5645,42.25322 -18.79615,-71.27437 -65.27031,-85.88157 -65.27031,-85.88157 5.4966,36.75662 -19.92413,76.94976 -44.43731,106.98276 -0.8611,-14.65672 -1.77611,-24.77041 -9.48353,-38.79609 -1.73009,26.6254 -22.07798,48.32914 -27.58817,75.00625 -7.46377,36.1269 5.59082,62.57876 55.17678,90.52452 z" id="path7033-7-1-5-8-2-2" />
+    <ns0:g id="g3190" transform="rotate(-45,412.50001,562.49999)">
+      <ns0:path id="circle3054" style="fill:#ef614c;fill-opacity:1;stroke-width:4.56597;paint-order:markers stroke fill;stop-color:#000000" d="m 412.50001,402.49999 a 160,160 0 0 0 -160,160 160,160 0 0 0 160,160 160,160 0 0 0 160,-160 160,160 0 0 0 -160,-160 z m 0,24.0254 a 135.97491,135.97491 0 0 1 135.97461,135.9746 135.97491,135.97491 0 0 1 -135.97461,135.9746 135.97491,135.97491 0 0 1 -135.9746,-135.9746 135.97491,135.97491 0 0 1 135.9746,-135.9746 z" />
+      <ns0:rect style="fill:#ef614c;fill-opacity:1;stroke-width:3.25666;paint-order:markers stroke fill;stop-color:#000000" id="rect2227" width="26.938427" height="297.60547" x="399.03082" y="413.69724" />
+    </ns0:g>
+  </ns0:g>
+</ns0:g>
+  </ns0:g>
+</ns0:svg>

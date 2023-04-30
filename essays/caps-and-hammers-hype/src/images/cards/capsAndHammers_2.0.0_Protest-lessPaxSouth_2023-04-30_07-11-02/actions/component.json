@@ -1,0 +1,56 @@
+{
+    "name": "actions",
+    "type": "PokerDeck",
+    "quantity": 1,
+    "frontInstructions": [
+        {
+            "name": "diplomat",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-diplomat.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "admiral",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-admiral.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "spy",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-spy.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "policeman",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-policeman.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "scientist",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-scientist.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "nuke",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-nuke.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "guerrilla",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-guerrilla.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "defector",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-defector.jpg",
+            "quantity": 3
+        },
+        {
+            "name": "soldier",
+            "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-soldier.jpg",
+            "quantity": 1
+        }
+    ],
+    "backInstructions": {
+        "name": "actions-back.jpg",
+        "filepath": "./output\\capsAndHammers_2.0.0_Protest-lessPaxSouth_2023-04-30_07-11-02\\actions\\actions-back.jpg"
+    }
+}
