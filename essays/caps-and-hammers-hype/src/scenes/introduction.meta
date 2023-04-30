@@ -19,123 +19,103 @@
     },
     {
       "name": "showNumber",
-      "targetTime": 4.673642654768267
+      "targetTime": 7.159291443139161
     },
     {
       "name": "showactions-guerrilla.jpg",
-      "targetTime": 5.673642654768267
+      "targetTime": 9.664337502204287
     },
     {
       "name": "hideactions-guerrilla.jpg",
-      "targetTime": 5.923642654768267
+      "targetTime": 9.914337502204287
     },
     {
       "name": "showTinyactions-guerrilla.jpg",
-      "targetTime": 6.048642654768267
+      "targetTime": 10.039337502204287
     },
     {
       "name": "showactions-nuke.jpg",
-      "targetTime": 6.673642654768267
+      "targetTime": 10.664337502204287
     },
     {
       "name": "hideactions-nuke.jpg",
-      "targetTime": 6.923642654768267
+      "targetTime": 10.914337502204287
     },
     {
       "name": "showTinyactions-nuke.jpg",
-      "targetTime": 7.048642654768267
+      "targetTime": 11.039337502204287
     },
     {
       "name": "showactions-spy.jpg",
-      "targetTime": 7.673642654768267
+      "targetTime": 12.97382036640087
     },
     {
       "name": "hideactions-spy.jpg",
-      "targetTime": 7.923642654768267
+      "targetTime": 13.22382036640087
     },
     {
       "name": "showTinyactions-spy.jpg",
-      "targetTime": 8.048642654768267
+      "targetTime": 13.34882036640087
     },
     {
       "name": "showactions-defector.jpg",
-      "targetTime": 8.673642654768267
+      "targetTime": 13.97382036640087
     },
     {
       "name": "hideactions-defector.jpg",
-      "targetTime": 8.923642654768267
+      "targetTime": 14.22382036640087
     },
     {
       "name": "showTinyactions-defector.jpg",
-      "targetTime": 9.048642654768267
+      "targetTime": 14.34882036640087
     },
     {
       "name": "showactions-diplomat.jpg",
-      "targetTime": 9.673642654768267
+      "targetTime": 15.797745395196696
     },
     {
       "name": "hideactions-diplomat.jpg",
-      "targetTime": 9.923642654768267
+      "targetTime": 16.047745395196696
     },
     {
       "name": "showTinyactions-diplomat.jpg",
-      "targetTime": 10.048642654768267
+      "targetTime": 16.172745395196696
     },
     {
       "name": "showactions-policeman.jpg",
-      "targetTime": 10.673642654768267
+      "targetTime": 16.797745395196696
     },
     {
       "name": "hideactions-policeman.jpg",
-      "targetTime": 10.923642654768267
+      "targetTime": 17.047745395196696
     },
     {
       "name": "showTinyactions-policeman.jpg",
-      "targetTime": 11.048642654768267
+      "targetTime": 17.172745395196696
     },
     {
       "name": "wait",
-      "targetTime": 15.99500698096488
+      "targetTime": 18.354020988791284
     },
     {
       "name": "holdArrow",
-      "targetTime": 16.49500698096488
+      "targetTime": 19.806588438139595
     },
     {
       "name": "showDefconCards",
-      "targetTime": 16.99500698096488
+      "targetTime": 20.306588438139595
     },
     {
       "name": "removeDefconCards",
-      "targetTime": 19.44449378261227
+      "targetTime": 21.556588438139595
     },
     {
       "name": "showDefconOne",
-      "targetTime": 21.700507665478277
-    },
-    {
-      "name": "showEarth",
-      "targetTime": 23.29034544684664
-    },
-    {
-      "name": "removeDefconOne",
-      "targetTime": 24.66534544684664
-    },
-    {
-      "name": "raiseHand",
-      "targetTime": 24.66534544684664
-    },
-    {
-      "name": "crunchDown",
-      "targetTime": 25.41534544684664
-    },
-    {
-      "name": "liftHand",
-      "targetTime": 28.705635432282183
+      "targetTime": 23.812602321005603
     },
     {
       "name": "introEnd",
-      "targetTime": 29.60563543228218
+      "targetTime": 33.85979586295924
     }
   ],
   "seed": 687877201

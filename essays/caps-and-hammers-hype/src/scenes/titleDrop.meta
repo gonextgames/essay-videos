@@ -1,0 +1,34 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "showEarth",
+      "targetTime": 0
+    },
+    {
+      "name": "click",
+      "targetTime": 0.5
+    },
+    {
+      "name": "something",
+      "targetTime": 1.5
+    },
+    {
+      "name": "raiseHand",
+      "targetTime": 3.275
+    },
+    {
+      "name": "crunchDown",
+      "targetTime": 4.025
+    },
+    {
+      "name": "liftHand",
+      "targetTime": 4.65
+    },
+    {
+      "name": "introEnd",
+      "targetTime": 5.550000000000001
+    }
+  ],
+  "seed": 4228691773
+}
