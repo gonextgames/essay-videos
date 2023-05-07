@@ -23,7 +23,6 @@ import scienceLabBackSource from "../images/scienceLabs-back.jpg"
 import moonLandingSource from "../images/scienceLabs-moonLanding.jpg"
 import earthSource from "../images/earth.png"
 import explosionSource from "../images/fire.png"
-import capsAndHammersCards from '../capsAndHammersCards';
 import nodes from "../../../../common/nodes"
 
 function* incrementNumber(influenceReference: Reference<Txt>, newNumber: string) {
@@ -84,46 +83,38 @@ function* peelCardAway(defconCardRectReference: Reference<Rect>, flipSignal: Sim
     )
 }
 
-function* shake(reference: Reference<Node>, shakeHalfDisplacement: Vector2, duration: number) {
-    var originalPosition = reference().position()
-    var a = new Vector2(originalPosition.x - shakeHalfDisplacement.x, originalPosition.y - shakeHalfDisplacement.y)
-    var b = new Vector2(originalPosition.x + shakeHalfDisplacement.x, originalPosition.y + shakeHalfDisplacement.y)
-    var count = 12
-    var shakeDuration = count/duration
-    
-    yield* reference().position(a, shakeDuration/2)
-    yield* reference().position(b, shakeDuration)
-    yield* reference().position(a, shakeDuration)
-    yield* reference().position(b, shakeDuration)
-    yield* reference().position(a, shakeDuration)
-    yield* reference().position(b, shakeDuration)
-    yield* reference().position(a, shakeDuration)
-    yield* reference().position(b, shakeDuration)
-    yield* reference().position(a, shakeDuration)
-    yield* reference().position(b, shakeDuration)
-    yield* reference().position(a, shakeDuration)
-    yield* reference().position(b, shakeDuration)
-    
-}
+function* createGridOfAssets(parent: Reference<Rect>) {
+    var cards = [
+        CapsAndHammersImages.diplomat,
+        CapsAndHammersImages.policeman,
+        CapsAndHammersImages.scientist,
+        CapsAndHammersImages.admiral,
+        CapsAndHammersImages.nuke,
+        CapsAndHammersImages.spy,
+        CapsAndHammersImages.defector,
+        CapsAndHammersImages.guerilla,
+        CapsAndHammersImages.soldier,
+    ]
+    const holderRectRef = createRef<Rect>()
 
-function* createMuteAnimation(mainRef: Reference<Rect>) {
-    var muteTxtRef = createRef<Txt>()
-    yield mainRef().add(<Txt ref={muteTxtRef} fontFamily={'JetBrains Mono'} fontSize={0} fill={"#fff"} stroke={"#303030"} strokeFirst={true} lineWidth={5} shadowColor={"#303030"} shadowOffset={new Vector2(5,5)}>🔊</Txt>)
+    yield parent().add(<Rect ref={holderRectRef} width={1080} height={1920} x={-1080/2} y={1920} />)
 
-    var mouseRef = createRef<Img>()
-    yield mainRef().add(<Img ref={mouseRef} src={mousePointerSource} scale={0.25} offsetX={1} offsetY={1} x={1080/2+100} y={1920/4}/>)
+    var references = []
+    var width = 2.5*100
+    var height = 3.5*100
+    var padding = 5
+    for (var i = 0; i < cards.length; i++) {
+        const cardRef = createRef<Rect>()
+        const widthSignal = createSignal(width)
+        const heightSignal = createSignal(height)
+        const flipSignal = createSignal(1)
 
-    var muteButtonPosition = new Vector2(1080/4, -1920/8)
-    yield* all(
-        yield muteTxtRef().fontSize(200, 4/8),
-        yield muteTxtRef().position(muteButtonPosition, 4/8),
-    )
-    yield* waitUntil("click")
-    yield* mouseRef().position(new Vector2(muteButtonPosition.x +50, muteButtonPosition.y+100), 4/8)
-    yield* muteTxtRef().text("🔇", 0)
-    yield* waitFor(4/8)
-    yield* mouseRef().position(new Vector2(1080/2+100, -1920/8), 4/8)
-    yield* muteTxtRef().fontSize(0, 2/8)
+        var x = (i % 3)+1
+        var y = Math.floor(i / 3)+1
+        yield holderRectRef().add(<CardHelper.Card rectReference={cardRef} x={x*(width+padding)} y={y*(height+padding)} frontSrc={cards[i]} backSrc={CapsAndHammersImages.actionBack} width={widthSignal} height={heightSignal} rotation={0} flipSignal={flipSignal}/>)
+        references.push(cardRef)
+    }
+    return holderRectRef
 }
 
 export default makeScene2D(function* (view) {
@@ -149,6 +140,8 @@ export default makeScene2D(function* (view) {
     const argentinaHeightSignal = createSignal(shownHeight)
     const argentinaFlipSignal = createSignal(0)
     yield mainRef().add(<CardHelper.Card rectReference={argentinaReference} frontSrc={CapsAndHammersImages.argentina} backSrc={CapsAndHammersImages.countryBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={90} flipSignal={argentinaFlipSignal}/>)
+
+    var cardGridRef = yield* createGridOfAssets(mainRef)
 
     const brazilReference = createRef<Rect>()
     const brazilWidthSignal = createSignal(cardSize.x)
@@ -199,16 +192,20 @@ export default makeScene2D(function* (view) {
 
     yield* waitUntil("showCards")
     var cards = [
-        capsAndHammersCards.guerilla, 
-        capsAndHammersCards.nuke,
-        capsAndHammersCards.spy, 
-        capsAndHammersCards.defector,
-        capsAndHammersCards.diplomat,
-        capsAndHammersCards.policeman,
+        CapsAndHammersImages.guerilla, 
+        CapsAndHammersImages.nuke,
+        CapsAndHammersImages.spy, 
+        CapsAndHammersImages.defector,
+        CapsAndHammersImages.diplomat,
+        CapsAndHammersImages.policeman,
     ]
     var rotations = [5, -3, 1, -2, 1, -5]
     var values = [3, 3, 3, 1, 1, 3]
     var value = 0
+
+    yield* cardGridRef().position.y(-1920/4,1, easeOutBack)
+    yield* waitUntil("hideAssets")
+    yield cardGridRef().position.y(-1920*2,4/8)
 
     var influenceReference = createRef<Txt>()
     yield mainRef().add(<Txt ref={influenceReference} fontFamily={'JetBrains Mono'} x={0} y={-100} rotation={0} fill={"#fff"} shadowColor={"#141414"} shadowOffset={new Vector2(5,5)} fontSize={0}>0/13</Txt>)
@@ -238,11 +235,11 @@ export default makeScene2D(function* (view) {
     yield* pointReference().start(1,4/8)
 
     var defconSources = [
-        capsAndHammersCards.defconOne,
-        capsAndHammersCards.defconTwo,
-        capsAndHammersCards.defconThree,
-        capsAndHammersCards.defconFour,
-        capsAndHammersCards.defconFive
+        CapsAndHammersImages.defconOne,
+        CapsAndHammersImages.defconTwo,
+        CapsAndHammersImages.defconThree,
+        CapsAndHammersImages.defconFour,
+        CapsAndHammersImages.defconFive
     ]
     var defconReferences = []
     var defconWidthSignals = []

@@ -132,7 +132,7 @@ export default makeScene2D(function* (view) {
     var spinDuration = 4/8
     yield spyBackReference().rotation(180,spinDuration,easeInOutBack)
     yield* waitFor(1/8*spinDuration)
-    yield* spyBackReference().position.y(-1920/4, 7/8*spinDuration)
+    yield* spyBackReference().position.y(-1920/4-100, 7/8*spinDuration)
 
     var handRect = createRef<Rect>()
     yield mainRef().add(<Rect ref={handRect} width={1080} height={1920/3} offsetY={1} y={3000}/>)
@@ -144,13 +144,34 @@ export default makeScene2D(function* (view) {
         yield hand.cardReferences[i]().compositeOperation("source-over",0)
     }
     const argentinaReference = createRef<Rect>()
-    const argentinaWidthSignal = createSignal(shownWidth)
-    const argentinaHeightSignal = createSignal(shownHeight)
+    const argentinaWidthSignal = createSignal(shownWidth-25)
+    const argentinaHeightSignal = createSignal(shownHeight-25)
     const argentinaFlipSignal = createSignal(0.5)
-    yield mainRef().add(<CardHelper.Card rectReference={argentinaReference} frontSrc={CapsAndHammersImages.argentina} backSrc={CapsAndHammersImages.countryBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={90} y={-150} flipSignal={argentinaFlipSignal}/>)
+
+    var columns = 4
+    var screenWidth = 1080
+    var startOnLeft = -1080/2
+    var spacing = 1080/(columns+1)
+    
+    const venezuelaReference = createRef<Rect>()
+    const venezuelaFlipSignal = createSignal(0.5)
+    yield mainRef().add(<CardHelper.Card rectReference={venezuelaReference} frontSrc={CapsAndHammersImages.venezuela} backSrc={CapsAndHammersImages.countryBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={180} y={-150} x={startOnLeft+spacing*4} flipSignal={venezuelaFlipSignal}/>)
+
+    yield mainRef().add(<CardHelper.Card rectReference={argentinaReference} frontSrc={CapsAndHammersImages.argentina} backSrc={CapsAndHammersImages.countryBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={180} y={-150} x={startOnLeft+spacing*3} flipSignal={argentinaFlipSignal}/>)
+
+    const brazilReference = createRef<Rect>()
+    const brazilFlipSignal = createSignal(0.5)
+    yield mainRef().add(<CardHelper.Card rectReference={brazilReference} frontSrc={CapsAndHammersImages.brazil} backSrc={CapsAndHammersImages.countryBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={180} y={-150} x={startOnLeft+spacing*2} flipSignal={brazilFlipSignal}/>)
+
+    const moonLandingReference = createRef<Rect>()
+    const moonLandingFlipSignal = createSignal(0.5)
+    yield mainRef().add(<CardHelper.Card rectReference={moonLandingReference} frontSrc={CapsAndHammersImages.scienceLabMoonLanding} backSrc={CapsAndHammersImages.scienceLabBack} width={argentinaWidthSignal} height={argentinaHeightSignal} rotation={0} y={-150} x={startOnLeft+spacing*1} flipSignal={moonLandingFlipSignal}/>)    
 
     yield* all(
+        yield moonLandingFlipSignal(1, 4/8, easeOutBack),
         yield argentinaFlipSignal(1, 4/8, easeOutBack),
+        yield venezuelaFlipSignal(1, 4/8, easeOutBack),
+        yield brazilFlipSignal(1, 4/8, easeOutBack),
         yield handRect().position.y((1920/2)+300,1)
     )
     

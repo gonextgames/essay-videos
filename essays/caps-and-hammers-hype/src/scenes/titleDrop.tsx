@@ -39,7 +39,7 @@ export default makeScene2D(function* (view) {
     yield mainRef().add(<Img ref={earthRef} src={earthSource} width={0} height={0}/>)
 
     var earthWidth = 600
-    yield* waitUntil("showEarth")
+    // yield* waitUntil("showEarth")
     var muteTxtRef = createRef<Txt>()
     yield mainRef().add(<Txt ref={muteTxtRef} fontFamily={'JetBrains Mono'} fontSize={0} fill={"#fff"} stroke={"#303030"} strokeFirst={true} lineWidth={5} shadowColor={"#303030"} shadowOffset={new Vector2(5,5)}>🔊</Txt>)
 

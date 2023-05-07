@@ -1,6 +1,7 @@
 import argentina from "./images/cards/countries/countries-argentina.jpg"
 import countryBack from "./images/cards/countries/countries-back.jpg"
 import brazil from "./images/cards/countries/countries-brazil.jpg"
+import venezuela from "./images/cards/countries/countries-venezuela.jpg"
 import china from "./images/cards/countries/countries-china.jpg"
 
 import actionBack from "./images/cards/actions/actions-back.jpg"
@@ -12,6 +13,7 @@ import guerrilla from "./images/cards/actions/actions-guerrilla.jpg"
 import policeman from "./images/cards/actions/actions-policeman.jpg"
 import spy from "./images/cards/actions/actions-spy.jpg"
 import scientist from "./images/cards/actions/actions-scientist.jpg"
+import soldier from "./images/cards/actions/actions-soldier.jpg"
 
 import defconOne from "./images/cards/defconOneAvoidance/defconOneAvoidance-defconOne.jpg"
 import defconTwo from "./images/cards/defconCard/defconCard-defconTwo.jpg"
@@ -34,6 +36,7 @@ import scienceLabMoonLanding from "./images/cards/scienceLabs/scienceLabs-moonLa
 export default {
     actionBack: actionBack,
     admiral: admiral,
+    venezuela: venezuela,
     defector: defector,
     diplomat: diplomat,
     argentina: argentina,
@@ -41,6 +44,7 @@ export default {
     policeman: policeman,
     scientist: scientist,
     guerilla: guerrilla,
+    soldier: soldier,
     countryBack: countryBack,
     brazil: brazil,
     spy: spy,
