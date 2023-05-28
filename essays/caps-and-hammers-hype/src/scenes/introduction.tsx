@@ -12,6 +12,9 @@ import {CodeBlock, insert} from '@motion-canvas/2d/lib/components/CodeBlock';
 
 import tiktokOverlaySource from "../../../../common/tiktokOverlay.png"
 
+import capsAndHammersPackage from "../../public/capsAndHammers_1.1.0_ResearchLabStealing_2023-05-27_06-33-14/package"
+capsAndHammersPackage.actionCaps.admiral
+
 import CapsAndHammersImages from "../capsAndHammersCards"
 import CardHelper from "../card"
 import communismSource from "../images/communism.png"
