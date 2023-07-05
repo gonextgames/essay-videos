@@ -24,7 +24,7 @@ const QuickBezier = (props:{reference?: Reference<CubicBezier>, startingPosition
 
 function *showImg(parent: Reference<Node>, src: string, scale: number, x: number, y: number, rotation: number) {
     const reference = createRef<Img>()
-    var gameDesignerComputerImg = <Img 
+    var image = <Img 
         src={src}
         ref={reference}
         scale={scale}
@@ -32,7 +32,7 @@ function *showImg(parent: Reference<Node>, src: string, scale: number, x: number
         y={y}
         rotation={rotation} />
 
-    yield parent().add(gameDesignerComputerImg)
+    yield parent().add(image)
     
     return reference
 }
