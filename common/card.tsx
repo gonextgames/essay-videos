@@ -4,7 +4,7 @@ import {CodeBlock} from '@motion-canvas/2d/lib/components/CodeBlock';
 import {Circle, Layout, Txt, Line, Rect, Node} from '@motion-canvas/2d/lib/components'
 import {all, delay,loop,waitFor,waitUntil} from '@motion-canvas/core/lib/flow'
 import {Direction, Vector2} from '@motion-canvas/core/lib/types'
-import { easeInBack, easeOutBack, linear } from '@motion-canvas/core/lib/tweening';
+import { easeInBack, easeInCubic, easeOutBack, easeOutCubic, linear } from '@motion-canvas/core/lib/tweening';
 
 import {createSignal, SimpleSignal, SignalValue} from '@motion-canvas/core/lib/signals';
 
@@ -60,12 +60,12 @@ function* flipCard(card: Reference<Rect>, width: number, duration: number) {
     var isFlipped = front.width() == 0
 
     if (!isFlipped) {
-        yield* front.width(0, duration/2, easeInBack)
-        yield* back.width(width, duration/2, easeOutBack)
+        yield* front.width(0, duration/2, linear)
+        yield* back.width(width, duration/2, linear)
     }
     else {
-        yield* back.width(0, duration/2, easeInBack)
-        yield* front.width(width, duration/2, easeOutBack)
+        yield* back.width(0, duration/2, linear)
+        yield* front.width(width, duration/2, linear)
     }
 }
 
