@@ -13,16 +13,16 @@ class PokerCard {
     this.cardRef = createRef();
     this.frontRef = createRef();
     this.backRef = createRef();
-    
+  }
+  *applyInitialState() {
     if (this.isFlipped) {
-      this.flip(0); // Immediate flip
+      yield* this.flip(0); // Immediate flip
     }
-
     if (this.isTapped) {
-      this.tap(0); // Immediate tap
+      yield* this.tap(0); // Immediate tap
     }
   }
-  *setPosition(x, y, angle, duration = 0) {
+  *setPosition(x, y, angle, duration = 0, easing = easeInOutCubic) {
     if (duration === 0) {
       this.cardRef().position.x(x);
       this.cardRef().position.y(y);
@@ -33,7 +33,7 @@ class PokerCard {
         this.cardRef().position.x(this.cardRef().position.x() + (x - this.cardRef().position.x()) * progress);
         this.cardRef().position.y(this.cardRef().position.y() + (y - this.cardRef().position.y()) * progress);
         this.cardRef().rotation(this.cardRef().rotation() + (angle - this.cardRef().rotation()) * progress);
-      });
+      }, easing);
     }
   }
 
@@ -87,9 +87,10 @@ class PokerCard {
   }
   *tap(totalTime = 0.3) {
     const currentRotation = this.cardRef().rotation();
-    const targetRotation = this.isTapped ? currentRotation - 90 : currentRotation + 90;
+    const targetRotation = this.isTapped ? currentRotation + 90 : currentRotation - 90;
 
     if (totalTime === 0) {
+      console.log(targetRotation)
       this.cardRef().rotation(targetRotation);
       this.isTapped = !this.isTapped;
       return;

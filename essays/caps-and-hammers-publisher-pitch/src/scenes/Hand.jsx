@@ -31,7 +31,7 @@ class Hand {
     const radians = angle * (Math.PI / 180);
     const targetOffsetX = (radius + highlightDistance) * Math.sin(radians);
     const targetOffsetY = (radius + highlightDistance) * (1 - Math.cos(radians)) - (highlightDistance * Math.cos(radians));
-
+    
     yield* cardToHighlight.setPosition(this.x + targetOffsetX, this.y + targetOffsetY, angle, duration);
   }
   customEasing = (x) => {
@@ -84,7 +84,6 @@ class Hand {
 
         const targetX = this.x + radius * Math.sin(radians);
         const targetY = this.y + radius * (1 - Math.cos(radians));
-        console.log(targetX, targetY)
         return card.setPosition(targetX, targetY, angle, duration);
       })
     );
