@@ -16,6 +16,7 @@ class PokerCard {
   }
   *applyInitialState() {
     if (this.isFlipped) {
+      console.log("flip")
       yield* this.flip(0); // Immediate flip
     }
     if (this.isTapped) {
@@ -28,12 +29,12 @@ class PokerCard {
       this.cardRef().position.y(y);
       this.cardRef().rotation(angle);
     } else {
-      // Smooth transition using tween
       yield* tween(duration, progress => {
-        this.cardRef().position.x(this.cardRef().position.x() + (x - this.cardRef().position.x()) * progress);
-        this.cardRef().position.y(this.cardRef().position.y() + (y - this.cardRef().position.y()) * progress);
-        this.cardRef().rotation(this.cardRef().rotation() + (angle - this.cardRef().rotation()) * progress);
-      }, easing);
+        const easedProgress = easing(progress);
+        this.cardRef().position.x(this.cardRef().position.x() + (x - this.cardRef().position.x()) * easedProgress);
+        this.cardRef().position.y(this.cardRef().position.y() + (y - this.cardRef().position.y()) * easedProgress);
+        this.cardRef().rotation(this.cardRef().rotation() + (angle - this.cardRef().rotation()) * easedProgress);
+      });
     }
   }
 
@@ -63,34 +64,43 @@ class PokerCard {
 
   *flip(totalTime = 0.3) {
     const halfWidth = this.width / 2;
-    const halfTime = totalTime / 2; // Split the total time in half for each tween
-  
-    // Shrink the front image to 0 width
+    const halfTime = totalTime / 2;
+    
+    this.isFlipped = !this.isFlipped;
     yield* tween(halfTime, progress => {
       const width = this.width * (1 - progress);
-      this.frontRef().width(width);
-    }, easeInOutCubic);
-  
-    this.isFlipped = !this.isFlipped;
-  
-    // Grow the back image to full width
-    yield* tween(halfTime, progress => {
-      const width = halfWidth + (halfWidth * progress);
-      if (this.isFlipped && this.backRef()) {
+      if (this.isFlipped) {
         this.frontRef().width(0);
         this.backRef().width(width);
-      } else if (this.frontRef() && this.backRef()) {
+      } else {
         this.frontRef().width(width);
         this.backRef().width(0);
       }
     }, easeInOutCubic);
+  
+    // Grow the back image to full width
+    yield* tween(halfTime, progress => {
+      const width = halfWidth + (halfWidth * progress);
+      if (this.isFlipped) {
+        this.backRef().width(0);
+        this.frontRef().width(width);
+      } else {
+        this.backRef().width(width);
+        this.frontRef().width(0);
+      }
+    }, easeInOutCubic);
+  }
+  *flipOutOfExistence(totalTime = 0.3) {
+    yield* all(
+      this.frontRef().width(0, totalTime, easeInOutCubic),
+      this.backRef().width(0, totalTime, easeInOutCubic)
+    );
   }
   *tap(totalTime = 0.3) {
     const currentRotation = this.cardRef().rotation();
     const targetRotation = this.isTapped ? currentRotation + 90 : currentRotation - 90;
 
     if (totalTime === 0) {
-      console.log(targetRotation)
       this.cardRef().rotation(targetRotation);
       this.isTapped = !this.isTapped;
       return;

@@ -30,23 +30,23 @@ export default makeScene2D(function* (view) {
   var hammersDeck = new PokerCard(capsAndHammers.hammersAction.back, capsAndHammers.hammersAction.back, width/3, height/3, false, true);
   
   const cardsGrid = [
-    [null, createPokerCard(capsAndHammers.hammersAction.back), createPokerCard(capsAndHammers.hammersAction.back), null, null],
-    [createPokerCard(capsAndHammers.hammersAction.back), createPokerCard(capsAndHammers.hammersAction.back), createPokerCard(capsAndHammers.hammersAction.back), createPokerCard(capsAndHammers.hammersAction.back), hammersDeck],
+    [null, null, null, null, null, ],
+    [null, null, null, null, hammersDeck],
     [jungleWarfare, peaceConference, dmz, spaceRace, countriesBack],
-    [createPokerCard(capsAndHammers.actionCaps.back), createPokerCard(capsAndHammers.actionCaps.back), createPokerCard(capsAndHammers.actionCaps.back), createPokerCard(capsAndHammers.actionCaps.back), capsDeck],
-    [null, createPokerCard(capsAndHammers.actionCaps.back), createPokerCard(capsAndHammers.actionCaps.back), null, null]
+    [null, null, null, null, capsDeck],
+    [null, null, null, null, null, ]
   ]
   const board = new Board(cardsGrid, 0, 0, height/3, height/3);
     
   
   const cards = [
-    new PokerCard(capsAndHammers.actionCaps.diplomat, capsAndHammers.actionCaps.back, width, height),
-    new PokerCard(capsAndHammers.actionCaps.spy, capsAndHammers.actionCaps.back, width, height),
     new PokerCard(capsAndHammers.actionCaps.scientist, capsAndHammers.actionCaps.back, width, height),
-    new PokerCard(capsAndHammers.actionCaps.nuke, capsAndHammers.actionCaps.back, width, height),
     new PokerCard(capsAndHammers.actionCaps.admiral, capsAndHammers.actionCaps.back, width, height),
     new PokerCard(capsAndHammers.actionCaps.soldier, capsAndHammers.actionCaps.back, width, height),
-    new PokerCard(capsAndHammers.actionCaps.guerrilla, capsAndHammers.actionCaps.back, width, height)
+    new PokerCard(capsAndHammers.actionCaps.diplomat, capsAndHammers.actionCaps.back, width, height),
+    new PokerCard(capsAndHammers.actionCaps.spy, capsAndHammers.actionCaps.back, width, height),
+    new PokerCard(capsAndHammers.actionCaps.nuke, capsAndHammers.actionCaps.back, width, height),
+    new PokerCard(capsAndHammers.actionCaps.guerrilla, capsAndHammers.actionCaps.back, width, height),
   ]
   const hand = new Hand(cards, 0, 900);
   
@@ -55,17 +55,24 @@ export default makeScene2D(function* (view) {
   yield* all(...cardsGrid.flat().filter(card => card !== null).map((card) => card.applyInitialState()))
   view.add(hand.render());
   yield* hand.arrangeFan()
-  yield* hand.moveHand(0, 400, 1, easeInOutCubic)
+  yield* board.cameraRef().zoom(1.5,0)
+  yield* waitFor(1.5);
+  yield* hand.moveHand(0, 400, 0.5, easeInOutCubic)
+  yield* waitFor(1);
   
-  yield* waitFor(0.5);
-  yield* hand.performHighlightAndReturn(1);
-  var removedCard = hand.removeCard(cards[4])
+  yield* hand.highlightCard(cards[4], 0.6, easeInOutCubic)
+  yield* hand.highlightCard(cards[5], 0.6, easeInOutCubic)
+  yield* hand.highlightCard(cards[6], 0.6, easeInOutCubic)
+  yield* waitFor(2);
+  
   yield* all(
-    hand.arrangeFan(0.3, easeInOutCubic),
-    removedCard.cardRef().position.x(0,0.3, easeInOutCubic),
-    removedCard.cardRef().position.y(-200,0.3, easeInOutCubic),
-    removedCard.cardRef().rotation(0,0.3, easeInOutCubic)
+    hand.moveHand(0, 900, 1, easeInOutCubic),
+    board.cameraRef().rotation(90, 1, easeInOutCubic),
+    board.cameraRef().zoom(4, 1, easeInOutCubic),
+    board.cameraRef().position.x(-400, 1, easeInOutCubic)
   )
+  yield* board.cameraRef().position.x(-200, 1, easeInOutCubic)
+  yield* board.cameraRef().position.x(0, 1, easeInOutCubic)
   yield* waitFor(0.5);
 });
 

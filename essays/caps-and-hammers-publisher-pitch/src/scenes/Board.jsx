@@ -58,24 +58,6 @@ class Board {
     );
 }
 
-  *skew(skewX, skewY, duration = 0) {
-    yield* this.cameraRef().skew([40,-30], duration)
-    // const skewVector = [skewX, skewY];
-
-    // if (duration === 0) {
-    //   // Immediate set
-    //   this.cameraRef().skew(skewVector);
-    // } else {
-    //   // Smooth transition using tween
-    //   const currentSkew = this.cameraRef().skew();
-    //   yield* tween(duration, progress => {
-    //     this.cameraRef().skew([
-    //       currentSkew[0] + (skewX - currentSkew[0]) * progress,
-    //       currentSkew[1] + (skewY - currentSkew[1]) * progress
-    //     ]);
-    //   });
-    // }
-  }
 
   render() {
     return (
