@@ -1,0 +1,54 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "start",
+      "targetTime": 41.12933866394256
+    },
+    {
+      "name": "whatEachCardSays",
+      "targetTime": 41.83455249100195
+    },
+    {
+      "name": "andwhatart",
+      "targetTime": 43.073860598982456
+    },
+    {
+      "name": "ituses",
+      "targetTime": 43.684860038848655
+    },
+    {
+      "name": "inyourcontentfiles",
+      "targetTime": 44.684860038848655
+    },
+    {
+      "name": "getOnTheRoad",
+      "targetTime": 49.53232401283183
+    },
+    {
+      "name": "addingPieces",
+      "targetTime": 51.09429346738734
+    },
+    {
+      "name": "illustrating",
+      "targetTime": 53.740453484516664
+    },
+    {
+      "name": "overlay",
+      "targetTime": 54.91176044968228
+    },
+    {
+      "name": "modify",
+      "targetTime": 55.81177856125336
+    },
+    {
+      "name": "comeupwithlogo",
+      "targetTime": 57.214950226569506
+    },
+    {
+      "name": "fortheback",
+      "targetTime": 57.714950226569506
+    }
+  ],
+  "seed": 2138767771
+}
